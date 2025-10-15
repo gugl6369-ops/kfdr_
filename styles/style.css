@@ -1,0 +1,8 @@
+@import url(./base/base.css);
+@import url(./blocks/blocks.css);
+@import url(./fonts/fonts.css);
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}

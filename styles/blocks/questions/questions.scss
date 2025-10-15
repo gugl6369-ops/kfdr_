@@ -1,0 +1,127 @@
+@use"../../mixin/mixin" as *;
+
+.questions{
+    position: relative;
+    display: flex;
+    padding: 80px 25px;
+    flex-direction: column;
+    gap: 40px;
+
+    &_title{
+        padding-left: 31px;
+        @include text-style("2", "desktop");
+    }
+
+    &_accordion-list{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &_cart{
+        display: flex;
+        flex-direction: column;
+        backdrop-filter: blur(240px);
+        border-radius: 16px;
+        box-shadow: -2px 4px 20px 0 rgba(25, 25, 25, 0.03) inset;
+        background: rgba(255, 255, 255, 0.5);
+        transition: all 3s ease-in-out;
+        
+    }
+
+    &_cart::-webkit-details-marker{
+        display:  none;
+    }
+
+    &_cart::marker{
+        display: none;
+    }
+
+    &_header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 28px 32px;
+        border-radius: 16px;
+        background-color: rgba($color: #ffffff, $alpha: 0.5);
+    }
+
+    &_header-title{
+        @include text-style("2", "desktop");
+    }
+    
+    &_header-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        width: 48px;
+        height: 48px;
+        backdrop-filter: blur(240px);
+        box-shadow: -2px 4px 20px 0 rgba(25, 25, 25, 0.03);
+        border-radius: 50%;
+        background-color: rgba($color: #ffffff, $alpha: 0.5);
+
+    }
+
+    &_content{
+        padding: 16px 24px 24px;
+        background-color: rgba($color: #ffffff, $alpha: 0.2);
+        border-radius: 0 0 16px 16px;
+    }
+
+    &_content-title{
+        @include text-style("body", "desktop");
+        color: var(--Grey);
+    }
+
+    &_header_img{
+        transition: all 1s ease-in-out;
+    }
+
+    &_cart[open] &_header-img{
+        transform: rotate(45deg);
+    }
+
+    &_decor{
+        position: absolute;
+        top: -40%;
+        right: 0;
+        z-index: -3;
+    }
+
+    &_decor1{
+        position: absolute;
+        bottom: -70%;
+        left: 0;
+        z-index: -3;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .questions{
+        padding: 20px 8px;
+        &_title{
+            @include text-style("2", "mobile");
+        }
+        &_header-title{
+            @include text-style("2", "mobile");
+        }
+        &_content-title{
+            @include text-style("body", "mobile");
+            color: var(--Grey);
+        }
+        &_header-img{
+            width: 60%;
+            aspect-ratio: 1;
+        }
+        &_header-btn{
+            width: 32px;
+            height: 32px;
+        }
+        &_header{
+            padding: 24px 16px;
+            gap: 0;
+        }
+    }
+}

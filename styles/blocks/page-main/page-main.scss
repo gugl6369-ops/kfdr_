@@ -1,0 +1,216 @@
+@use"../../mixin/mixin" as *;
+.page-main{
+    position:relative;
+    padding: 0 56px 80px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &_left-content{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    
+    &_form-input{
+        padding: 8px;
+        display: flex;
+        background-color: rgba($color: #ffffff, $alpha: 0.5);
+        border-radius: 16px;
+        gap: 24px;
+        justify-content: space-between;
+    }
+
+
+    &_form{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &_btn{
+        background-color: var(--White);
+        color: var(--Blue);
+    }
+
+    &_input{
+        width: 100%;
+        padding: 12px 8px;
+        border: none;
+        background-color: transparent;
+    }
+
+    &_subject{
+        @include text-style("1", "desktop");
+    }
+
+    &_title{
+        padding-left: 8px;
+        @include text-style("discription","desktop");
+        color: rgba(89, 89, 89, 1);
+    }
+
+    &_link{
+        text-decoration: none;
+        color: var(--Blue);
+    }
+
+    &_scroll-title{
+        @include text-style("table","desktop");
+        color: var(--White);
+    }
+
+    &_img-block {
+        position: relative;
+    }
+
+    &_img{
+        position: relative;
+    }
+
+    &_block-decor{
+        position: absolute;
+        right: 0;
+        bottom: 25%;
+        z-index: 0;
+    }
+
+    &_img-absolut2{
+        position: absolute;
+        left: -163px;
+        bottom: -37px;
+        z-index: -1;
+
+    }
+
+    &_img{
+        z-index: 2;
+    }
+
+    &_scroll-down{
+        position: absolute;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        bottom: -126px;
+    }
+
+    // ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ ФОНА  
+    &_decore{
+        position: absolute;
+        bottom: -30%;
+        left: 0;
+        z-index: -3;
+    }
+
+    &_decore1{
+        position: absolute;
+        top: 0;
+        z-index: -3;
+    }
+}
+
+
+//АДАПТИВ
+
+@media  screen and (max-width:1300px) {
+
+    .page-main{
+        flex-direction: column;
+        padding-top: 40px ;
+        
+        &_scroll-down{
+            display:  none;
+        }
+
+        &_left-content{
+            width: 100%;
+        }
+    }
+    
+
+}
+
+@media  screen and (max-width:700px) {
+
+    .page-main{
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 0;
+
+        &_left-content{
+            width: 100%;
+        }
+        
+        &_img-block{
+            align-items: center;
+        }
+
+        &_decore{
+            top: 25%;
+            left: 0;
+            bottom: 0;
+        }
+        &_decore1{
+            display: none;
+        }
+
+        &_img{
+            width: 500px;
+        }
+
+        &_block-decor{
+            right: -20%;
+        }
+
+        &_img-absolut1{
+            width: 70%;
+            height: 70%;
+        }
+
+        &_img-absolut2{
+            width: 50%;
+            height: 50%;
+            left: -20%;
+        }
+
+        &_title{
+            @include text-style("discription","mobile");
+        }
+
+        &_subject{
+            @include text-style("1", "mobile");
+        }
+
+    }
+
+}
+@media screen and (max-width:450px) {
+        .page-main{
+            
+        &_img{
+            width: 400px;
+        }
+        &_block-decor{
+            right: -40%;
+        }
+
+        &_img-absolut1{
+            width: 60%;
+            height: 60%;
+        }
+
+        &_img-absolut2{
+            width: 50%;
+            height: 50%;
+            left: -20%;
+        }
+        
+
+    }
+    
+}
+
+

@@ -1,0 +1,169 @@
+.tariffs {
+  background-color: var(--White);
+  padding: 80px 24px 88px;
+}
+.tariffs_title {
+  font-family: "VisueltPro-Medium";
+  line-height: 112%;
+  font-size: 36px;
+  font-weight: 500;
+  font-size: 36px;
+  padding: 0 0 40px 32px;
+}
+.tariffs_list {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+.tariffs_cart {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 3/span 3;
+  box-shadow: 0 4px 20px 0 rgba(25, 25, 25, 0.05) inset, 0 4px 20px 0 rgba(25, 25, 25, 0.05);
+  border: 1px solid;
+  -o-border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+     border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+}
+.tariffs_header {
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.tariffs_cart-title {
+  font-family: "VisueltPro-Medium";
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.tariffs_cart-price {
+  font-family: "VisueltPro-Medium";
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--Grey);
+}
+.tariffs_mouth-price {
+  color: var(--Blue);
+  font-family: "VisueltPro-Medium";
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.tariffs_cart-content {
+  padding: 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.tariffs_item {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 16px;
+}
+.tariffs_point-title {
+  color: var(--Grey);
+  justify-content: start;
+  grid-column: span 3/span 8;
+  grid-column-start: 2;
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+}
+.tariffs_point-div {
+  display: flex;
+  grid-column: span 3/span 1;
+  grid-column-start: 1;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.tariffs_link-button {
+  padding: 16px 24px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tariffs_btn {
+  width: 100%;
+  background-color: var(--White);
+}
+.tariffs_link {
+  text-decoration: none;
+  color: var(--Blue);
+  font-family: "VisueltPro-Medium";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1150px) {
+  .tariffs_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tariffs_cart {
+    grid-column: span 1/span 1;
+  }
+}
+@media screen and (max-width: 650px) {
+  .tariffs_list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .tariffs_cart {
+    grid-column: span 1/span 1;
+  }
+}
+@media screen and (max-width: 550px) {
+  .tariffs {
+    padding: 40px 20px;
+  }
+  .tariffs_title {
+    font-family: "VisueltPro-Medium";
+    font-size: 24px;
+    line-height: 125%;
+    font-weight: 500;
+  }
+  .tariffs_link {
+    font-family: "VisueltPro-Medium";
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .tariffs_point-title {
+    font-family: "VisueltPro-Medium";
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .tariffs_cart-title {
+    font-family: "VisueltPro-Medium";
+    font-size: 18px;
+    line-height: 125%;
+    font-weight: 500;
+  }
+  .tariffs_mouth-price {
+    font-family: "VisueltPro-Medium";
+    font-size: 18px;
+    line-height: 125%;
+    font-weight: 500;
+  }
+  .tariffs_cart-price {
+    font-family: "VisueltPro-Medium";
+    font-size: 18px;
+    line-height: 125%;
+    font-weight: 500;
+  }
+}/*# sourceMappingURL=tariffs.css.map */

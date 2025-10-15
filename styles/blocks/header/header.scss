@@ -1,0 +1,123 @@
+@use"../../mixin/mixin" as *;
+
+.header{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding: 16px 56px;
+    background: var(--White);
+    border-radius: 24px 24px 0 0;
+    align-items: center;
+
+    &_burger{
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    &_burger::before{
+        content: '';
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        display: none;
+        background-color: rgba($color: #ffffff, $alpha: 0.5);
+
+    }
+
+    &_logo-block{
+        grid-column: span 2 / span 2;
+        display: flex;
+    }
+
+    &_account{
+        display: none;
+    }
+
+    &_logo { 
+        color: var(--Blue);
+    }   
+
+    
+    &_controllers { 
+        display: flex;
+        grid-column-start: 7;
+        align-items: center;
+        gap: 16px;
+        grid-column: span 2 / span 2;
+        justify-content: end;
+    } 
+
+    &_languge{
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+
+    &_RU{
+        color: var(--Blue);
+        @include text-style("headline","desktop")
+    }
+
+    &_EN{
+        @include text-style("headline","desktop");
+        color: var(--Grey);
+    }
+
+    &_separator{
+        @include text-style("headline","desktop");
+        color: var(--Grey);
+    }
+    
+    &_btn-block{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &_btn{
+    color: var(--White);
+    background-color: var(--Blue);
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .header{
+        display: flex;
+        justify-content: space-between;
+        &_languge{
+            display: none;
+        }
+
+        &_burger{
+            display: block;
+        }
+        &_burger::before{
+            display: block;
+        }
+        &_logo-block{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+    }
+}
+@media screen and (max-width:560px) {
+    .header{
+        &_account{
+        display: block;
+        }
+        &_btn{
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+
+
+

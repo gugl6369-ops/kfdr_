@@ -1,0 +1,138 @@
+.feedback {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 80px 56px;
+  background-color: var(--White);
+}
+.feedback_form-block {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.feedback_title {
+  font-family: "VisueltPro-Medium";
+  line-height: 112%;
+  font-size: 36px;
+  font-weight: 500;
+}
+.feedback_text {
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--Grey);
+}
+.feedback_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.feedback_input {
+  background-color: var(--Background);
+  border-radius: 16px;
+  padding: 16px;
+  border: none;
+}
+.feedback_btn-block {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.feedback_btn {
+  color: var(--White);
+  background-color: var(--Blue);
+}
+.feedback_btn-text {
+  font-family: "VisueltPro-Regular";
+  font-size: 12px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--Grey);
+}
+.feedback_link {
+  color: var(--Blue);
+}
+.feedback_img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feedback_textarea {
+  resize: vertical;
+}
+.feedback_circ {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 489px;
+  height: 489px;
+  overflow: hidden;
+}
+.feedback_circ-img {
+  position: relative;
+  filter: blur(240px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feedback_circ::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: radial-gradient(circle at 0 320%, rgba(255, 255, 255, 0) 80%, rgb(255, 255, 255) 90%);
+}
+.feedback_men-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -9%;
+  overflow: hidden;
+  border-radius: 0 0 110% 110%;
+  z-index: 2;
+}
+
+@media screen and (max-width: 1100px) {
+  .feedback {
+    display: flex;
+  }
+  .feedback_img {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .feedback {
+    padding: 40px 20px;
+    display: flex;
+  }
+  .feedback_img {
+    display: none;
+  }
+  .feedback_btn-block {
+    flex-direction: column;
+    align-items: start;
+  }
+  .feedback_btn-text {
+    font-family: "VisueltPro-Medium";
+    font-size: 10px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .feedback_text {
+    font-family: "VisueltPro-Medium";
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .feedback_title {
+    font-family: "VisueltPro-Medium";
+    font-size: 24px;
+    line-height: 125%;
+    font-weight: 500;
+  }
+}/*# sourceMappingURL=feedback.css.map */

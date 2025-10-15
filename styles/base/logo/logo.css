@@ -1,0 +1,15 @@
+.logo {
+  font-family: "VisueltPro-Medium";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 560px) {
+  .logo {
+    font-family: "VisueltPro-Medium";
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 500;
+  }
+}/*# sourceMappingURL=logo.css.map */

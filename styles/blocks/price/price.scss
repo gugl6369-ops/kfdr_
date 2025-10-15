@@ -1,0 +1,136 @@
+@use"../../mixin/mixin" as *;
+
+.price{  
+    background-color: var(--White);
+    padding: 88px 56px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    align-items: center;
+    gap: 24px;
+
+    &_left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+    }
+
+    &_img-cirk{
+        position: relative;
+        width: 465px;
+        height: 465px;
+        overflow: hidden; 
+        border-radius: 50%;
+    }
+
+    &_img{
+        filter: blur(240px);
+    }
+
+    &_img-main{
+        position: absolute;
+        width: 628px;
+        height: 640px;
+        z-index: 2;
+    }
+
+    &_title{
+        @include text-style("1", "desktop");
+    }
+
+    &_form{
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+        padding-right: 163px;
+    }
+
+    &_text-block{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &_input-block{
+        padding: 8px;
+        display: flex;
+        background-color: var(--Background);
+        border-radius: 16px;
+        gap: 24px;
+        justify-content: space-between;
+    }
+
+    &_form-title{
+        padding-left: 8px;
+        @include text-style("discription","desktop");
+        color: rgba(89, 89, 89, 1);
+    }
+
+    &_form-link{
+        color: var(--Blue);
+        text-decoration: none;
+    }
+
+    &_input-email{
+        background-color: transparent;
+        padding: 12px;
+        border: none;
+    }
+
+    &_input-main::placeholder{
+        @include text-style("body", "desktop");
+    }
+
+    &_btn{
+        color: var(--White);
+        background-color: var(--Blue);
+    }
+
+}
+@media screen and (max-width:1300px) {
+    .price{
+        display: flex;
+        flex-direction: column;
+        padding: 40px 56px;
+    }
+    
+}
+@media screen and (max-width:700px) {
+    .price{
+        padding: 40px 8px;
+        &_left{
+            width: 100%;
+        }
+        &_img-main{
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+    
+        }
+        &_img-cirk{
+            width: 80%;
+            height: auto;
+            aspect-ratio: 1;
+        }
+        &_form-title{
+            padding-left: 8px;
+            @include text-style("discription","mobile");
+        }
+        &_title{
+            @include text-style("1", "mobile");
+        }
+        &_form{
+            padding-right: 0;
+        }
+        &_input-block{
+            gap: 0;
+            padding: 3px;
+        }
+        &_input-email{
+            padding: 2px;
+        }
+
+    }
+}
+

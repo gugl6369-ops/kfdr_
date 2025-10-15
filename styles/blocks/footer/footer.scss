@@ -1,0 +1,64 @@
+@use"../../mixin/mixin" as *;
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 56px;
+    background-color: var(--Blue);
+    border-radius: 0 0 24px 24px;
+    align-items: center;
+
+    &_text-block{
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    &_logo{
+        color: var(--White);
+    }
+
+    &_text{
+        @include text-style("table", "desktop");
+        color: var(--LtGrey);
+    }
+
+    &_link-block{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    &_link{
+        @include text-style("body", "desktop");
+        text-decoration: none;
+        color: var(--White);
+    }
+
+    &_arrow{
+        margin-bottom: 15px;
+    }
+    &_link-mobile{
+        display: none;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .footer{
+        padding: 16px 21px;
+        &_text{
+            @include text-style("table", "mobile");
+        }
+        &_link{
+            display: none
+        }
+        &_link-mobile{
+            display: block;
+            text-decoration: none;
+            color: var(--White);
+            @include text-style("body", "mobile");
+        }
+    }
+    
+}
