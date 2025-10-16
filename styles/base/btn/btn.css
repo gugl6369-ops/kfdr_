@@ -1,0 +1,21 @@
+.btn {
+  padding: 12px 24px;
+  border-radius: 16px;
+  border: none;
+  font-family: "VisueltPro-Medium";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .btn {
+    font-family: "VisueltPro-Medium";
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+}/*# sourceMappingURL=btn.css.map */

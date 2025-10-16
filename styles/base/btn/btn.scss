@@ -1,0 +1,18 @@
+@use"../../mixin/mixin" as *;
+
+.btn{
+    padding: 12px 24px ;
+    border-radius: 16px;
+    border: none;
+    @include text-style("span", "desktop");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:500px) {
+    .btn{
+        @include text-style("span", "mobile");    
+    }
+    
+}

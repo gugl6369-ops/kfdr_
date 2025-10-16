@@ -1,0 +1,130 @@
+@use"../../mixin/mixin" as *;
+
+.our-work{
+    position: relative;
+    padding: 80px 56px 0;
+
+    &_title{
+        @include text-style("2", "desktop");
+    }
+    &_content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        padding-top: 41px;
+        gap: 24px;
+    }
+    //&_content-left{}
+
+    &_content-right{
+        display: flex;
+        flex-direction: column;
+        padding: 26px 0 80px 0;
+        justify-content: space-between;
+        gap: 71px;
+    }
+    &_text-block{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &_scroll{
+        display: flex;
+        gap: 16px;
+        margin-bottom: 6px;
+        align-items: center;
+    }
+
+    &_scroll-title{
+        @include text-style("span", "desktop");
+        color: var(--White);
+    }
+
+    &_scroll-title--active{
+        color: var(--Blue) !important;
+    }
+
+    &_scroll-div{
+        width: 24px;
+        height: 2px;
+        background-color: var(--White);
+    }
+    &_right-title{
+        @include text-style("2", "desktop");
+        margin-bottom: -8px;
+
+    }
+    &_text-title{
+        @include text-style("headline", "desktop");
+        color: var(--Blue);
+    }
+    &_main-text{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-right: 165px;
+    }
+    &_text{
+        @include text-style("body", "desktop");
+        color: var(--Grey);
+    }
+    &_btn{
+        color: var(--White);
+        background-color: var(--Blue);
+    }
+    &_img{
+        width: 100%;
+    }
+
+    // ФОНОВЫЙ ДЕКОР
+    &_decor{
+        position: absolute;
+        right: 0;
+        top: -65%;
+        z-index: -3;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .our-work{
+        
+        &_content{
+            display: flex;
+            flex-direction: column;
+        }
+        &_decor{
+            top: 20%;
+
+        }
+         &_main-text{
+            padding-right: 56px;
+        }   
+    }
+    
+}
+@media screen and (max-width:550px) {
+    .our-work{
+        padding: 40px 8px 0;
+        &_text-title{
+            @include text-style("headline", "mobile");
+        }
+
+        &_title{
+            @include text-style("2", "mobile");
+        }
+        &_scroll-title{
+            @include text-style("span", "mobile");
+        }
+         &_right-title{
+            @include text-style("2", "mobile");
+            margin-bottom: -8px;
+        }
+        &_text{
+            @include text-style("body", "mobile");
+        }
+         &_main-text{
+            padding-right: 19px;
+        }   
+    }
+    
+}
