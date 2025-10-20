@@ -20,31 +20,20 @@ getBtn.addEventListener("click", (event)=> {
 
 
             fileParse.fields.forEach(field => {
-               
-               
-
-                //label create
+                //block create
                 const input_block = document.createElement('div');
                 input_block.classList.add('input-block');
                 includeBlock.appendChild(input_block);
 
-                const label = document.createElement('label'); 
-                label.textContent = field.label;
-                label.classList.add('input-bock_label');
-                input_block.appendChild(label);
+
+                //label create
+                if (field.label) createLabel(field.label, input_block);
 
                 //input create
-                const input = document.createElement('input');
-                input.classList.add('input-bock_input')
-                const fieldInput = field.input;
-                console.log(typeof(fieldInput));
-                input.type = fieldInput.type;
-                if (fieldInput.placeholder) input.setAttribute('placeholder', fieldInput.placeholder);
-                if (fieldInput.required) input.setAttribute('required', '');
-                input_block.appendChild(input);
+                
 
                 //связка 
-                label.htmlFor = input.id;
+              //  if() label.htmlFor = input.id;
 
                 
             });
@@ -58,6 +47,29 @@ getBtn.addEventListener("click", (event)=> {
 
     })
 });
+
+
+
+function createLabel(name, path){
+    const block = document.createElement('label');
+    block.textContent = name;
+    block.classList.add('include_name');
+    path.appendChild(block);
+}
+
+function createInput(name, path){
+    const input = document.createElement('input');
+    input.classList.add('input-bock_input-', toString(name.type));
+    
+
+    const fieldInput = field.input;
+    console.log(typeof(fieldInput));
+    input.type = fieldInput.type;
+    if (fieldInput.placeholder) input.setAttribute('placeholder', fieldInput.placeholder);
+    if (fieldInput.required) input.setAttribute('required', '');
+    input_block.appendChild(input);
+}
+
 
 function closeBlock(){
     formBlock.style.display = 'none';
