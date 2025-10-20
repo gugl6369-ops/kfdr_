@@ -12,12 +12,50 @@ getBtn.addEventListener("click", (event)=> {
     const file = getInput.files[0];
     closeBlock();
     readerJSON(file, (fileParse) =>{
+            //name create
+            const input_name = document.createElement('h1');
+            input_name.textContent = fileParse.name;
+            input_name.classList.add('include_name');
+            includeBlock.appendChild(input_name);
+
 
             fileParse.fields.forEach(field => {
+               
+               
+
+                //label create
+                const input_block = document.createElement('div');
+                input_block.classList.add('input-block');
+                includeBlock.appendChild(input_block);
+
                 const label = document.createElement('label'); 
                 label.textContent = field.label;
-                includeBlock.appendChild(label);
+                label.classList.add('input-bock_label');
+                input_block.appendChild(label);
+
+                //input create
+                const input = document.createElement('input');
+                input.classList.add('input-bock_input')
+                const fieldInput = field.input;
+                console.log(typeof(fieldInput));
+                input.type = fieldInput.type;
+                if (fieldInput.placeholder) input.setAttribute('placeholder', fieldInput.placeholder);
+                if (fieldInput.required) input.setAttribute('required', '');
+                input_block.appendChild(input);
+
+                //связка 
+                label.htmlFor = input.id;
+
+                
             });
+            fileParse.buttons.forEach(button => {
+                const include_btn = document.createElement('button');
+                include_btn.textContent = button.text;
+                include_btn.classList.add('include_btn');
+                includeBlock.appendChild(include_btn);
+            })
+        
+
     })
 });
 
