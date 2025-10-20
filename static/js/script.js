@@ -3,7 +3,7 @@ const getBtn = document.getElementById("form_button"); // button click
 const formBlock = document.getElementById("form-block");
 
 const includeBlock = document.getElementById("include"); //block add
-
+let i = 1;
 
 
 getBtn.addEventListener("click", (event)=> {
@@ -25,16 +25,18 @@ getBtn.addEventListener("click", (event)=> {
                 input_block.classList.add('input-block');
                 includeBlock.appendChild(input_block);
 
-
                 //label create
-                if (field.label) createLabel(field.label, input_block);
+                if (field.label) label = createLabel(field.label, input_block);
 
                 //input create
+                if (field.input) input = createInput(field.input, input_block);
+
+                //связка id
+                if(label && input) {
+                    label.htmlFor = input.id;
+                    i++;
+                }
                 
-
-                //связка 
-              //  if() label.htmlFor = input.id;
-
                 
             });
             fileParse.buttons.forEach(button => {
@@ -55,19 +57,22 @@ function createLabel(name, path){
     block.textContent = name;
     block.classList.add('include_name');
     path.appendChild(block);
+    return block;
 }
 
 function createInput(name, path){
     const input = document.createElement('input');
-    input.classList.add('input-bock_input-', toString(name.type));
-    
 
-    const fieldInput = field.input;
-    console.log(typeof(fieldInput));
+    const fieldInput = name;
     input.type = fieldInput.type;
+    input.id = i;
+
     if (fieldInput.placeholder) input.setAttribute('placeholder', fieldInput.placeholder);
-    if (fieldInput.required) input.setAttribute('required', '');
-    input_block.appendChild(input);
+    if (fieldInput.required) input.required = true;
+    if (fieldInput.multiple) input.multiple = true;
+    if (fieldInput.mask) input.setAttribute('', '');
+    path.appendChild(input);
+    return input;
 }
 
 
