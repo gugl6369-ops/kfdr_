@@ -20,6 +20,7 @@ getBtn.addEventListener("click", (event)=> {
 
 
             fileParse.fields.forEach(field => {
+                try{
                 //block create
                 const input_block = document.createElement('div');
                 input_block.classList.add('input-block');
@@ -36,7 +37,10 @@ getBtn.addEventListener("click", (event)=> {
                     label.htmlFor = input.id;
                     i++;
                 }
-                
+                }
+                catch{
+                    alert('Error!')
+                }
                 
             });
             fileParse.buttons.forEach(button => {
@@ -70,7 +74,7 @@ function createInput(name, path){
     if (fieldInput.placeholder) input.setAttribute('placeholder', fieldInput.placeholder);
     if (fieldInput.required) input.required = true;
     if (fieldInput.multiple) input.multiple = true;
-    if (fieldInput.mask) input.setAttribute('', '');
+    if (fieldInput.filetype) input.setAttribute('accept', fieldInput.filetype);
     path.appendChild(input);
     return input;
 }
