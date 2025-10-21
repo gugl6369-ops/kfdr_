@@ -1,0 +1,29 @@
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.form_label{
+    color: #22223b;
+    font-family: 'Minecraft';
+    font-size: 36px;
+}
+
+.form_input-block{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form_imput{
+    font-family: 'Minecraft';
+}
+.form_button{
+    color: #ffffff; 
+    background-color: #ff0000;
+    border: 2px solid #3c0707; 
+    box-shadow: 0 5px #3c0707;
+}

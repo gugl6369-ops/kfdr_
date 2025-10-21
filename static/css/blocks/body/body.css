@@ -1,0 +1,12 @@
+.body{
+    background-color: #fffcf2;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../../pic/base.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

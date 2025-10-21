@@ -1,0 +1,7 @@
+.btn{
+    font-family: 'Minecraft';
+    padding: 15px;
+    border-radius: 20px 5px 5px 20px;
+    cursor: pointer;
+    color: #ffffff;
+}

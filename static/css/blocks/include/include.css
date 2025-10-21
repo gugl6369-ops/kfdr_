@@ -1,0 +1,48 @@
+.include{
+    display: flex;
+    gap: 5%;
+}
+.include_name{
+    font-family: 'Minecraft';
+    font-size: 32px;
+}
+.include_label{
+    font-family: 'Minecraft';
+    font-size: 14px;
+}
+.include_input-block{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid rgb(177, 177, 177);
+    align-items: center;
+    gap: 10%;
+}
+
+.include_field-block{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.include_input{
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    box-shadow: inset 0 3px rgb(166, 156, 156), inset 0 5px rgba(0, 0, 0, 0.132) ;
+    border: 3px solid #b1abab;
+}
+
+.include_btn-block{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    gap: 20px;
+}
+
+.include_btn{
+    border: 3px solid black;
+    background-color: rgb(240, 43, 43);
+     box-shadow: 0 5px #3c0707;
+}
