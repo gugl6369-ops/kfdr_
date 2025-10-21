@@ -53,8 +53,17 @@ getBtn.addEventListener("click", (event)=> {
                 references_block.classList.add('include_references-block');
                 field_block.appendChild(references_block);
 
+                const references_btn_block = document.createElement('div');
+                references_btn_block.classList.add('include_references-btn-block');
+                references_block.appendChild(references_btn_block);
+
                 fileParse.references.forEach(referenc => {
-                    if(referenc.input){ createInputRef()}
+                    if(referenc.input){ createInput(referenc.input, references_btn_block)}
+                    if(referenc.text){ 
+                        const references_block_text = document.createElement('div');
+                        references_block_text.classList.add('include_references-block-text');
+                        references_block.appendChild(references_block_text);
+                        createReference(referenc, references_block_text)}
                 });
             }
             
@@ -77,6 +86,19 @@ getBtn.addEventListener("click", (event)=> {
 });
 
 
+function createReference(name, path){
+    if(name["text without ref"]){ 
+        const block_text_ref = document.createElement('p');
+        block_text_ref.textContent = name["text without ref"];
+        block_text_ref.classList.add('include_references-text-ref');
+        path.appendChild(block_text_ref);
+    }
+    const block_text = document.createElement('a');
+    block_text.textContent = name.text;
+    block_text.classList.add('include_references-text');
+    block_text.href = name.ref;
+    path.appendChild(block_text);
+}
 
 
 
@@ -126,16 +148,27 @@ function createInput(name, path){
     if (fieldInput.required) input.required = true;
     if (fieldInput.multiple) input.multiple = true;
     if (fieldInput.filetype) { 
-        addEventListener('change', () => {
+        input.addEventListener('change', () => {
             if (!fileCheck(fieldInput.filetype, input.files)){
                 alert('Плохой файл!');
                 input.value = '';
             };
-        })};
+        })
+    };
+    if (fieldInput.technologies){ 
+
+    }
+    if (fieldInput.color){ 
+        createDatalist(path);
+        fieldInput.setAttribute('list', 'my-list');
+    }
     path.appendChild(input);
     return input;
 }
 
+function createDatalist(name, path) {
+    const DataList = document.creat
+}
 
 function closeBlock(blockOpen, blockClose){
     blockClose.style.display = 'none';

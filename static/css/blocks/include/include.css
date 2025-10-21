@@ -46,3 +46,26 @@
     background-color: rgb(240, 43, 43);
      box-shadow: 0 5px #3c0707;
 }
+
+.include_references-block{
+    display: flex;
+    gap: 25px;
+}
+
+.include_references-text-ref{
+    font-family: 'Minecraft';
+}
+
+.include_references-block-text{
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+}
+
+.include_references-text{
+    font-family: 'Minecraft';
+}
+
+.include_references-btn-block{
+
+}
