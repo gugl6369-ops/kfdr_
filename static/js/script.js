@@ -9,16 +9,19 @@ let i = 1;
 
 getBtn.addEventListener("click", (event)=> {
     event.preventDefault();
-    mainBlock.style.display = 'block';
+   
     const file = getInput.files[0];
-    closeBlock();
+    if (fileCheck(0, getInput.files)){}
+    else{
+        return alert('бред!');
+    }
+    closeBlock(mainBlock, formBlock);
     readerJSON(file, (fileParse) =>{
             
             //name create
             const input_name = document.createElement('h1');
             input_name.textContent = fileParse.name;
-            input_name.classList.add('include_name');
-            
+            input_name.classList.add('include_name');   
             includeBlock.appendChild(input_name);
 
             const field_block = document.createElement('div');
@@ -40,25 +43,40 @@ getBtn.addEventListener("click", (event)=> {
                 //связка id
                 if(label && input) {
                     label.htmlFor = input.id;
-                    i++;
                 }
                
                 
             });
-            const btn_block = document.createElement('div');
-            btn_block.classList.add('include_btn-block');
-            includeBlock.appendChild(btn_block);
 
-            fileParse.buttons.forEach(button => {
-                const include_btn = document.createElement('button');
-                include_btn.textContent = button.text;
-                include_btn.classList.add('btn', 'include_btn');
-                btn_block.appendChild(include_btn);
-            })
+            if (fileParse.references){
+                const references_block = document.createElement('div');
+                references_block.classList.add('include_references-block');
+                field_block.appendChild(references_block);
 
+                fileParse.references.forEach(referenc => {
+                    if(referenc.input){ createInputRef()}
+                });
+            }
+            
+
+            if (fileParse.buttons){
+                const btn_block = document.createElement('div');
+                btn_block.classList.add('include_btn-block');
+                includeBlock.appendChild(btn_block);
+
+                fileParse.buttons.forEach(button => {
+                    const include_btn = document.createElement('button');
+                    include_btn.textContent = button.text;
+                    include_btn.classList.add('btn', 'include_btn');
+                    btn_block.appendChild(include_btn);
+                })
+            }
+            
     })
     
 });
+
+
 
 
 
@@ -70,29 +88,62 @@ function createLabel(name, path){
     return block;
 }
 
+function fileCheck(list, fileList){
+    if(fileList.length == 0){
+        console.log('все НЕ окей');
+        return false;
+    }
+
+
+    if (list == 0){
+        list = ['js', 'json'];
+    }
+
+    console.log(fileList);
+    
+    for(let i = 0; i < fileList.length; i++){
+        let fileName = fileList[i].name;
+        let type = fileName.slice(fileName.lastIndexOf('.') + 1);  
+        if(!list.includes(type)){
+            console.log('все НЕ окей');
+            return false;
+        }
+    }
+    console.log('все окей');
+    return true;
+}
+
+
+
 function createInput(name, path){
     const input = document.createElement('input');
 
     const fieldInput = name;
     input.type = fieldInput.type;
-    input.id = i;
+    input.id = i++;
     input.classList.add('include_input');
     if (fieldInput.placeholder) input.setAttribute('placeholder', fieldInput.placeholder);
     if (fieldInput.required) input.required = true;
     if (fieldInput.multiple) input.multiple = true;
-    if (fieldInput.filetype) {
-
-    }
+    if (fieldInput.filetype) { 
+        addEventListener('change', () => {
+            if (!fileCheck(fieldInput.filetype, input.files)){
+                alert('Плохой файл!');
+                input.value = '';
+            };
+        })};
     path.appendChild(input);
     return input;
 }
 
 
-function closeBlock(){
-    formBlock.style.display = 'none';
+function closeBlock(blockOpen, blockClose){
+    blockClose.style.display = 'none';
+    blockOpen.style.display = 'block';
 }
 
 function readerJSON(file, back){
+   // if (fileCheck(0, file)){
     try{
         const fr = new FileReader();
         fr.readAsText(file);
@@ -104,6 +155,10 @@ function readerJSON(file, back){
     catch{
         alert('Error!');
     }
+  //  }
+ //   else{
+  //      alert('a?');
+    //}
 }
 
 // заметки мои
