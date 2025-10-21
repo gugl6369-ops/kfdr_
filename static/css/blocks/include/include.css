@@ -1,6 +1,7 @@
 .include{
     display: flex;
     gap: 5%;
+    position: relative;
 }
 .include_name{
     font-family: 'Minecraft';
@@ -66,6 +67,16 @@
     font-family: 'Minecraft';
 }
 
-.include_references-btn-block{
-    
+.include_btn-x{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url(/static/pic/x.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20%;
+    cursor: pointer;
 }

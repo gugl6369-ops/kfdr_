@@ -15,6 +15,7 @@ getBtn.addEventListener("click", (event)=> {
     else{
         return alert('бред!');
     }
+    closeInclude();
     closeBlock(mainBlock, formBlock);
     readerJSON(file, (fileParse) =>{
             
@@ -84,6 +85,7 @@ getBtn.addEventListener("click", (event)=> {
     })
     
 });
+
 
 
 function createReference(name, path){
@@ -192,6 +194,16 @@ function readerJSON(file, back){
  //   else{
   //      alert('a?');
     //}
+}
+
+function closeInclude(){
+    const closeBtn = document.createElement('div');
+    closeBtn.classList.add('include_btn-x');
+    includeBlock.appendChild(closeBtn);
+    closeBtn.addEventListener('click', () =>  {
+        closeBlock(formBlock, mainBlock);
+        includeBlock.innerHTML = '';
+    })
 }
 
 // заметки мои
