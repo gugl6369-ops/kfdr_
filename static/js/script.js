@@ -159,8 +159,8 @@ function createInput(name, path){
 
     }
     if (fieldInput.color){ 
-        createDatalist(path);
-        fieldInput.setAttribute('list', 'my-list');
+        createDatalist(name, path);
+        input.setAttribute('list', 'my-list');
     }
     path.appendChild(input);
     return input;

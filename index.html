@@ -9,9 +9,12 @@
 <body class="body">
     <section class="form-block" id="form-block">
         <form class="form" id="form">
-            <label class="form_label" for="file">Send the file here:</label>
+            <h1 class="form_label" for="file">Send the file here:</h1>
             <div class="form_input-block">
-                <input class="form_input" name="file" id="input" type="file" accept=".js, .json, application/json" required>
+                <label class="form_input-wrap">
+                    <input class="form_input" name="file" id="input" type="file" accept=".js, .json, application/json" required>
+                    <p class="form_custom-input">Дай файл мне прям сюда</p>
+                </label>
                 <button class="btn form_button" id="form_button" type="submit">Send a file</button>
             </div>
         </form>

@@ -4,4 +4,29 @@
     border-radius: 20px 5px 5px 20px;
     cursor: pointer;
     color: #ffffff;
+    background:  linear-gradient(-45deg, #fe0000 20%,  #ffffff80 30%, #ff0808 40%)  ;
+    background-size: 400% 400%;
+    background-position: 200% 50%;
+    animation: glist 2.5s linear infinite;
+}
+
+
+
+@keyframes glist{
+    0%{
+        background-position: 0% 0%;
+    }
+    49%{
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 10% 50%;
+    }
+    75%{
+        background-position: 70% 50%;
+    }
+    100%{
+        background-position: 100% 100%;
+    }
+
 }
