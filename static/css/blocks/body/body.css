@@ -1,5 +1,6 @@
 .body{
     background-color: #fffcf2;
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -9,4 +10,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+.body_pet{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(/static/pic/ghost.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    bottom: -10px;
+    right: -10px;
 }

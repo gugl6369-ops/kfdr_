@@ -1,6 +1,7 @@
 const getInput = document.getElementById("input"); // input
 const getBtn = document.getElementById("form_button"); // button click
 const formBlock = document.getElementById("form-block");
+const bodyBlock = document.getElementById('body');
 
 const mainBlock = document.getElementById("main");
 const includeBlock = document.getElementById("include"); //block add
@@ -10,6 +11,7 @@ let i = 1;
 getBtn.addEventListener("click", (event)=> {
     event.preventDefault();
    
+    companion();
     const file = getInput.files[0];
     if (fileCheck(0, getInput.files)){}
     else{
@@ -228,6 +230,34 @@ function createSelect(name, path, fieldType){
     if (name.multiple) block.multiple = true;
     path.appendChild(block);
 }
+
+
+function companion(){
+    const pet = document.createElement('div');
+    pet.classList.add('body_pet');
+    body.appendChild(pet);
+    pet.onmouseout = function(event) {
+        let shiftX = event.clientX - pet.getBoundingClientRect().left;
+        let shiftY = event.clientY - pet.getBoundingClientRect().top;
+
+        function moveAt(pageX, pageY) {
+            pet.style.left = pageX + 'px';
+            pet.style.top = pageY + 'px';
+            
+        }
+
+        function onMouseMove(event){
+            moveAt(event.pageX, event.pageY)
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+
+    }
+
+    
+}
+
+
 
 // заметки мои
 
