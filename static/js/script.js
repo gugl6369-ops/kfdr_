@@ -6,12 +6,12 @@ const bodyBlock = document.getElementById('body');
 const mainBlock = document.getElementById("main");
 const includeBlock = document.getElementById("include"); //block add
 let i = 1;
-
+companion();
 
 getBtn.addEventListener("click", (event)=> {
     event.preventDefault();
    
-    companion();
+    
     const file = getInput.files[0];
     if (fileCheck(0, getInput.files)){}
     else{
@@ -236,7 +236,9 @@ function companion(){
     const pet = document.createElement('div');
     pet.classList.add('body_pet');
     body.appendChild(pet);
-    pet.onmouseout = function(event) {
+    
+    pet.addEventListener('click', (event) => {
+
         let shiftX = event.clientX - pet.getBoundingClientRect().left;
         let shiftY = event.clientY - pet.getBoundingClientRect().top;
 
@@ -252,7 +254,7 @@ function companion(){
 
         document.addEventListener('mousemove', onMouseMove);
 
-    }
+    })
 
     
 }
