@@ -264,9 +264,7 @@ function companion(){
         document.addEventListener('mousemove', onMouseMove);
 
     })
-     pet.addEventListener('click', (event) => { alert('Ура, вы нашли Зиги, таперь он ваш паразит/друг на проверке!')})
-
-    
+    pet.addEventListener('click', (event) => { alert('Ура, вы нашли Зиги, таперь он ваш паразит/друг на проверке!')})
 }
 
 

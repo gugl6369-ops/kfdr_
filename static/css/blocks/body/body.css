@@ -10,6 +10,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 20px;
 }
 .body_pet{
     position: absolute;
