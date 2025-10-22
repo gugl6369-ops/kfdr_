@@ -54,6 +54,7 @@
     background-position: 200% 50%;
     animation: glist 1.5s linear infinite;
     transition: 0.4s;
+    overflow: hidden;
 }
 
 .form_input-wrap::after{

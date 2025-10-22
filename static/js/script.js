@@ -146,6 +146,13 @@ function createInput(name, path){
     input.type = fieldInput.type;
     input.id = i++;
     input.classList.add('include_input');
+     if (fieldInput.color || fieldInput.technologies){ 
+        let fieldType; 
+        if(fieldInput.color){ fieldType = fieldInput.color; }
+        if(fieldInput.technologies){fieldType = fieldInput.technologies}
+        createDatalist(name, path, fieldType);
+        return true;
+    }
     if (fieldInput.placeholder) input.setAttribute('placeholder', fieldInput.placeholder);
     if (fieldInput.required) input.required = true;
     if (fieldInput.multiple) input.multiple = true;
@@ -157,13 +164,7 @@ function createInput(name, path){
             };
         })
     };
-    if (fieldInput.technologies){ 
-
-    }
-    if (fieldInput.color){ 
-        createDatalist(name, path);
-        input.setAttribute('list', 'my-list');
-    }
+   
     path.appendChild(input);
     return input;
 }
@@ -204,6 +205,20 @@ function closeInclude(){
         closeBlock(formBlock, mainBlock);
         includeBlock.innerHTML = '';
     })
+}
+
+function createDatalist(name, path, fieldType){
+    const block = document.createElement('select');
+    for(let i = 0; i < fieldType.length; i++){
+        const blockOption = document.createElement('option');
+        blockOption.value = fieldType[i];
+        blockOption.textContent = fieldType[i];
+        block.appendChild(blockOption);
+    }
+    block.id = i++;
+    if (name.required) block.required = true;
+    if (name.multiple) block.multiple = true;
+    path.appendChild(block);
 }
 
 // заметки мои
