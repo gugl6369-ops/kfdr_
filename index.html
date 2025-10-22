@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+    <title>Json</title>
+</head>
+<body class="body" id="body">
+    <section class="form-block" id="form-block">
+        <form class="form" id="form">
+            <h1 class="form_label" for="file">Send the file here:</h1>
+            <div class="form_input-block">
+                <label class="form_input-wrap">
+                    <input class="form_input" name="file" id="input" type="file" accept=".js, .json, application/json" required>
+                    <p class="form_custom-input" id="text-content">Дай файл мне прям сюда</p>
+                </label>
+                <button class="btn form_button" id="form_button" type="submit">Send a file</button>
+            </div>
+        </form>
+    </section>
+    <main class="main" id="main">
+        <form class="include" id="include">
+        </form>
+    </main>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

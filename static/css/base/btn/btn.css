@@ -1,0 +1,49 @@
+.btn{
+    font-family: 'Minecraft';
+    padding: 15px;
+    border-radius: 20px 5px 5px 20px;
+    cursor: pointer;
+    color: #ffffff;
+    background:  linear-gradient(-45deg, #fe0000 20%,  #ffffff80 30%, #ff0808 40%)  ;
+    background-size: 400% 400%;
+    background-position: 200% 50%;
+    animation: glist 2.5s linear infinite;
+    transition: 0.2s ease;
+}
+
+
+
+@keyframes glist{
+    0%{
+        background-position: 0% 0%;
+    }
+    49%{
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 10% 50%;
+    }
+    75%{
+        background-position: 70% 50%;
+    }
+    100%{
+        background-position: 100% 100%;
+    }
+
+}
+
+.btn:hover{
+    box-shadow: 0 0px rgb(94, 21, 21);
+    transform: translateY(4px);
+    transition: 0.2s ease;
+}
+
+.btn:active{
+    background:  linear-gradient(-45deg, #aa0202 20%,  #615f5f80 30%, #aa0202 40%);
+    background-size: 400% 400%;
+    background-position: 200% 50%;
+    animation: glist 2.5s linear infinite;
+    box-shadow: 0 0px rgb(94, 21, 21);
+    transform: translateY(4px);
+    transition: 0.2s ease;
+}

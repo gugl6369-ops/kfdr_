@@ -1,0 +1,10 @@
+@import url(./blocks/blocks.css);
+@import url(./fonts/fonts.css);
+@import url(./base/base.css);
+@import url(./adapt/adapt.css);
+*{
+    
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
