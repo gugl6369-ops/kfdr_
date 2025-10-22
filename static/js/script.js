@@ -130,7 +130,6 @@ function createLabel(name, path){
 
 function fileCheck(list, fileList){
     if(fileList.length == 0){
-        console.log('все НЕ окей');
         return false;
     }
 
@@ -149,7 +148,6 @@ function fileCheck(list, fileList){
             return false;
         }
     }
-    console.log('все окей');
     return true;
 }
 
@@ -266,10 +264,3 @@ function companion(){
     })
     pet.addEventListener('click', (event) => { alert('Ура, вы нашли Зиги, таперь он ваш паразит/друг на проверке!')})
 }
-
-
-
-// заметки мои
-
-
-// - при загрузке файла появляется кнопка*(идея)

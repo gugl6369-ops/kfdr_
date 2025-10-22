@@ -16,7 +16,7 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    background-image: url(/static/pic/ghost.png);
+    background-image: url(../../../../static/pic/ghost.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
