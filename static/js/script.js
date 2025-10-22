@@ -2,11 +2,20 @@ const getInput = document.getElementById("input"); // input
 const getBtn = document.getElementById("form_button"); // button click
 const formBlock = document.getElementById("form-block");
 const bodyBlock = document.getElementById('body');
+const labelBlock = document.getElementsByClassName('.form_input-wrap');
+const textLabel = document.getElementById('text-content');
 
 const mainBlock = document.getElementById("main");
 const includeBlock = document.getElementById("include"); //block add
 let i = 1;
 companion();
+
+getInput.addEventListener('input', (event) =>{
+    const fileInput = getInput.files[0];
+    textLabel.textContent = "Файл: " + fileInput.name +"  Тип: " + fileInput.type;
+});
+
+
 
 getBtn.addEventListener("click", (event)=> {
     event.preventDefault();
@@ -243,8 +252,8 @@ function companion(){
         let shiftY = event.clientY - pet.getBoundingClientRect().top;
 
         function moveAt(pageX, pageY) {
-            pet.style.left = pageX + 'px';
-            pet.style.top = pageY + 'px';
+            pet.style.left = pageX + 20 + 'px';
+            pet.style.top = pageY + 20 + 'px';
             
         }
 
@@ -255,6 +264,7 @@ function companion(){
         document.addEventListener('mousemove', onMouseMove);
 
     })
+     pet.addEventListener('click', (event) => { alert('Ура, вы нашли Зиги, таперь он ваш паразит/друг на проверке!')})
 
     
 }

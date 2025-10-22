@@ -8,6 +8,7 @@
     background-size: 400% 400%;
     background-position: 200% 50%;
     animation: glist 2.5s linear infinite;
+    transition: 0.2s ease;
 }
 
 
@@ -29,4 +30,20 @@
         background-position: 100% 100%;
     }
 
+}
+
+.btn:hover{
+    box-shadow: 0 0px rgb(94, 21, 21);
+    transform: translateY(4px);
+    transition: 0.2s ease;
+}
+
+.btn:active{
+    background:  linear-gradient(-45deg, #aa0202 20%,  #615f5f80 30%, #aa0202 40%);
+    background-size: 400% 400%;
+    background-position: 200% 50%;
+    animation: glist 2.5s linear infinite;
+    box-shadow: 0 0px rgb(94, 21, 21);
+    transform: translateY(4px);
+    transition: 0.2s ease;
 }
