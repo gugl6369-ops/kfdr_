@@ -81,6 +81,11 @@ getBtn.addEventListener("click", (event)=> {
                     btn_block.appendChild(include_btn);
                 })
             }
+            if (!fileParse.buttons){
+                const blocki = document.createElement('div');
+                blocki.classList.add('include_blocki');
+                includeBlock.appendChild(blocki);
+            }
             
     })
     
@@ -146,11 +151,11 @@ function createInput(name, path){
     input.type = fieldInput.type;
     input.id = i++;
     input.classList.add('include_input');
-     if (fieldInput.color || fieldInput.technologies){ 
+     if (fieldInput.colors || fieldInput.technologies){ 
         let fieldType; 
-        if(fieldInput.color){ fieldType = fieldInput.color; }
+        if(fieldInput.colors){ fieldType = fieldInput.colors; }
         if(fieldInput.technologies){fieldType = fieldInput.technologies}
-        createDatalist(name, path, fieldType);
+        createSelect(name, path, fieldType);
         return true;
     }
     if (fieldInput.placeholder) input.setAttribute('placeholder', fieldInput.placeholder);
@@ -169,9 +174,7 @@ function createInput(name, path){
     return input;
 }
 
-function createDatalist(name, path) {
-    const DataList = document.creat
-}
+
 
 function closeBlock(blockOpen, blockClose){
     blockClose.style.display = 'none';
@@ -207,12 +210,17 @@ function closeInclude(){
     })
 }
 
-function createDatalist(name, path, fieldType){
+function createSelect(name, path, fieldType){
     const block = document.createElement('select');
     for(let i = 0; i < fieldType.length; i++){
         const blockOption = document.createElement('option');
         blockOption.value = fieldType[i];
         blockOption.textContent = fieldType[i];
+        let check = String(fieldType[i]);
+        if(check.startsWith("#")){
+            blockOption.classList.add('include_color');
+            blockOption.style.backgroundColor = fieldType[i];
+        }
         block.appendChild(blockOption);
     }
     block.id = i++;
@@ -223,7 +231,5 @@ function createDatalist(name, path, fieldType){
 
 // заметки мои
 
-// парсить ток стринги через file reader - 
 
 // - при загрузке файла появляется кнопка*(идея)
-// крест для закрытия формы обратно

@@ -80,3 +80,14 @@
     border-radius: 20%;
     cursor: pointer;
 }
+
+.include_blocki{
+    padding: 12px;
+
+}
+
+.include_color{
+    font-size: 14px;
+    font-family: 'Minecraft';
+    
+}
