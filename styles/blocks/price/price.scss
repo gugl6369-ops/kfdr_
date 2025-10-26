@@ -1,7 +1,7 @@
 @use"../../mixin/mixin" as *;
 
 .price{  
-    background-color: var(--White);
+    background-color: var(--white);
     padding: 88px 56px;
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -55,7 +55,7 @@
     &_input-block{
         padding: 8px;
         display: flex;
-        background-color: var(--Background);
+        background-color: var(--background);
         border-radius: 16px;
         gap: 24px;
         justify-content: space-between;
@@ -68,7 +68,7 @@
     }
 
     &_form-link{
-        color: var(--Blue);
+        color: var(--blue);
         text-decoration: none;
     }
 
@@ -83,8 +83,8 @@
     }
 
     &_btn{
-        color: var(--White);
-        background-color: var(--Blue);
+        color: var(--white);
+        background-color: var(--blue);
     }
 
 }

@@ -1,6 +1,9 @@
 .main{
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .main::before{

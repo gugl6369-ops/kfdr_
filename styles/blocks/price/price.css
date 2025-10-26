@@ -1,5 +1,5 @@
 .price {
-  background-color: var(--White);
+  background-color: var(--white);
   padding: 88px 56px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -48,7 +48,7 @@
 .price_input-block {
   padding: 8px;
   display: flex;
-  background-color: var(--Background);
+  background-color: var(--background);
   border-radius: 16px;
   gap: 24px;
   justify-content: space-between;
@@ -62,7 +62,7 @@
   color: rgb(89, 89, 89);
 }
 .price_form-link {
-  color: var(--Blue);
+  color: var(--blue);
   text-decoration: none;
 }
 .price_input-email {
@@ -83,8 +83,8 @@
   font-weight: 400;
 }
 .price_btn {
-  color: var(--White);
-  background-color: var(--Blue);
+  color: var(--white);
+  background-color: var(--blue);
 }
 
 @media screen and (max-width: 1300px) {

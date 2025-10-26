@@ -57,7 +57,7 @@
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
-  color: var(--Grey);
+  color: var(--grey);
 }
 .reviews_content {
   display: flex;
@@ -70,15 +70,15 @@
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
-  color: var(--Grey);
+  color: var(--grey);
 }
 .reviews_btn-block {
   display: flex;
   justify-content: end;
 }
 .reviews_btn {
-  background-color: var(--White);
-  color: var(--Blue);
+  background-color: var(--white);
+  color: var(--blue);
 }
 .reviews_1 {
   width: 45%;

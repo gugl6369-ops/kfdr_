@@ -4,7 +4,7 @@
 .advantages{
     display: flex;
     flex-direction: column;
-    background: var(--White);
+    background: var(--white);
     padding: 80px 24px;
     gap: 40px;
 
@@ -45,7 +45,7 @@
         padding: 16px 24px 24px 24px;
         gap: 16px;
         @include text-style("body", "desktop");
-        color: var(--Grey);
+        color: var(--grey);
     
     }
 }

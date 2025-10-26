@@ -4,12 +4,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 80px 56px;
-    background-color: var(--White);
+    background-color: var(--white);
 
     &_form-block{
         display: flex;
         flex-direction: column;
         gap: 40px;
+        max-width: 550px;
     }
 
     &_title{
@@ -18,7 +19,7 @@
     
     &_text{
         @include text-style("body", "desktop");
-        color: var(--Grey);
+        color: var(--grey);
     }
 
     &_form{
@@ -28,7 +29,7 @@
     }
 
     &_input{
-        background-color: var(--Background);
+        background-color: var(--background);
         border-radius: 16px;
         padding: 16px;
         border: none;
@@ -41,17 +42,18 @@
     }
 
     &_btn{
-        color: var(--White);
-        background-color: var(--Blue);
+        color: var(--white);
+        background-color: var(--blue);
     }
 
     &_btn-text{
         @include text-style("discription", "desktop");
-        color: var(--Grey);
+        color: var(--grey);
+        max-width: 300px;
     }
 
     &_link{
-        color: var(--Blue);
+        color: var(--blue);
     }
 
     &_img{

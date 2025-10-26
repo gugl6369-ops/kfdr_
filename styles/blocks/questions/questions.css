@@ -26,6 +26,7 @@
   box-shadow: -2px 4px 20px 0 rgba(25, 25, 25, 0.03) inset;
   background: rgba(255, 255, 255, 0.5);
   transition: all 3s ease-in-out;
+  cursor: pointer;
 }
 .questions_cart::-webkit-details-marker {
   display: none;
@@ -70,7 +71,7 @@
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
-  color: var(--Grey);
+  color: var(--grey);
 }
 .questions_header_img {
   transition: all 1s ease-in-out;

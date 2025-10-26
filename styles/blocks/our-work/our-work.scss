@@ -37,26 +37,28 @@
 
     &_scroll-title{
         @include text-style("span", "desktop");
-        color: var(--White);
+        color: var(--white);
+        cursor: pointer;
     }
 
     &_scroll-title--active{
-        color: var(--Blue) !important;
+        color: var(--blue) !important;
     }
 
     &_scroll-div{
         width: 24px;
         height: 2px;
-        background-color: var(--White);
+        background-color: var(--white);
     }
     &_right-title{
         @include text-style("2", "desktop");
         margin-bottom: -8px;
+        max-width: 550px;
 
     }
     &_text-title{
         @include text-style("headline", "desktop");
-        color: var(--Blue);
+        color: var(--blue);
     }
     &_main-text{
         display: flex;
@@ -66,14 +68,15 @@
     }
     &_text{
         @include text-style("body", "desktop");
-        color: var(--Grey);
+        color: var(--grey);
     }
     &_btn{
-        color: var(--White);
-        background-color: var(--Blue);
+        color: var(--white);
+        background-color: var(--blue);
     }
     &_img{
         width: 100%;
+        max-width: 720px;
     }
 
     // ФОНОВЫЙ ДЕКОР
@@ -118,6 +121,7 @@
          &_right-title{
             @include text-style("2", "mobile");
             margin-bottom: -8px;
+            max-width: none;
         }
         &_text{
             @include text-style("body", "mobile");

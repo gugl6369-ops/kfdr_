@@ -3,6 +3,8 @@
   font-size: 18px;
   line-height: 135%;
   font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 560px) {

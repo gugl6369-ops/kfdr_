@@ -38,15 +38,16 @@
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
-  color: var(--White);
+  color: var(--white);
+  cursor: pointer;
 }
 .our-work_scroll-title--active {
-  color: var(--Blue) !important;
+  color: var(--blue) !important;
 }
 .our-work_scroll-div {
   width: 24px;
   height: 2px;
-  background-color: var(--White);
+  background-color: var(--white);
 }
 .our-work_right-title {
   font-family: "VisueltPro-Medium";
@@ -54,13 +55,14 @@
   font-size: 36px;
   font-weight: 500;
   margin-bottom: -8px;
+  max-width: 550px;
 }
 .our-work_text-title {
   font-family: "VisueltPro-Medium";
   font-size: 18px;
   line-height: 135%;
   font-weight: 500;
-  color: var(--Blue);
+  color: var(--blue);
 }
 .our-work_main-text {
   display: flex;
@@ -73,14 +75,15 @@
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
-  color: var(--Grey);
+  color: var(--grey);
 }
 .our-work_btn {
-  color: var(--White);
-  background-color: var(--Blue);
+  color: var(--white);
+  background-color: var(--blue);
 }
 .our-work_img {
   width: 100%;
+  max-width: 720px;
 }
 .our-work_decor {
   position: absolute;
@@ -129,6 +132,7 @@
     line-height: 125%;
     font-weight: 500;
     margin-bottom: -8px;
+    max-width: none;
   }
   .our-work_text {
     font-family: "VisueltPro-Medium";

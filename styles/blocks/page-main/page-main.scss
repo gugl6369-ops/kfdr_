@@ -11,6 +11,7 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
+        max-width: 550px;
     }
 
     
@@ -31,8 +32,8 @@
     }
 
     &_btn{
-        background-color: var(--White);
-        color: var(--Blue);
+        background-color: var(--white);
+        color: var(--blue);
     }
 
     &_input{
@@ -50,16 +51,17 @@
         padding-left: 8px;
         @include text-style("discription","desktop");
         color: rgba(89, 89, 89, 1);
+        max-width: 300px;
     }
 
     &_link{
         text-decoration: none;
-        color: var(--Blue);
+        color: var(--blue);
     }
 
     &_scroll-title{
         @include text-style("table","desktop");
-        color: var(--White);
+        color: var(--white);
     }
 
     &_img-block {
@@ -125,7 +127,8 @@
             display:  none;
         }
 
-        &_left-content{
+        &_left-content{       
+            max-width: none;
             width: 100%;
         }
     }

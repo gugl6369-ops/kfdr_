@@ -1,6 +1,7 @@
 @use"../../mixin/mixin" as *;
 
 .btn{
+    cursor: pointer;
     padding: 12px 24px ;
     border-radius: 16px;
     border: none;

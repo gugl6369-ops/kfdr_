@@ -1,7 +1,12 @@
-
-
-.body{
-    padding: 24px;
-    background-color: var(--Background);
-    border-radius: 26px;
+.body {
+  padding: 24px;
+  background-color: var(--background);
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+.wrapper {
+  max-width: 1920px;
+}/*# sourceMappingURL=body.css.map */

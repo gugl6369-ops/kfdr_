@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     padding: 16px 56px;
-    background: var(--White);
+    background: var(--white);
     border-radius: 24px 24px 0 0;
     align-items: center;
 
@@ -34,7 +34,9 @@
     }
 
     &_logo { 
-        color: var(--Blue);
+        color: var(--blue);
+        text-decoration: none;
+        cursor: pointer;
     }   
 
     
@@ -54,18 +56,18 @@
     }
 
     &_RU{
-        color: var(--Blue);
+        color: var(--blue);
         @include text-style("headline","desktop")
     }
 
     &_EN{
         @include text-style("headline","desktop");
-        color: var(--Grey);
+        color: var(--grey);
     }
 
     &_separator{
         @include text-style("headline","desktop");
-        color: var(--Grey);
+        color: var(--grey);
     }
     
     &_btn-block{
@@ -75,8 +77,8 @@
     }
 
     &_btn{
-    color: var(--White);
-    background-color: var(--Blue);
+    color: var(--white);
+    background-color: var(--blue);
     }
 }
 

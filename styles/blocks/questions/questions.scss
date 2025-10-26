@@ -26,7 +26,7 @@
         box-shadow: -2px 4px 20px 0 rgba(25, 25, 25, 0.03) inset;
         background: rgba(255, 255, 255, 0.5);
         transition: all 3s ease-in-out;
-        
+        cursor: pointer;
     }
 
     &_cart::-webkit-details-marker{
@@ -72,7 +72,7 @@
 
     &_content-title{
         @include text-style("body", "desktop");
-        color: var(--Grey);
+        color: var(--grey);
     }
 
     &_header_img{

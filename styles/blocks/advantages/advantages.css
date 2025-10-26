@@ -1,7 +1,7 @@
 .advantages {
   display: flex;
   flex-direction: column;
-  background: var(--White);
+  background: var(--white);
   padding: 80px 24px;
   gap: 40px;
 }
@@ -53,7 +53,7 @@
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
-  color: var(--Grey);
+  color: var(--grey);
 }
 
 @media screen and (max-width: 850px) {

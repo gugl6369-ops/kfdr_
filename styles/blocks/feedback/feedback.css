@@ -2,12 +2,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 80px 56px;
-  background-color: var(--White);
+  background-color: var(--white);
 }
 .feedback_form-block {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  max-width: 550px;
 }
 .feedback_title {
   font-family: "VisueltPro-Medium";
@@ -20,7 +21,7 @@
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
-  color: var(--Grey);
+  color: var(--grey);
 }
 .feedback_form {
   display: flex;
@@ -28,7 +29,7 @@
   gap: 16px;
 }
 .feedback_input {
-  background-color: var(--Background);
+  background-color: var(--background);
   border-radius: 16px;
   padding: 16px;
   border: none;
@@ -39,18 +40,19 @@
   gap: 24px;
 }
 .feedback_btn {
-  color: var(--White);
-  background-color: var(--Blue);
+  color: var(--white);
+  background-color: var(--blue);
 }
 .feedback_btn-text {
   font-family: "VisueltPro-Regular";
   font-size: 12px;
   line-height: 135%;
   font-weight: 400;
-  color: var(--Grey);
+  color: var(--grey);
+  max-width: 300px;
 }
 .feedback_link {
-  color: var(--Blue);
+  color: var(--blue);
 }
 .feedback_img {
   position: relative;

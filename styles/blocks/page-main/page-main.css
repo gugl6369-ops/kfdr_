@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  max-width: 550px;
 }
 .page-main_form-input {
   padding: 8px;
@@ -25,8 +26,8 @@
   gap: 16px;
 }
 .page-main_btn {
-  background-color: var(--White);
-  color: var(--Blue);
+  background-color: var(--white);
+  color: var(--blue);
 }
 .page-main_input {
   width: 100%;
@@ -47,17 +48,18 @@
   line-height: 135%;
   font-weight: 400;
   color: rgb(89, 89, 89);
+  max-width: 300px;
 }
 .page-main_link {
   text-decoration: none;
-  color: var(--Blue);
+  color: var(--blue);
 }
 .page-main_scroll-title {
   font-family: "VisueltPro-Medium";
   font-size: 16px;
   line-height: 135%;
   font-weight: 400;
-  color: var(--White);
+  color: var(--white);
 }
 .page-main_img-block {
   position: relative;
@@ -108,6 +110,7 @@
     display: none;
   }
   .page-main_left-content {
+    max-width: none;
     width: 100%;
   }
 }

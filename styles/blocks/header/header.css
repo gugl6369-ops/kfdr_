@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   padding: 16px 56px;
-  background: var(--White);
+  background: var(--white);
   border-radius: 24px 24px 0 0;
   align-items: center;
 }
@@ -28,7 +28,9 @@
   display: none;
 }
 .header_logo {
-  color: var(--Blue);
+  color: var(--blue);
+  text-decoration: none;
+  cursor: pointer;
 }
 .header_controllers {
   display: flex;
@@ -44,7 +46,7 @@
   gap: 2px;
 }
 .header_RU {
-  color: var(--Blue);
+  color: var(--blue);
   font-family: "VisueltPro-Medium";
   font-size: 18px;
   line-height: 135%;
@@ -55,14 +57,14 @@
   font-size: 18px;
   line-height: 135%;
   font-weight: 500;
-  color: var(--Grey);
+  color: var(--grey);
 }
 .header_separator {
   font-family: "VisueltPro-Medium";
   font-size: 18px;
   line-height: 135%;
   font-weight: 500;
-  color: var(--Grey);
+  color: var(--grey);
 }
 .header_btn-block {
   display: flex;
@@ -70,8 +72,8 @@
   justify-content: center;
 }
 .header_btn {
-  color: var(--White);
-  background-color: var(--Blue);
+  color: var(--white);
+  background-color: var(--blue);
 }
 
 @media screen and (max-width: 1300px) {

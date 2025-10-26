@@ -57,7 +57,7 @@
 
     &_data{
         @include text-style("body", "desktop");
-        color: var(--Grey);
+        color: var(--grey);
     }
 
     &_content{
@@ -69,7 +69,7 @@
 
     &_text{
         @include text-style("body", "desktop");
-        color: var(--Grey);
+        color: var(--grey);
     }
 
     &_btn-block{
@@ -78,8 +78,8 @@
     }
 
     &_btn{
-        background-color: var(--White);
-        color: var(--Blue);
+        background-color: var(--white);
+        color: var(--blue);
 
     }
 

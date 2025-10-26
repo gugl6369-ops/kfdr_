@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     padding: 24px 56px;
-    background-color: var(--Blue);
+    background-color: var(--blue);
     border-radius: 0 0 24px 24px;
     align-items: center;
 
@@ -15,12 +15,13 @@
     }
 
     &_logo{
-        color: var(--White);
+        color: var(--white);
     }
 
     &_text{
         @include text-style("table", "desktop");
-        color: var(--LtGrey);
+        color: var(--ltGrey);
+        max-width: 200px;
     }
 
     &_link-block{
@@ -33,7 +34,7 @@
     &_link{
         @include text-style("body", "desktop");
         text-decoration: none;
-        color: var(--White);
+        color: var(--white);
     }
 
     &_arrow{
@@ -56,7 +57,7 @@
         &_link-mobile{
             display: block;
             text-decoration: none;
-            color: var(--White);
+            color: var(--white);
             @include text-style("body", "mobile");
         }
     }
