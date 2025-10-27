@@ -39,7 +39,10 @@
 
     &_arrow{
         margin-bottom: 15px;
+        height: 23px;
+        cursor: pointer;
     }
+    //&_arrow:hover{}
     &_link-mobile{
         display: none;
     }

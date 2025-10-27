@@ -31,8 +31,25 @@
     &_input{
         background-color: var(--background);
         border-radius: 16px;
-        padding: 16px;
+        padding: 20px;
         border: none;
+        color: var(--hoverBlue);
+    }
+    &_input::placeholder{
+        @include text-style("body", "desktop");
+        color: var(--grey);
+    }
+    &_input:hover{
+        box-shadow: 0 8px 20px 0 rgba(94, 84, 160, 0.25);
+    }
+    &_input:focus{
+        outline: none;
+    }
+    &_input:hover::placeholder{
+        color: var(--hoverBlue);
+    }
+    &_input:focus::placeholder{
+        opacity: 0;
     }
 
     &_btn-block{

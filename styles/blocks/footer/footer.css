@@ -49,6 +49,8 @@
 }
 .footer_arrow {
   margin-bottom: 15px;
+  height: 23px;
+  cursor: pointer;
 }
 .footer_link-mobile {
   display: none;

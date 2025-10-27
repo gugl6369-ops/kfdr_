@@ -115,6 +115,16 @@
     &_img{
         z-index: 2;
     }
+    
+    &_wheeldown{
+        width: 24px;
+        height: 32px;
+        background-image: url(/pic/page-main/Wheeldown.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: all 0.3s linear;
+    }
 
     &_scroll-down{
         position: absolute;
@@ -122,6 +132,15 @@
         gap: 8px;
         align-items: center;
         bottom: -126px;
+        cursor: pointer;
+    }
+
+    &_scroll-down:hover &_wheeldown{
+        background-image: url(/pic/page-main/decor/Wheeldown.svg);
+    }
+
+    &_scroll-down:hover &_scroll-title{
+        color: var(--hoverBlue);
     }
 
     // ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ ФОНА  

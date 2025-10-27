@@ -131,12 +131,28 @@
 .page-main_img {
   z-index: 2;
 }
+.page-main_wheeldown {
+  width: 24px;
+  height: 32px;
+  background-image: url(/pic/page-main/Wheeldown.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3s linear;
+}
 .page-main_scroll-down {
   position: absolute;
   display: flex;
   gap: 8px;
   align-items: center;
   bottom: -126px;
+  cursor: pointer;
+}
+.page-main_scroll-down:hover .page-main_wheeldown {
+  background-image: url(/pic/page-main/decor/Wheeldown.svg);
+}
+.page-main_scroll-down:hover .page-main_scroll-title {
+  color: var(--hoverBlue);
 }
 .page-main_decore {
   position: absolute;

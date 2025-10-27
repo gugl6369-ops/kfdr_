@@ -42,8 +42,41 @@
 .feedback_input {
   background-color: var(--background);
   border-radius: 16px;
-  padding: 16px;
+  padding: 20px;
   border: none;
+  color: var(--hoverBlue);
+}
+.feedback_input::-moz-placeholder {
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--grey);
+}
+.feedback_input::placeholder {
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--grey);
+}
+.feedback_input:hover {
+  box-shadow: 0 8px 20px 0 rgba(94, 84, 160, 0.25);
+}
+.feedback_input:focus {
+  outline: none;
+}
+.feedback_input:hover::-moz-placeholder {
+  color: var(--hoverBlue);
+}
+.feedback_input:hover::placeholder {
+  color: var(--hoverBlue);
+}
+.feedback_input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.feedback_input:focus::placeholder {
+  opacity: 0;
 }
 .feedback_btn-block {
   display: flex;
