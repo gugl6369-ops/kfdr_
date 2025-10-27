@@ -72,19 +72,34 @@
         text-decoration: none;
     }
 
-    &_input-email{
+    &_input{
         background-color: transparent;
         padding: 12px;
         border: none;
-    }
-
-    &_input-main::placeholder{
+        cursor: pointer;
+        color: var(--hoverBlue);
         @include text-style("body", "desktop");
     }
 
-    &_btn{
-        color: var(--white);
-        background-color: var(--blue);
+    &_input::placeholder{
+        @include text-style("body", "desktop");
+        color: var(--grey);
+    }
+
+    &_input:hover::placeholder{
+        color: var(--hoverBlue);
+    }
+
+    &_input:focus{
+        outline: none;
+    }
+
+    &_input:focus::placeholder{ 
+        opacity: 0;
+    }
+
+    &_input-block:has(&_input:focus){
+        box-shadow: 0 8px 20px 0 rgba(94, 84, 160, 0.25);
     }
 
 }

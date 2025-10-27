@@ -41,7 +41,32 @@
         padding: 12px 8px;
         border: none;
         background-color: transparent;
+        cursor: pointer;
+        color: var(--hoverBlue);
+        @include text-style("body", "desktop");
     }
+
+    &_input::placeholder{
+        @include text-style("body", "desktop");
+        color: var(--grey);
+    }
+
+    &_input:hover::placeholder{
+        color: var(--hoverBlue);
+    }
+
+    &_input:focus{
+        outline: none;
+    }
+
+    &_input:focus::placeholder{ 
+        opacity: 0;
+    }
+
+    &_form-input:has(&_input:focus){
+        box-shadow: 0 8px 20px 0 rgba(94, 84, 160, 0.25);
+    }
+
 
     &_subject{
         @include text-style("1", "desktop");

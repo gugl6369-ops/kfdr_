@@ -34,6 +34,44 @@
   padding: 12px 8px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+  color: var(--hoverBlue);
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+}
+.page-main_input::-moz-placeholder {
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--grey);
+}
+.page-main_input::placeholder {
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--grey);
+}
+.page-main_input:hover::-moz-placeholder {
+  color: var(--hoverBlue);
+}
+.page-main_input:hover::placeholder {
+  color: var(--hoverBlue);
+}
+.page-main_input:focus {
+  outline: none;
+}
+.page-main_input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.page-main_input:focus::placeholder {
+  opacity: 0;
+}
+.page-main_form-input:has(.page-main_input:focus) {
+  box-shadow: 0 8px 20px 0 rgba(94, 84, 160, 0.25);
 }
 .page-main_subject {
   font-family: "VisueltPro-Medium";

@@ -13,6 +13,14 @@
         color: var(--grey);
         text-decoration: none;
     }
+
+    &_title:hover{
+        color: var(--hoverBlue);
+    }
+
+    &_title:active{
+        color: var(--inactiveBlue);
+    }
     
 }
 @media screen and (max-width:1300px) {

@@ -3,7 +3,6 @@
   background-color: var(--background);
   border-radius: 26px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 

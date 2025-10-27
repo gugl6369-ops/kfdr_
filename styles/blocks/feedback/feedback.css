@@ -39,10 +39,6 @@
   align-items: center;
   gap: 24px;
 }
-.feedback_btn {
-  color: var(--white);
-  background-color: var(--blue);
-}
 .feedback_btn-text {
   font-family: "VisueltPro-Regular";
   font-size: 12px;

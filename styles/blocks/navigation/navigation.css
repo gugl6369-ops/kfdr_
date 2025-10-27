@@ -14,6 +14,12 @@
   color: var(--grey);
   text-decoration: none;
 }
+.navigation_title:hover {
+  color: var(--hoverBlue);
+}
+.navigation_title:active {
+  color: var(--inactiveBlue);
+}
 
 @media screen and (max-width: 1300px) {
   .navigation {

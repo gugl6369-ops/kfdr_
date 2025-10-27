@@ -65,26 +65,48 @@
   color: var(--blue);
   text-decoration: none;
 }
-.price_input-email {
+.price_input {
   background-color: transparent;
   padding: 12px;
   border: none;
-}
-.price_input-main::-moz-placeholder {
+  cursor: pointer;
+  color: var(--hoverBlue);
   font-family: "VisueltPro-Regular";
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
 }
-.price_input-main::placeholder {
+.price_input::-moz-placeholder {
   font-family: "VisueltPro-Regular";
   font-size: 18px;
   line-height: 135%;
   font-weight: 400;
+  color: var(--grey);
 }
-.price_btn {
-  color: var(--white);
-  background-color: var(--blue);
+.price_input::placeholder {
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--grey);
+}
+.price_input:hover::-moz-placeholder {
+  color: var(--hoverBlue);
+}
+.price_input:hover::placeholder {
+  color: var(--hoverBlue);
+}
+.price_input:focus {
+  outline: none;
+}
+.price_input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.price_input:focus::placeholder {
+  opacity: 0;
+}
+.price_input-block:has(.price_input:focus) {
+  box-shadow: 0 8px 20px 0 rgba(94, 84, 160, 0.25);
 }
 
 @media screen and (max-width: 1300px) {
