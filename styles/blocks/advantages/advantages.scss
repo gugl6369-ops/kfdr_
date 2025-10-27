@@ -20,11 +20,14 @@
     }
 
     &_cart{
-        @include cart-style();
+        @extend .card-style;
         display: flex;
         flex-direction: column;
         grid-column: span 3 / span 3;
         width: 100%;
+    }
+    &_cart:hover{
+        box-shadow: -8px 8px 25px rgba(66, 63, 86, 0.25);
     }
 
     &_header{

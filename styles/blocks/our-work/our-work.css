@@ -1,3 +1,14 @@
+.card-style {
+  border: 1px solid;
+  box-shadow: 0 4px 20px 0 rgba(25, 25, 25, 0.05), 0 4px 20px 0 rgba(25, 25, 25, 0.05) inset;
+  -o-border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+     border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+}
+
 .our-work {
   position: relative;
   padding: 80px 56px 0;
@@ -17,10 +28,22 @@
 }
 .our-work_content-right {
   display: flex;
-  flex-direction: column;
-  padding: 26px 0 80px 0;
-  justify-content: space-between;
   gap: 71px;
+  width: 100%;
+  padding: 26px 0 80px 0;
+  overflow: hidden;
+  flex-direction: column;
+}
+.our-work_card-list {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 100%);
+  transition: transform 0.5s linear;
+}
+.our-work_card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
 .our-work_text-block {
   display: flex;
@@ -41,8 +64,14 @@
   color: var(--white);
   cursor: pointer;
 }
+.our-work_scroll-title:hover {
+  color: var(--hoverBlue);
+}
+.our-work_scroll-title:active {
+  color: var(--inactiveBlue);
+}
 .our-work_scroll-title--active {
-  color: var(--blue) !important;
+  color: var(--inactiveBlue) !important;
 }
 .our-work_scroll-div {
   width: 24px;

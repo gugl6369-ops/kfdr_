@@ -15,13 +15,27 @@
         gap: 24px;
     }
     //&_content-left{}
-
     &_content-right{
         display: flex;
-        flex-direction: column;
-        padding: 26px 0 80px 0;
-        justify-content: space-between;
         gap: 71px;
+        width: 100%;
+        padding: 26px 0 80px 0;
+        overflow: hidden;
+        flex-direction: column;
+        
+    }
+
+    &_card-list{
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(3, 100%);
+        transition: transform 0.5s linear;
+    }
+    &_card{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        
     }
     &_text-block{
         display: flex;
@@ -41,8 +55,15 @@
         cursor: pointer;
     }
 
+    &_scroll-title:hover{
+        color: var(--hoverBlue);
+    }
+     &_scroll-title:active{
+        color: var(--inactiveBlue);
+    }
+
     &_scroll-title--active{
-        color: var(--blue) !important;
+        color: var(--inactiveBlue) !important;
     }
 
     &_scroll-div{
