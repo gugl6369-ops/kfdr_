@@ -61,6 +61,48 @@
   font-weight: 400;
   color: var(--grey);
 }
+.advantages_smile {
+  width: 56px;
+  height: 56px;
+  background-image: url(../../../pic/advantages/Emoji.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.advantages_smile:hover {
+  background-image: url(../../../pic/advantages/Emoji_och.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 140%;
+}
+.advantages_smile-cat {
+  width: 56px;
+  height: 56px;
+  background-image: url(../../../pic/advantages/Emoji_cat.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.advantages_smile-cat:hover {
+  background-image: url(../../../pic/advantages/Emoji_cat.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 140%;
+}
+.advantages_smile-och {
+  width: 56px;
+  height: 56px;
+  background-image: url(../../../pic/advantages/Emoji_och.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.advantages_smile-och:hover {
+  background-image: url(../../../pic/advantages/Emoji.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 140%;
+}
 
 @media screen and (max-width: 850px) {
   .advantages_carts {

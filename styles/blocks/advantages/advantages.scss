@@ -51,6 +51,49 @@
         color: var(--grey);
     
     }
+    &_smile{
+        width: 56px;
+        height: 56px;
+        background-image: url(../../../pic/advantages/Emoji.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &_smile:hover{
+        background-image: url(../../../pic/advantages/Emoji_och.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 140%;
+    }
+    &_smile-cat{
+        width: 56px;
+        height: 56px;
+        background-image: url(../../../pic/advantages/Emoji_cat.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &_smile-cat:hover{
+        background-image: url(../../../pic/advantages/Emoji_cat.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 140%;
+    }
+   
+    &_smile-och{
+        width: 56px;
+        height: 56px;
+        background-image: url(../../../pic/advantages/Emoji_och.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &_smile-och:hover{
+        background-image: url(../../../pic/advantages/Emoji.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 140%;
+    }
 }
 
 //АДАПТИВ
