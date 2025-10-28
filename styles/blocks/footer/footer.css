@@ -48,9 +48,13 @@
   color: var(--white);
 }
 .footer_arrow {
+  display: flex;
   margin-bottom: 15px;
   height: 23px;
   cursor: pointer;
+}
+.footer_arrow:hover {
+  transform: scaleY(1.3);
 }
 .footer_link-mobile {
   display: none;

@@ -64,12 +64,19 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
-        padding: 16px 24px ;
+        padding: 16px 24px;
     }
 
     &_text{
         @include text-style("body", "desktop");
         color: var(--grey);
+    }
+
+    &_subtitle-block{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px;
     }
 
     &_btn-block{
@@ -78,9 +85,8 @@
     }
 
     &_btn{
-        background-color: var(--white);
-        color: var(--blue);
-
+        @include text-style("body", "desktop");
+        color: var(--grey);
     }
 
 

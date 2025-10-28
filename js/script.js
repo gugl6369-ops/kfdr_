@@ -2,7 +2,9 @@ const cardList = document.querySelector(".our-work_card-list"),
       cards = document.querySelectorAll(".our-work_card"),
       separator = document.querySelectorAll(".header_separator"),
       reviews = document.querySelectorAll(".reviews_cart"),
-      reviewsBlock = document.querySelector(".reviews_list");
+      reviewsBlock = document.querySelector(".reviews_list"),
+      reviewsBtn = document.getElementById("reviewsBtn"),
+      reviewsSubtitle = document.querySelector(".reviews_subtitle-block");
 let active = separator[0];
 
 cards.forEach( card => {
@@ -78,3 +80,16 @@ function rollerReviews(){
 
 reviewsBlock.addEventListener( 'click', rollerReviews);
 
+function structureReviews(){
+    let mass =["review_1", "review_2", "review_3", "review_4" ]; 
+    reviews.forEach(cat =>{
+        for(let i = 1; i <= 4; i++){
+            if(cat.classList.contains(`reviews_${i}`)){ cat.classList.remove(`reviews_${i}`)}
+        }
+        cat.classList.contains("reviews_1");
+    })
+    reviewsBtn.style.display = 'none';
+    reviewsSubtitle.style.display = 'flex';
+}
+
+reviewsBtn.addEventListener('click', structureReviews);
