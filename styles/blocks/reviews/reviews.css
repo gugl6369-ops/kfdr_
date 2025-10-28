@@ -98,18 +98,18 @@
   top: -60px;
   left: 25%;
 }
-.reviews_4 {
-  position: absolute;
-  width: 45%;
-  bottom: -30px;
-  left: 15%;
-}
 .reviews_3 {
   position: absolute;
   z-index: 2;
   width: 45%;
   bottom: 80px;
   right: 25px;
+}
+.reviews_4 {
+  position: absolute;
+  width: 45%;
+  bottom: -30px;
+  left: 15%;
 }
 .reviews_decor {
   position: absolute;

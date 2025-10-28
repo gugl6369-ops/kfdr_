@@ -1,6 +1,8 @@
 const cardList = document.querySelector(".our-work_card-list"),
       cards = document.querySelectorAll(".our-work_card"),
-      separator = document.querySelectorAll(".header_separator");
+      separator = document.querySelectorAll(".header_separator"),
+      reviews = document.querySelectorAll(".reviews_cart"),
+      reviewsBlock = document.querySelector(".reviews_list");
 let active = separator[0];
 
 cards.forEach( card => {
@@ -8,14 +10,12 @@ cards.forEach( card => {
     btns.forEach( (btn, index) =>{
         btn.addEventListener('click', ()  => {
             cardList.style.transform = `translateX(${-index * 100}%)`;
-            
         })
     })
 })
 
 
 separator.forEach( (lang) => {
-    
     lang.addEventListener('click', () =>{
         if (lang != active) {
             active = lang;
@@ -47,3 +47,34 @@ function activeLang(a){
 function deActiveLang(a){
     a.classList.remove('header_separator--active');
 }
+
+function rollerReviews(){
+    console.log('click');
+    reviews.forEach(cat =>{
+            if(cat.classList.contains("reviews_1")) {
+                cat.classList.add("reviews_3"); 
+                cat.classList.remove("reviews_1"); 
+            }
+            else if(cat.classList.contains("reviews_2")) {
+                cat.classList.add("reviews_1"); 
+                cat.classList.remove("reviews_2"); 
+            }
+            else if(cat.classList.contains("reviews_3")) {
+                cat.classList.add("reviews_4"); 
+                cat.classList.remove("reviews_3"); 
+            }
+            else if(cat.classList.contains("reviews_4")) {
+                cat.classList.add("reviews_2");
+                cat.classList.remove("reviews_4");
+            }
+        // 1 2 3 4
+        // 3 1 4 2
+        // 1 > 3
+        // 3 > 4
+        // 4 > 2
+        // 2 > 1
+    })
+}
+
+reviewsBlock.addEventListener( 'click', rollerReviews);
+
