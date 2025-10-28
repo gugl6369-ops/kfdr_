@@ -23,7 +23,7 @@
         background-color: rgba($color: #ffffff, $alpha: 0.5);
 
     }
-
+   
     &_logo-block{
         grid-column: span 2 / span 2;
         display: flex;
@@ -55,12 +55,7 @@
         gap: 2px;
     }
 
-    &_RU{
-        color: var(--blue);
-        @include text-style("headline","desktop")
-    }
-
-    &_EN{
+    &_separator_poll{
         @include text-style("headline","desktop");
         color: var(--grey);
     }
@@ -68,8 +63,17 @@
     &_separator{
         @include text-style("headline","desktop");
         color: var(--grey);
+        cursor: pointer;
     }
-    
+    &_separator:hover{
+        color: var(--hoverBlue);
+    }
+    &_separator:active{
+        color: var(--inactiveBlue);
+    }
+    &_separator--active{
+        color: var(--blue);
+    }
     &_btn-block{
         display: flex;
         align-items: center;

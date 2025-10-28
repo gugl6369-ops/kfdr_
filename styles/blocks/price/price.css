@@ -11,7 +11,7 @@
 
 .price {
   background-color: var(--white);
-  padding: 88px 56px;
+  padding: 50px 56px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -24,7 +24,6 @@
   position: relative;
 }
 .price_img-cirk {
-  position: relative;
   width: 465px;
   height: 465px;
   overflow: hidden;
@@ -34,7 +33,6 @@
   filter: blur(240px);
 }
 .price_img-main {
-  position: absolute;
   width: 628px;
   height: 640px;
   z-index: 2;
@@ -44,6 +42,7 @@
   line-height: 125%;
   font-size: 56px;
   font-weight: 500;
+  max-width: 80%;
 }
 .price_form {
   display: flex;
@@ -156,6 +155,7 @@
     line-height: 112%;
     font-size: 36px;
     font-weight: 500;
+    max-width: none;
   }
   .price_form {
     padding-right: 0;

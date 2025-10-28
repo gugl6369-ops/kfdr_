@@ -56,14 +56,7 @@
   align-items: center;
   gap: 2px;
 }
-.header_RU {
-  color: var(--blue);
-  font-family: "VisueltPro-Medium";
-  font-size: 18px;
-  line-height: 135%;
-  font-weight: 500;
-}
-.header_EN {
+.header_separator_poll {
   font-family: "VisueltPro-Medium";
   font-size: 18px;
   line-height: 135%;
@@ -76,6 +69,16 @@
   line-height: 135%;
   font-weight: 500;
   color: var(--grey);
+  cursor: pointer;
+}
+.header_separator:hover {
+  color: var(--hoverBlue);
+}
+.header_separator:active {
+  color: var(--inactiveBlue);
+}
+.header_separator--active {
+  color: var(--blue);
 }
 .header_btn-block {
   display: flex;
