@@ -54,6 +54,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  width: 100%;
 }
 .price_input-block {
   padding: 8px;
@@ -166,8 +167,8 @@
   }
   .price_title {
     font-family: "VisueltPro-Medium";
-    line-height: 112%;
-    font-size: 36px;
+    font-size: 24px;
+    line-height: 125%;
     font-weight: 500;
     max-width: none;
   }
@@ -177,8 +178,28 @@
   .price_input-block {
     gap: 0;
     padding: 3px;
+    width: 100%;
   }
   .price_input-email {
     padding: 2px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .price_input-block {
+    justify-content: space-between;
+  }
+  .price_input {
+    font-family: "VisueltPro-Medium";
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+    padding: 1px;
+  }
+  .price_btn {
+    padding: 10px;
+    font-family: "VisueltPro-Medium";
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
   }
 }/*# sourceMappingURL=price.css.map */

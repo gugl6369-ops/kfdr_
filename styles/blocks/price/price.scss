@@ -49,6 +49,7 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
+        width: 100%;
     }
 
     &_input-block{
@@ -143,7 +144,7 @@
             @include text-style("discription","mobile");
         }
         &_title{
-            @include text-style("1", "mobile");
+            @include text-style("2", "mobile");
             max-width: none;
         }
         &_form{
@@ -152,6 +153,7 @@
         &_input-block{
             gap: 0;
             padding: 3px;
+            width: 100%;
         }
         &_input-email{
             padding: 2px;
@@ -159,4 +161,19 @@
 
     }
 }
+@media screen and (max-width:700px) {
+    .price{
+        &_input-block{
+            justify-content: space-between;
+        }
+        &_input{
+            @include text-style("body", "mobile");
+            padding: 1px;
+        }
+        &_btn{
+            padding: 10px;
+            @include text-style("span", "mobile");
+        }
+    }
 
+}

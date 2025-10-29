@@ -159,14 +159,17 @@
     grid-template-columns: repeat(1, 1fr);
   }
   .reviews_1 {
+    transform: none;
     position: static;
     width: 100%;
   }
   .reviews_4 {
+    transform: none;
     position: static;
     width: 100%;
   }
   .reviews_3 {
+    transform: none;
     position: static;
     width: 100%;
   }
