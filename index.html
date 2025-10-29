@@ -10,30 +10,32 @@
 <body class="body"><!--add class-->
     <div class="wrapper">
         <header class="header">
-            <div class="header_logo-block">
-                <img class="header_burger" src="pic/header/Menu/Closed/Menu/Closed.svg" alt="меню">
-                <a class="header_logo" href="#"><h1 class="logo header_logo">Инстаботы</h1></a>
-            </div>
-            <nav class="navigation">
-                <a class="navigation_title" href="#our-work">О компании</a>
-                <a class="navigation_title" href="#tariffs">Тарифы</a>
-                <a class="navigation_title" href="#reviews">Отзывы</a>
-                <a class="navigation_title" href="#questions">Q&A</a>
-                <a class="navigation_title" href="#feedback">Обратная связь</a>
-            </nav>
-            <div class="header_controllers">
-                <div class="header_languge">
-                    <span class="header_separator header_separator--active">Ru</span>
-                    <span class="header_separator_poll">/</span>
-                    <span class="header_separator">En</span>
+            <div class="header_block">
+                <div class="header_logo-block">
+                    <img class="header_burger" src="pic/header/Menu/Closed/Menu/Closed.svg" alt="меню">
+                    <a class="header_logo" href="#"><h1 class="logo header_logo">Инстаботы</h1></a>
                 </div>
-                <div class="header_btn-block">
-                    <img class="header_account" src="pic/header/Frame_50.svg" alt="Круг"/>
-                    <button class="btn btn_blue"><span class="btn_text">Вход и регистрация</span></button>
+                <nav class="navigation">
+                    <a class="navigation_title" href="#our-work">О компании</a>
+                    <a class="navigation_title" href="#tariffs">Тарифы</a>
+                    <a class="navigation_title" href="#reviews">Отзывы</a>
+                    <a class="navigation_title" href="#questions">Q&A</a>
+                    <a class="navigation_title" href="#feedback">Обратная связь</a>
+                </nav>
+                <div class="header_controllers">
+                    <div class="header_languge">
+                        <span class="header_separator header_separator--active">Ru</span>
+                        <span class="header_separator_poll">/</span>
+                        <span class="header_separator">En</span>
+                    </div>
+                    <div class="header_btn-block">
+                        <img class="header_account" src="pic/header/Frame_50.svg" alt="Круг"/>
+                        <button class="btn btn_blue"><span class="btn_text">Вход и регистрация</span></button>
+                    </div>
                 </div>
             </div>
         </header>
-    
+        
         <main class="main"> 
             <section class="page-main" id="page-main">
                 <div class="page-main_left-content">
@@ -513,7 +515,7 @@
                         <textarea class=" feedback_input feedback_textarea" aria-label="Что вы бы хотели спросить о росте в Instagram" placeholder="Что вы бы хотели спросить о росте в Instagram" required ></textarea>
                         <div class="feedback_btn-block">
                         <button class="btn btn_blue"  type="submit"><span class="btn_text">Отправить заявку</span></button>
-                        <p class="feedback_btn-text">Нажимая на кнопку вы соглашаетесь на обработку <a class="feedback_link">персональных данных</a></p>
+                        <p class="feedback_btn-text">Нажимая на кнопку вы соглашаетесь на обработку <a class="feedback_link" href="#">персональных данных</a></p>
                         </div>
                     </form>
                     
@@ -536,6 +538,29 @@
             </div>
         </footer>
     </div>
+
+    <template id="template">
+        <div id="menu" class="menu">
+            <div class="menu_main">
+                <h3  class="menu_title">Меню</h3>
+                <nav class="menu_navigation">
+                    <a class="menu_subtitle menu_subtitle-blue " href="#our-work">О компании</a>
+                    <a class="menu_subtitle" href="#tariffs">Тарифы</a>
+                    <a class="menu_subtitle" href="#reviews">Отзывы</a>
+                    <a class="menu_subtitle" href="#questions">Q&A</a>
+                    <a class="menu_subtitle" href="#feedback">Обратная связь</a>
+                </nav>
+            </div>
+            <div class="menu_footer">
+                <div class="menu_language">
+                    <span class="menu_separator menu_separator--active">Ru</span>
+                    <span class="menu_separator">/</span>
+                    <span class="menu_separator">En</span>
+                </div>
+            </div>
+        </div>
+    </template>
+
     <script src="js/script.js"></script>
 </body>
 </html>

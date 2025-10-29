@@ -80,10 +80,21 @@
     }
 
     &_link{
+        @include text-style("discription","desktop");
         text-decoration: none;
         color: var(--blue);
+        transition: 0.3s linear;
+        background-image: linear-gradient(var(--hoverBlue), var(--hoverBlue));
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: .5s ease-in-out;
     }
-
+    &_link:hover{
+        color: var(--hoverBlue);
+        background-size: 100% 2px;
+    }
+    
     &_scroll-title{
         @include text-style("table","desktop");
         color: var(--white);

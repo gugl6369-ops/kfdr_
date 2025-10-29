@@ -1,18 +1,22 @@
 @use"../../mixin/mixin" as *;
 
 .header{
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    position: relative;
     padding: 16px 56px;
-    background: var(--white);
     border-radius: 24px 24px 0 0;
-    align-items: center;
+    background: var(--white);
+    &_block{
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        align-items: center;
+    }
 
     &_burger{
         position: relative;
         justify-content: center;
         align-items: center;
         display: none;
+        cursor: pointer;
     }
     &_burger::before{
         content: '';
@@ -63,13 +67,16 @@
     &_separator{
         @include text-style("headline","desktop");
         color: var(--grey);
+        transition: 0.3s;
         cursor: pointer;
     }
     &_separator:hover{
         color: var(--hoverBlue);
     }
+    
     &_separator:active{
         color: var(--inactiveBlue);
+        transform: scaleZ(1);
     }
     &_separator--active{
         color: var(--blue);
@@ -84,8 +91,10 @@
 
 @media screen and (max-width:1300px) {
     .header{
-        display: flex;
-        justify-content: space-between;
+        &_block{
+            display: flex;
+            justify-content: space-between;
+        }
         &_languge{
             display: none;
         }

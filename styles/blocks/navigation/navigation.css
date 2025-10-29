@@ -24,12 +24,14 @@
   font-weight: 400;
   color: var(--grey);
   text-decoration: none;
+  transition: 0.3s;
 }
 .navigation_title:hover {
   color: var(--hoverBlue);
 }
 .navigation_title:active {
   color: var(--inactiveBlue);
+  transform: scaleZ(1);
 }
 
 @media screen and (max-width: 1300px) {

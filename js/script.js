@@ -4,8 +4,19 @@ const cardList = document.querySelector(".our-work_card-list"),
       reviews = document.querySelectorAll(".reviews_cart"),
       reviewsBlock = document.querySelector(".reviews_list"),
       reviewsBtn = document.getElementById("reviewsBtn"),
-      reviewsSubtitle = document.querySelector(".reviews_subtitle-block");
+      reviewsSubtitle = document.querySelector(".reviews_subtitle-block"), 
+      burgerBtn = document.querySelector('.header_burger'),
+      menuTemplate = document.getElementById("template"),
+      header = document.querySelector('.header'),
+      body = document.querySelector('body');
+      
+
+
+let menuContent = menuTemplate.content;
 let active = separator[0];
+let openMenuBool = false;
+let menu;
+let menuNav;
 
 cards.forEach( card => {
     const btns = card.querySelectorAll(".our-work_scroll-title");
@@ -81,7 +92,6 @@ function rollerReviews(){
 reviewsBlock.addEventListener( 'click', rollerReviews);
 
 function structureReviews(){
-    let mass =["review_1", "review_2", "review_3", "review_4" ]; 
     reviews.forEach(cat =>{
         for(let i = 1; i <= 4; i++){
             if(cat.classList.contains(`reviews_${i}`)){ cat.classList.remove(`reviews_${i}`)}
@@ -93,3 +103,37 @@ function structureReviews(){
 }
 
 reviewsBtn.addEventListener('click', structureReviews);
+
+burgerBtn.addEventListener('click', openMenu);
+
+
+
+function openMenu(){
+    
+    if(!openMenuBool){
+        openMenuBool = true; 
+        console.log(menuContent);
+        const menuCopy = menuContent.cloneNode(true);
+        header.appendChild(menuCopy);
+        menu = document.querySelector('.menu');
+        body.style.overflow = "hidden";
+        menuNav = document.querySelectorAll('.menu_subtitle');
+        menuNav.forEach( btn =>{
+            console.log(btn);
+            btn.addEventListener('click', openMenu);   
+        })
+        
+    }
+   
+    else{
+        openMenuBool = false;
+        header.removeChild(menu);
+        body.style.overflow = "auto";
+        menuNav.forEach( btn =>{
+            btn.removeEventListener('click', openMenu);   
+        })
+    }
+    console.log(openMenuBool);
+    
+    
+}

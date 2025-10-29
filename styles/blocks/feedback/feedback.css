@@ -92,7 +92,22 @@
   max-width: 300px;
 }
 .feedback_link {
+  font-family: "VisueltPro-Regular";
+  font-size: 12px;
+  line-height: 135%;
+  font-weight: 400;
+  text-decoration: none;
   color: var(--blue);
+  transition: 0.3s linear;
+  background-image: linear-gradient(var(--hoverBlue), var(--hoverBlue));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: 0.5s ease-in-out;
+}
+.feedback_link:hover {
+  color: var(--hoverBlue);
+  background-size: 100% 1px;
 }
 .feedback_img {
   position: relative;

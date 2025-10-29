@@ -1,0 +1,49 @@
+@use'../../mixin/mixin' as *;
+
+.menu{
+    padding: 80px 56px;
+    position: fixed;
+    left: 24px;
+    right: 24px;
+    top: 9%;
+    display: flex;
+    flex-direction: column;
+    bottom: 24px;
+    z-index: 4;
+    background-color: rgba($color: #ffffff, $alpha: 1);
+    justify-content: space-between;
+    border-radius: 0 0 24px 24px;
+
+    &_main{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+   }
+    &_title{
+        color: var(--grey);
+        @include text-style('3', 'desktop');
+    }
+    &_navigation{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    &_subtitle{
+        text-decoration: none;
+        @include text-style('1', 'desktop');
+        color: var(--black);
+    }
+    &_subtitle:hover{
+        color: var(--hoverBlue);
+    }
+     &_subtitle-blue{
+        color: var(--blue);
+    }
+    &_separator{
+        @include text-style('1', 'desktop');
+        color: var(--grey);
+    }
+    &_separator--active{
+        color: var(--blue);
+    }
+}
