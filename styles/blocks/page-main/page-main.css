@@ -134,7 +134,7 @@
 .page-main_wheeldown {
   width: 24px;
   height: 32px;
-  background-image: url(/pic/page-main/Wheeldown.svg);
+  background-image: url("../../../pic/page-main/Wheeldown.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -149,7 +149,7 @@
   cursor: pointer;
 }
 .page-main_scroll-down:hover .page-main_wheeldown {
-  background-image: url(/pic/page-main/decor/Wheeldown.svg);
+  background-image: url("../../../pic/page-main/decor/Wheeldown.svg");
 }
 .page-main_scroll-down:hover .page-main_scroll-title {
   color: var(--hoverBlue);
@@ -158,12 +158,70 @@
   position: absolute;
   bottom: -30%;
   left: 0;
+  z-index: -4;
+  animation: 1s decor infinite;
+}
+.page-main_decore2 {
+  position: absolute;
+  bottom: -20%;
+  left: 0;
   z-index: -3;
+  animation: 4s decor2 infinite;
 }
 .page-main_decore1 {
   position: absolute;
   top: 0;
   z-index: -3;
+}
+.page-main_decore3 {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  z-index: -3;
+  animation: 7s decor3 infinite;
+}
+@keyframes decor3 {
+  50% {
+    width: 500px;
+    height: 513px;
+    top: 15%;
+    right: 10%;
+  }
+  80% {
+    width: 600px;
+    height: 600px;
+    top: 0;
+    right: 0;
+  }
+}
+@keyframes decor {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes decor2 {
+  0% {
+    transform: rotate(0deg);
+    bottom: 0;
+  }
+  50% {
+    transform: rotate(-19deg);
+    left: 10%;
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @media screen and (max-width: 1300px) {
