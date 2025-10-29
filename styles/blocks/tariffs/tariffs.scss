@@ -26,6 +26,7 @@
 
     &_cart:hover{
         box-shadow: -8px 8px 25px rgba(66, 63, 86, 0.25);
+        transform: scaleY(1.02);
     }
 
     &_header{
@@ -98,7 +99,12 @@
         background-color: var(--white);
         
     }
-
+    &_cart:hover &_mouth-price{
+        color: var(--hoverBlue);
+    }
+    &_cart:hover &_link{
+        color: var(--hoverBlue);
+    }
     &_link{
         text-decoration: none;
         color: var(--blue);

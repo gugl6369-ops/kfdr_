@@ -120,6 +120,30 @@
   bottom: -30px;
   left: 15%;
 }
+.reviews_rating {
+  display: flex;
+  gap: 4px;
+}
+.reviews_rating-star-pol {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../pic/reviews/StarEmpty.svg");
+}
+.reviews_rating-star {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../pic/reviews/StarFull.svg");
+}
+.reviews_rating-star:hover {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../pic/reviews/fullStarHover.svg");
+}
+.reviews_rating-star-pol:hover {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../pic/reviews/emptyStarHover.svg");
+}
 .reviews_decor {
   position: absolute;
   right: 0;

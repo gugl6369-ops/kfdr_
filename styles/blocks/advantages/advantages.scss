@@ -25,9 +25,12 @@
         flex-direction: column;
         grid-column: span 3 / span 3;
         width: 100%;
+        transition: all 0.3s linear;
+       
     }
     &_cart:hover{
         box-shadow: -8px 8px 25px rgba(66, 63, 86, 0.25);
+         transform: scaleY(1.02);
     }
 
     &_header{

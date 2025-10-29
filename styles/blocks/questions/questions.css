@@ -84,10 +84,13 @@
   font-weight: 400;
   color: var(--grey);
 }
-.questions_header_img {
-  transition: all 1s ease-in-out;
+.questions_header-img {
+  transition: all 0.3s ease-in-out;
 }
 .questions_cart[open] .questions_header-img {
+  transform: rotate(45deg);
+}
+.questions_cart:hover .questions_header-img {
   transform: rotate(45deg);
 }
 .questions_decor {

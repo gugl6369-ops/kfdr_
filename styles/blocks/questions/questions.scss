@@ -75,11 +75,15 @@
         color: var(--grey);
     }
 
-    &_header_img{
-        transition: all 1s ease-in-out;
+    &_header-img{
+        transition: all 0.3s ease-in-out;
     }
 
     &_cart[open] &_header-img{
+        transform: rotate(45deg);
+    }
+
+    &_cart:hover &_header-img{
         transform: rotate(45deg);
     }
 
