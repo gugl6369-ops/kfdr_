@@ -32,60 +32,36 @@ separator.forEach( (lang) => {
     lang.addEventListener('click', () =>{
         if (lang != active) {
             active = lang;
-            activeLang(lang);
-            if(active == separator[1]) {
-                deActiveLang(separator[0]);
-            }
-            else{
-                deActiveLang(separator[1]);
-            }
+            changeLang(lang);
+            active == separator[1] ? changeLang(separator[0]) : changeLang(separator[1]);
         }
         else{
             lang.classList.remove('header_separator--active');
             if(lang == separator[1]) {
                 active = separator[0];
-                activeLang(separator[0]);
+                changeLang(separator[0]);
             }
             else{
                 active = separator[1];
-                activeLang(separator[1]);
+                changeLang(separator[1]);
             }
         }
     })
 })
 
-function activeLang(a){
-    a.classList.add('header_separator--active');
-}
-function deActiveLang(a){
-    a.classList.remove('header_separator--active');
+function changeLang(a){
+    a.classList.toggle('header_separator--active');
 }
 
 function rollerReviews(){
-    console.log('click');
-    reviews.forEach(cat =>{
-            if(cat.classList.contains("reviews_1")) {
-                cat.classList.add("reviews_3"); 
-                cat.classList.remove("reviews_1"); 
+    reviews.forEach( review =>{
+        for (let i = 1; i <= reviews.length; i++){
+            const classReviewList = review.className;
+            if (classReviewList.endsWith(`${i.toString()}`)) {
+                review.classList.replace(`reviews_${i}`, `reviews_${(i % reviews.length) + 1}`);
+                break;
             }
-            else if(cat.classList.contains("reviews_2")) {
-                cat.classList.add("reviews_1"); 
-                cat.classList.remove("reviews_2"); 
-            }
-            else if(cat.classList.contains("reviews_3")) {
-                cat.classList.add("reviews_4"); 
-                cat.classList.remove("reviews_3"); 
-            }
-            else if(cat.classList.contains("reviews_4")) {
-                cat.classList.add("reviews_2");
-                cat.classList.remove("reviews_4");
-            }
-        // 1 2 3 4
-        // 3 1 4 2
-        // 1 > 3
-        // 3 > 4
-        // 4 > 2
-        // 2 > 1
+        }
     })
 }
 
@@ -104,7 +80,7 @@ function structureReviews(){
 
 reviewsBtn.addEventListener('click', structureReviews);
 
-burgerBtn.addEventListener('click', openMenu);
+
 
 
 
@@ -133,7 +109,5 @@ function openMenu(){
             btn.removeEventListener('click', openMenu);   
         })
     }
-    console.log(openMenuBool);
-    
-    
 }
+burgerBtn.addEventListener('click', openMenu);
