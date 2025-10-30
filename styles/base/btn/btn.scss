@@ -15,9 +15,11 @@
         @include text-style("span", "desktop");
         transition: all 0.2s linear;
     }
+
     &:hover &_text{
         transform: translateY(-2px);
     }
+
     &:active &_text{
         transform: none;
     }
@@ -25,27 +27,26 @@
     &_blue{
         color: var(--white);
         background-color: var(--blue);
-        :hover{
-        background-color: var(--hoverBlue);
-        box-shadow: 0 7px 15px 0 rgba(80, 93, 236, 0.25);
+        &:hover{
+            background-color: var(--hoverBlue);
+            box-shadow: 0 7px 15px 0 rgba(80, 93, 236, 0.25);
         }
-        :active{
-        background-color: var(--inactiveBlue);
-        box-shadow: none;
-        padding: 12px 24px;
+        &:active{
+            background-color: var(--inactiveBlue);
+            box-shadow: none;
         }
     }
  
     &_white{
         color: var(--blue);
         background-color: var(--white);
-        :hover{
-        color: var(--hoverBlue);
-        box-shadow: 0 7px 15px 0 rgba(80, 93, 236, 0.25);
+        &:hover{
+            color: var(--hoverBlue);
+            box-shadow: 0 7px 15px 0 rgba(80, 93, 236, 0.25);
         }
-        :active{
-        color: var(--inactiveBlue);
-        box-shadow: none;
+        &:active{
+            color: var(--inactiveBlue);
+            box-shadow: none;
         }
     }
     

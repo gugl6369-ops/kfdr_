@@ -36,24 +36,23 @@
   color: var(--white);
   background-color: var(--blue);
 }
-.btn_blue :hover {
+.btn_blue:hover {
   background-color: var(--hoverBlue);
   box-shadow: 0 7px 15px 0 rgba(80, 93, 236, 0.25);
 }
-.btn_blue :active {
+.btn_blue:active {
   background-color: var(--inactiveBlue);
   box-shadow: none;
-  padding: 12px 24px;
 }
 .btn_white {
   color: var(--blue);
   background-color: var(--white);
 }
-.btn_white :hover {
+.btn_white:hover {
   color: var(--hoverBlue);
   box-shadow: 0 7px 15px 0 rgba(80, 93, 236, 0.25);
 }
-.btn_white :active {
+.btn_white:active {
   color: var(--inactiveBlue);
   box-shadow: none;
 }
