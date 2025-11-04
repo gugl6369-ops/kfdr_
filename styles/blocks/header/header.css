@@ -93,6 +93,9 @@
 }
 
 @media screen and (max-width: 1300px) {
+  .header {
+    position: relative;
+  }
   .header_block {
     display: flex;
     justify-content: space-between;

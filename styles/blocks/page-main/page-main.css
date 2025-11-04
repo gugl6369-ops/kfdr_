@@ -301,7 +301,7 @@
 }
 @media screen and (max-width: 450px) {
   .page-main_img {
-    width: 400px;
+    width: 100%;
   }
   .page-main_block-decor {
     right: -40%;

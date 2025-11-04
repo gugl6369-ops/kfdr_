@@ -125,6 +125,24 @@
         &_header-title{
             @include text-style("3", "mobile");
         }
+        &_smile{
+            background-image: url(../../../pic/advantages/Emoji_och.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 140%;
+        }
+         &_smile-cat{
+            background-image: url(../../../pic/advantages/Emoji_cat.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 140%;
+        }
+        &_smile-och{
+            background-image: url(../../../pic/advantages/Emoji.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 140%;
+        }
     }
 }
 

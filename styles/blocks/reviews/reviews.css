@@ -239,7 +239,7 @@
   .reviews_list {
     grid-template-columns: repeat(1, 1fr);
   }
-  .reviews_1 {
+  .reviews_2 {
     transform: none;
     position: static;
     width: 100%;

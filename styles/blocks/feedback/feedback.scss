@@ -10,7 +10,7 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
-        max-width: 550px;
+        
     }
 
     &_title{
@@ -86,7 +86,7 @@
         position: relative;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
     }
     
     &_textarea{
@@ -236,6 +236,10 @@
 @media screen and (max-width:1100px ) {
     .feedback{
         display: flex;
+
+        &_form-block{
+            max-width: 550px;
+        }
         &_img{
             display: none;
         }

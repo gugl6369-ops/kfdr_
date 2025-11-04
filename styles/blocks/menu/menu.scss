@@ -2,22 +2,23 @@
 
 .menu{
     padding: 80px 56px;
-    position: fixed;
-    left: 24px;
-    right: 24px;
-    top: 9%;
+    position: absolute;
     display: flex;
+    top: 100%;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    right: 0;
     flex-direction: column;
-    bottom: 24px;
+    background-color: #ffffff;
     z-index: 4;
-    background-color: rgba($color: #ffffff, $alpha: 1);
-    justify-content: space-between;
-    border-radius: 0 0 24px 24px;
-
+    gap: 5%;
     &_main{
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 40px;
+
    }
     &_title{
         color: var(--grey);
@@ -45,5 +46,20 @@
     }
     &_separator--active{
         color: var(--blue);
+    }
+  
+}
+
+@media screen and (max-width: 450px) {
+    .menu{
+        &_title{
+            @include text-style('3', 'mobile');
+        }
+        &_subtitle{
+            @include text-style('1', 'mobile');
+        }
+        &_separator{
+            @include text-style('1', 'mobile');
+        }
     }
 }
