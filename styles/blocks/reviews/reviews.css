@@ -141,17 +141,98 @@
   height: 24px;
   background-image: url("../../../pic/reviews/emptyStarHover.svg");
 }
-.reviews_decor {
+.reviews_decor-vector-purpur {
   position: absolute;
-  right: 0;
-  top: -35%;
   z-index: -3;
+  animation: 8s reviews_decor-vector-purpur infinite;
 }
-.reviews_decor1 {
+.reviews_decor-vector {
   position: absolute;
-  right: 0;
-  bottom: -50%;
   z-index: -3;
+  animation: 8s reviews_decor-vector infinite;
+}
+.reviews_decor-vector-blue {
+  position: absolute;
+  z-index: -3;
+  animation: 10s reviews_decor-vector-blue infinite;
+}
+.reviews_decor-purpur {
+  position: absolute;
+  z-index: -3;
+  animation: 10s reviews_decor-purpur infinite;
+}
+@keyframes reviews_decor-vector-purpur {
+  0% {
+    right: -10%;
+    top: -30%;
+  }
+  30% {
+    right: -15%;
+    top: -35%;
+  }
+  60% {
+    right: -5%;
+    top: -45%;
+  }
+  100% {
+    right: -10%;
+    top: -30%;
+  }
+}
+@keyframes reviews_decor-vector {
+  0% {
+    right: -15%;
+    top: -25%;
+  }
+  30% {
+    right: -5%;
+    top: -25%;
+  }
+  60% {
+    right: -15%;
+    top: -35%;
+  }
+  100% {
+    right: -15%;
+    top: -25%;
+  }
+}
+@keyframes reviews_decor-vector-blue {
+  0% {
+    right: -10%;
+    bottom: -45%;
+  }
+  30% {
+    right: 5%;
+    bottom: -45%;
+  }
+  60% {
+    right: -5%;
+    bottom: -25%;
+  }
+  100% {
+    right: -10%;
+    bottom: -45%;
+  }
+}
+@keyframes reviews_decor-purpur {
+  0% {
+    right: 0;
+    bottom: -50%;
+  }
+  30% {
+    right: -15%;
+    bottom: -35%;
+  }
+  60% {
+    right: 15%;
+    bottom: -25%;
+    transform: rotate(45deg);
+  }
+  100% {
+    right: 0;
+    bottom: -50%;
+  }
 }
 
 @media screen and (max-width: 1100px) {

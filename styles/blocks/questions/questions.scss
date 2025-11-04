@@ -87,19 +87,104 @@
         transform: rotate(45deg);
     }
 
-    &_decor{
+    &_decor-purpur{
         position: absolute;
-        top: -40%;
-        right: 0;
+        animation: 10s questions_decor-purpur infinite;
         z-index: -3;
     }
 
-    &_decor1{
+    &_decor-pink{
         position: absolute;
-        bottom: -70%;
-        left: 0;
+        z-index: -3;
+        animation: 10s questions_decor-pink infinite;
+    }
+
+    &_decor-blue{
+        position: absolute;
+        z-index: -3;
+        animation: 10s questions_decor-blue infinite;
+    } 
+    &_decor-purpur-small{
+        position: absolute;
+        animation: 10s questions_decor-purpur-small infinite;
         z-index: -3;
     }
+    @keyframes questions_decor-purpur {
+    0%{
+        top: -40%;
+        right: -10%;
+    }
+    30%{
+        right: 0%;
+        top: -35%;
+    }
+    60%{
+        right: -10%;
+        top: -45%;
+        transform: rotate(45deg);
+    }
+    100%{
+        right: -10%;
+        top: -40%;
+    }
+    }
+    @keyframes questions_decor-pink {
+    0%{
+        top: -40%;
+        right: -15%;
+    }
+    30%{
+        right: -20%;
+        top: -30%;
+    }
+    60%{
+        right: -15%;
+        top: -10%;
+    }
+    100%{
+        right: -15%;
+        top: -40%;
+    }
+    }
+
+    @keyframes questions_decor-blue {
+    0%{
+        bottom: -70%;
+        left: -15%;
+    }
+    30%{
+        left: -20%;
+        bottom: -30%;
+    }
+    60%{
+        left: -15%;
+        bottom: -40%;
+    }
+    100%{
+        bottom: -70%;
+        left: -15%;
+    }
+    }
+
+    @keyframes questions_decor-purpur-small {
+    0%{
+        bottom: -30%;
+        left: -10%
+    }
+    30%{
+        left: 20%;
+        bottom: -50%;
+    }
+    60%{
+        left: -15%;
+        bottom: -40%;
+    }
+    100%{
+        bottom: -30%;
+        left: -10%;
+    }
+}
+    
 }
 
 @media screen and (max-width:700px) {
