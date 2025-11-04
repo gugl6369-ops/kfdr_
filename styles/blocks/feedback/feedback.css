@@ -118,30 +118,123 @@
 .feedback_textarea {
   resize: vertical;
 }
-.feedback_circ {
-  position: relative;
+.feedback_img-content {
   display: flex;
+  position: relative;
   justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 489px;
-  height: 489px;
+  align-items: flex-end;
+  border-radius: 0 0 50% 50%;
   overflow: hidden;
 }
-.feedback_circ-img {
-  position: relative;
-  filter: blur(240px);
+.feedback_img-roud {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--background);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
-.feedback_circ::before {
+.feedback_img-roud::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  background: radial-gradient(circle at 0 320%, rgba(255, 255, 255, 0) 80%, rgb(255, 255, 255) 90%);
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(60px);
+          backdrop-filter: blur(60px);
+  z-index: 3;
+}
+.feedback_decor-pink {
+  position: absolute;
+  animation: 6s feedback_decor-pink infinite;
+}
+.feedback_decor-blue {
+  position: absolute;
+  animation: 6s feedback_decor-blue infinite;
+}
+.feedback_decor-white {
+  position: absolute;
+  animation: 6s feedback_decor-white infinite;
+}
+.feedback_decor-purpur {
+  position: absolute;
+  animation: 6s feedback_decor-purpur infinite;
+}
+.feedback_img-man {
+  z-index: 4;
+}
+@keyframes feedback_decor-pink {
+  0% {
+    bottom: -60%;
+    left: -60%;
+  }
+  30% {
+    bottom: -30%;
+  }
+  60% {
+    bottom: -50%;
+  }
+  100% {
+    bottom: -60%;
+    left: -60%;
+  }
+}
+@keyframes feedback_decor-purpur {
+  0% {
+    bottom: -35%;
+    right: -20%;
+  }
+  30% {
+    bottom: -25%;
+    right: -10%;
+  }
+  60% {
+    bottom: -15%;
+    right: -5%;
+  }
+  100% {
+    bottom: -35%;
+    right: -20%;
+  }
+}
+@keyframes feedback_decor-blue {
+  0% {
+    bottom: -50%;
+    right: -20%;
+  }
+  30% {
+    bottom: -35%;
+    right: -15%;
+  }
+  60% {
+    bottom: -20%;
+    right: -15%;
+  }
+  100% {
+    bottom: -50%;
+    right: -20%;
+  }
+}
+@keyframes feedback_decor-white {
+  0% {
+    bottom: 10%;
+    right: -45%;
+  }
+  30% {
+    bottom: 20%;
+    right: -45%;
+  }
+  60% {
+    bottom: 20%;
+    right: -70%;
+  }
+  100% {
+    bottom: 10%;
+    right: -45%;
+  }
 }
 .feedback_men-block {
   display: flex;
