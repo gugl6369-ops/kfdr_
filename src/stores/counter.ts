@@ -1,12 +1,19 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
-  }
 
-  return { count, doubleCount, increment }
+export const useCounterStore = defineStore('counter', () => {
+  const id = ref([]);  
+  const getNews = () =>{
+    fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
+      .then((d)=>{
+        return d.json();
+      })
+      .then((f)=>{
+        id.value = f;
+      });
+  }
+  
+
+  return {getNews, id};
 })
