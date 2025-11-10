@@ -3,8 +3,8 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
+  <header class="header w-full">
+    <div class="wrapper p-8 flex-row justufy-between">
       <nav>
         <RouterLink to="/about">Random</RouterLink>
       </nav>
