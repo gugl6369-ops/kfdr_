@@ -3,10 +3,16 @@
     
     const store = useCounterStore();
     store.getNews();
+    let stop = store.story; 
+
+    console.log(stop);
+
 </script>
 <template>
     Приветщвыомптфывшиотв шцушгпрышвфгп рывшгп рфывлп
-    <p v-for="id in store.id">{{id}}</p>
+    <div v-for="item in store.story" >
+        <p>{{item}}</p>
+    </div>
 </template>
 <style>
 </style>
