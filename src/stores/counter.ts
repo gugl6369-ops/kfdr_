@@ -12,10 +12,8 @@ export const useCounterStore = defineStore('counter', () => {
     fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
       .then((d)=>{
         return d.json();
-        
       })
       .then((f)=>{
-
           f.slice(last, next).forEach( (element: number) => {
             fetch(`https://hacker-news.firebaseio.com/v0/item/${element}.json`)
               .then ((l) =>{

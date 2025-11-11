@@ -3,7 +3,7 @@
     const store = useCounterStore();
 </script>
 <template>
-    <article v-for="item in store.story" class="new-item flex flex-col relative p-6 w-full shadow-xl rounded-lg gap-5 justify-between">        
+    <article v-for="item in store.story" class="new-item flex flex-col cursor-pointer relative p-6 w-full shadow-xl rounded-lg gap-5 justify-between">        
         <div class="new-item_header">
             <div :disable="item.type" class="flex bg-blue-100 w-auto p-1 rounded-r-lg items-center absolute top-4 left-0 pl-4 pr-2">
                 <img class="w-8" src="../assets/pic/megafon.png" alt="Мегафон"/>
