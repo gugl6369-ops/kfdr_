@@ -1,11 +1,6 @@
 <script setup lang="ts">
     import {useCounterStore} from '../stores/counter';
-
     const store = useCounterStore();
-    store.getNews();
-    let stop = store.story; 
-    let count = 0;
-
 </script>
 <template>
     <article v-for="item in store.story" class="new-item flex flex-col relative p-6 w-full shadow-xl rounded-lg gap-5 justify-between">        

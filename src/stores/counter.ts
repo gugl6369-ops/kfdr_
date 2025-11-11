@@ -6,7 +6,9 @@ export const useCounterStore = defineStore('counter', () => {
   const story = ref((new Array));
   const comment = new Object();
   const stor = new Array;
-  const getNews = () =>{
+
+
+  const getNews = (last:number, next:number) =>{
     fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
       .then((d)=>{
         return d.json();
@@ -14,7 +16,7 @@ export const useCounterStore = defineStore('counter', () => {
       })
       .then((f)=>{
 
-          f.slice(0,100).forEach( (element: number) => {
+          f.slice(last, next).forEach( (element: number) => {
             fetch(`https://hacker-news.firebaseio.com/v0/item/${element}.json`)
               .then ((l) =>{
                 return l.json();
@@ -29,5 +31,7 @@ export const useCounterStore = defineStore('counter', () => {
           }
       });
   }
+  
+
   return {getNews, story, comment, stor};
 })
