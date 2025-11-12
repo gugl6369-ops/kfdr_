@@ -10,7 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
       </nav>
     </div>
   </header>
-  <main class="flex">
+  <main class="flex flex-col gap-100 items-center justify-center">
     <RouterView />
   </main>
 </template>

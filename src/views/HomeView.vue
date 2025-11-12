@@ -13,10 +13,13 @@
     positionPostNext += 20;
     store.getNews(positionPost, positionPostNext); 
   }
+
+
+  
 </script>
 
 <template>
-  <div class="w-full flex justify-bitween flex-col items-center gap-20"  >
+  <div class="w-80% flex justify-bitween flex-col items-center gap-20"  >
     <div class="home_posts wrapper max-w-260 grid grid-cols-3 gap-10 justify-center" id="listPost">
       <NewItem />  
     </div>
