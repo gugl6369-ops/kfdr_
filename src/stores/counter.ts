@@ -2,9 +2,8 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 
-export const useCounterStore = defineStore('counter', () => {
+export const searchNews = defineStore('item', () => {
   const story = ref((new Array));
-  const comment = new Object();
   const stor = new Array;
 
 
@@ -31,5 +30,5 @@ export const useCounterStore = defineStore('counter', () => {
   }
   
 
-  return {getNews, story, comment, stor};
+  return {getNews, story, stor};
 })
