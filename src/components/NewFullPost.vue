@@ -22,11 +22,10 @@
         </div>
         <p v-if="item.text" v-html="item.text"></p>
     </div>
-    <div v-else-if="store.isLoading">Загрущзка</div>
+    <div v-else-if="store.isLoading">Загрузка</div>
     <div v-else>
         <div>
-            <img src="../assets/pic/star.png"></img>
-            <h1>404</h1>
+            <h1 class="text-4xl">404</h1>
             <h2>Пост утерян или его и не было..</h2>
         </div>
     </div>
