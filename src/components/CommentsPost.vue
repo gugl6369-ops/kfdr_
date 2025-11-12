@@ -23,20 +23,22 @@ import {ref} from 'vue';
     if (props.comm.kids) getKids(props.comm.kids);
 </script>
 <template>
-    <div>
-        <p v-if="props.comm.by">{{ props.comm.by }}</p>
-        <p v-if="props.comm.text" v-html="props.comm.text"></p>
-        <p v-if="props.comm.time">{{ props.comm.time }}</p>
-        <p v-if="props.comm.kids">{{ props.comm.kids.length }}</p>
-
-        <div v-if="props.comm.kids" v-for="kid in kids" class="comment">
+    <div class="flex flex-col gap-10 ">
+        <div class="flex flex-col gap-5 bg-gray-400/25 p-5 rounded-lg">
+            <div v-if="props.comm.by" class="w-full flex justify-between ">
+                <p class="font-extrabold text-blue-600">{{ props.comm.by }}</p>
+                <p v-if="props.comm.time" class="text-gray-400">{{ new Date(props.comm.time * 1000).toDateString() }}</p>
+            </div>
+            <p v-if="props.comm.text" v-html="props.comm.text" class="max-w-200"></p>
+            <p v-if="props.comm.kids" class="flex p-2 bg-blue-400/25" >Ответов: {{ props.comm.kids.length }}</p>
+        </div>
+        
+        <div v-if="props.comm.kids" v-for="kid in kids" class="pl-5">
             <CommentsPost :comm="kid"/>
         </div>
         
     </div>
 </template>
 <style scoped>
-.comment{
-    padding-left: 50px;
-}
+
 </style>

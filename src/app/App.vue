@@ -6,13 +6,13 @@ import { RouterLink, RouterView } from 'vue-router'
   <header class="header w-full bg-blue-400/50">
     <div class="wrapper p-8 flex-row justufy-between">
       <nav>
-        <RouterLink to="/about">Random</RouterLink>
+        <RouterLink to="/">Домой</RouterLink>
       </nav>
     </div>
   </header>
-  <main class="flex flex-col gap-100 items-center justify-center">
-    <RouterView />
-  </main>
+  <main class="flex flex-col gap-10 items-center justify-center w-full pt-20">
+    <RouterView  />
+  </main> 
 </template>
 
 <style scoped>

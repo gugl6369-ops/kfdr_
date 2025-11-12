@@ -8,17 +8,19 @@
 </script>
 
 <template>
-    <div v-if="item">
-        <div>
+    <div v-if="item" class="w-full flex flex-col bg-blue-400/25 p-12 rounded-lg gap-5">
+        <div class="flex justify-between">
             <div>
                 <div></div>
-                <p v-if="item.by">{{ item.by }}</p>
+                <p v-if="item.by" class="font-extrabold text-blue-800">{{ item.by }}</p>
             </div>
             <p>№{{ item.id }}</p>
         </div>
-        <h1 v-if="item.title">{{item.title}}</h1>
-        <h2 v-if="item.text">{{ item.text }}</h2>
-        <p v-if="item.time">{{ new Date((item.time)*1000).toDateString()  }}</p>
+        <div class="flex justify-between">
+            <h1 v-if="item.title">{{item.title}}</h1>
+            <p v-if="item.time" class="text-gray-600/80">{{ new Date((item.time)*1000).toDateString()  }}</p>
+        </div>
+        <p v-if="item.text" v-html="item.text"></p>
     </div>
     <div v-else-if="store.isLoading">Загрущзка</div>
     <div v-else>

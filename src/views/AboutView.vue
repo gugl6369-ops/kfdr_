@@ -16,10 +16,11 @@ import { onMounted } from 'vue';
 
 </script>
 <template>
-    <div>
+    <div class="w-4/5 items-center justify-center">
         <NewFullPost />  
     </div>
-    <div v-if="store.comment">
+    <div v-if="store.comment" class="flex flex-col gap-10 w-4/5">
+        <h2 class="text-4xl">Комментарии:</h2>
         <CommentsPost v-for="comm in store.comment" :comm="comm"/>
     </div>
 </template>
