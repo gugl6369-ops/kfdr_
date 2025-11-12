@@ -1,0 +1,318 @@
+.card-style {
+  border: 1px solid;
+  box-shadow: 0 4px 20px 0 rgba(25, 25, 25, 0.05), 0 4px 20px 0 rgba(25, 25, 25, 0.05) inset;
+  -o-border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+     border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+}
+
+.page-main {
+  position: relative;
+  padding: 0 56px 80px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-main_left-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 550px;
+}
+.page-main_form-input {
+  padding: 8px;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  gap: 24px;
+  justify-content: space-between;
+}
+.page-main_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.page-main_btn {
+  background-color: var(--white);
+  color: var(--blue);
+}
+.page-main_input {
+  width: 100%;
+  padding: 12px 8px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--hoverBlue);
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+}
+.page-main_input::-moz-placeholder {
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--grey);
+}
+.page-main_input::placeholder {
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--grey);
+}
+.page-main_input:hover::-moz-placeholder {
+  color: var(--hoverBlue);
+}
+.page-main_input:hover::placeholder {
+  color: var(--hoverBlue);
+}
+.page-main_input:focus {
+  outline: none;
+}
+.page-main_input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.page-main_input:focus::placeholder {
+  opacity: 0;
+}
+.page-main_form-input:has(.page-main_input:focus) {
+  box-shadow: 0 8px 20px 0 rgba(94, 84, 160, 0.25);
+}
+.page-main_subject {
+  font-family: "VisueltPro-Medium";
+  line-height: 125%;
+  font-size: 56px;
+  font-weight: 500;
+}
+.page-main_title {
+  padding-left: 8px;
+  font-family: "VisueltPro-Regular";
+  font-size: 12px;
+  line-height: 135%;
+  font-weight: 400;
+  color: rgb(89, 89, 89);
+  max-width: 300px;
+}
+.page-main_link {
+  font-family: "VisueltPro-Regular";
+  font-size: 12px;
+  line-height: 135%;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--blue);
+  transition: 0.3s linear;
+  background-image: linear-gradient(var(--hoverBlue), var(--hoverBlue));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: 0.5s ease-in-out;
+}
+.page-main_link:hover {
+  color: var(--hoverBlue);
+  background-size: 100% 2px;
+}
+.page-main_scroll-title {
+  font-family: "VisueltPro-Medium";
+  font-size: 16px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--white);
+}
+.page-main_img-block {
+  position: relative;
+}
+.page-main_img {
+  position: relative;
+}
+.page-main_block-decor {
+  position: absolute;
+  right: 0;
+  bottom: 25%;
+  z-index: 0;
+}
+.page-main_img-absolut2 {
+  position: absolute;
+  left: -163px;
+  bottom: -37px;
+  z-index: -1;
+}
+.page-main_img {
+  z-index: 2;
+}
+.page-main_wheeldown {
+  width: 24px;
+  height: 32px;
+  background-image: url("../../../pic/page-main/Wheeldown.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3s linear;
+}
+.page-main_scroll-down {
+  position: absolute;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  bottom: -126px;
+  cursor: pointer;
+}
+.page-main_scroll-down:hover .page-main_wheeldown {
+  background-image: url("../../../pic/page-main/decor/Wheeldown.svg");
+}
+.page-main_scroll-down:hover .page-main_scroll-title {
+  color: var(--hoverBlue);
+}
+.page-main_decore {
+  position: absolute;
+  bottom: -30%;
+  left: 0;
+  z-index: -4;
+  animation: 1s decor infinite;
+}
+.page-main_decore2 {
+  position: absolute;
+  bottom: -20%;
+  left: 0;
+  z-index: -3;
+  animation: 4s decor2 infinite;
+}
+.page-main_decore1 {
+  position: absolute;
+  top: 0;
+  z-index: -3;
+}
+.page-main_decore3 {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  z-index: -3;
+  animation: 7s decor3 infinite;
+}
+@keyframes decor3 {
+  50% {
+    width: 500px;
+    height: 513px;
+    top: 15%;
+    right: 10%;
+  }
+  80% {
+    width: 600px;
+    height: 600px;
+    top: 0;
+    right: 0;
+  }
+}
+@keyframes decor {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes decor2 {
+  0% {
+    transform: rotate(0deg);
+    bottom: 0;
+  }
+  50% {
+    transform: rotate(-19deg);
+    left: 10%;
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .page-main {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+  .page-main_scroll-down {
+    display: none;
+  }
+  .page-main_left-content {
+    max-width: none;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .page-main {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 0;
+  }
+  .page-main_left-content {
+    width: 100%;
+  }
+  .page-main_img-block {
+    align-items: center;
+  }
+  .page-main_decore {
+    top: 25%;
+    left: 0;
+    bottom: 0;
+  }
+  .page-main_decore1 {
+    display: none;
+  }
+  .page-main_img {
+    width: 500px;
+  }
+  .page-main_block-decor {
+    right: -20%;
+  }
+  .page-main_img-absolut1 {
+    width: 70%;
+    height: 70%;
+  }
+  .page-main_img-absolut2 {
+    width: 50%;
+    height: 50%;
+    left: -20%;
+  }
+  .page-main_title {
+    font-family: "VisueltPro-Medium";
+    font-size: 10px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .page-main_subject {
+    font-family: "VisueltPro-Medium";
+    line-height: 112%;
+    font-size: 36px;
+    font-weight: 500;
+  }
+}
+@media screen and (max-width: 450px) {
+  .page-main_img {
+    width: 100%;
+  }
+  .page-main_block-decor {
+    right: -40%;
+  }
+  .page-main_img-absolut1 {
+    width: 60%;
+    height: 60%;
+  }
+  .page-main_img-absolut2 {
+    width: 50%;
+    height: 50%;
+    left: -20%;
+  }
+}/*# sourceMappingURL=page-main.css.map */

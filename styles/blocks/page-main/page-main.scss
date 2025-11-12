@@ -1,0 +1,337 @@
+@use"../../mixin/mixin" as *;
+.page-main{
+    position:relative;
+    padding: 0 56px 80px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &_left-content{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: 550px;
+    }
+
+    
+    &_form-input{
+        padding: 8px;
+        display: flex;
+        background-color: rgba($color: #ffffff, $alpha: 0.5);
+        border-radius: 16px;
+        gap: 24px;
+        justify-content: space-between;
+    }
+
+
+    &_form{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &_btn{
+        background-color: var(--white);
+        color: var(--blue);
+    }
+
+    &_input{
+        width: 100%;
+        padding: 12px 8px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: var(--hoverBlue);
+        @include text-style("body", "desktop");
+    }
+
+    &_input::placeholder{
+        @include text-style("body", "desktop");
+        color: var(--grey);
+    }
+
+    &_input:hover::placeholder{
+        color: var(--hoverBlue);
+    }
+
+    &_input:focus{
+        outline: none;
+    }
+
+    &_input:focus::placeholder{ 
+        opacity: 0;
+    }
+
+    &_form-input:has(&_input:focus){
+        box-shadow: 0 8px 20px 0 rgba(94, 84, 160, 0.25);
+    }
+
+
+    &_subject{
+        @include text-style("1", "desktop");
+    }
+
+    &_title{
+        padding-left: 8px;
+        @include text-style("discription","desktop");
+        color: rgba(89, 89, 89, 1);
+        max-width: 300px;
+    }
+
+    &_link{
+        @include text-style("discription","desktop");
+        text-decoration: none;
+        color: var(--blue);
+        transition: 0.3s linear;
+        background-image: linear-gradient(var(--hoverBlue), var(--hoverBlue));
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: .5s ease-in-out;
+    }
+    &_link:hover{
+        color: var(--hoverBlue);
+        background-size: 100% 2px;
+    }
+    
+    &_scroll-title{
+        @include text-style("table","desktop");
+        color: var(--white);
+    }
+
+    &_img-block {
+        position: relative;
+    }
+
+    &_img{
+        position: relative;
+    }
+
+    &_block-decor{
+        position: absolute;
+        right: 0;
+        bottom: 25%;
+        z-index: 0;
+    }
+
+    &_img-absolut2{
+        position: absolute;
+        left: -163px;
+        bottom: -37px;
+        z-index: -1;
+
+    }
+
+    &_img{
+        z-index: 2;
+    }
+    
+    &_wheeldown{
+        width: 24px;
+        height: 32px;
+        background-image: url('../../../pic/page-main/Wheeldown.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: all 0.3s linear;
+    }
+
+    &_scroll-down{
+        position: absolute;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        bottom: -126px;
+        cursor: pointer;
+    }
+
+    &_scroll-down:hover &_wheeldown{
+        background-image: url('../../../pic/page-main/decor/Wheeldown.svg');
+    }
+
+    &_scroll-down:hover &_scroll-title{
+        color: var(--hoverBlue);
+    }
+
+    // ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ ФОНА  
+    &_decore{
+        position: absolute;
+        bottom: -30%;
+        left: 0;
+        z-index: -4;
+        animation: 1s decor infinite;
+    }
+    &_decore2{
+        position: absolute;
+        bottom: -20%;
+        left: 0;
+        z-index: -3;
+        animation: 4s decor2 infinite;
+    }
+
+    &_decore1{
+        position: absolute;
+        top: 0;
+        z-index: -3;
+    }
+    
+    &_decore3{
+        width: 350px;
+        height: 350px;
+        position: absolute;
+        top: 30%;
+        right: 20%;
+        z-index: -3;
+        animation: 7s decor3 infinite;
+    }
+    @keyframes decor3 {
+        25%{
+
+        }
+        50%{
+            width: 500px;
+            height: 513px;
+            top: 15%;
+            right: 10%;
+        };
+        80%{
+            width: 600px;
+            height: 600px;
+            top: 0;
+            right: 0;
+        };
+        100%{}
+    }
+    @keyframes decor {
+        0%{
+            transform:rotate(-2deg);
+        };
+        50%{
+            transform:rotate(-4deg);
+        };
+        100%{
+            transform:rotate(0);
+        };
+    }
+    @keyframes decor2 {
+        0%{
+            transform:rotate(0deg);
+            bottom: 0;
+        };
+        50%{
+            transform:rotate(-19deg);
+            left: 10%;
+        };
+        75%{
+            transform:rotate(-15deg);
+        };
+        100%{
+            transform:rotate(0deg);
+        };
+    }
+
+}
+
+
+//АДАПТИВ
+
+@media  screen and (max-width:1300px) {
+
+    .page-main{
+        flex-direction: column;
+        padding-top: 40px ;
+        
+        &_scroll-down{
+            display:  none;
+        }
+
+        &_left-content{       
+            max-width: none;
+            width: 100%;
+        }
+    }
+    
+
+}
+
+@media  screen and (max-width:700px) {
+
+    .page-main{
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 0;
+
+        &_left-content{
+            width: 100%;
+        }
+        
+        &_img-block{
+            align-items: center;
+        }
+
+        &_decore{
+            top: 25%;
+            left: 0;
+            bottom: 0;
+        }
+        &_decore1{
+            display: none;
+        }
+
+        &_img{
+            width: 500px;
+        }
+
+        &_block-decor{
+            right: -20%;
+        }
+
+        &_img-absolut1{
+            width: 70%;
+            height: 70%;
+        }
+
+        &_img-absolut2{
+            width: 50%;
+            height: 50%;
+            left: -20%;
+        }
+
+        &_title{
+            @include text-style("discription","mobile");
+        }
+
+        &_subject{
+            @include text-style("1", "mobile");
+        }
+
+    }
+
+}
+@media screen and (max-width:450px) {
+        .page-main{
+            
+        &_img{
+            width: 100%;
+        }
+        &_block-decor{
+            right: -40%;
+        }
+
+        &_img-absolut1{
+            width: 60%;
+            height: 60%;
+        }
+
+        &_img-absolut2{
+            width: 50%;
+            height: 50%;
+            left: -20%;
+        }
+        
+
+    }
+    
+}
+

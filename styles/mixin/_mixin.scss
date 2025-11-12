@@ -1,0 +1,94 @@
+@mixin text-style($level, $layout) {
+    @if $level == "1" and $layout == "desktop" {
+        font-family: 'VisueltPro-Medium';
+        line-height: 125%;
+        font-size: 56px;
+        font-weight: 500;
+    } @else if $level == "1" and $layout == "mobile" {
+        font-family: 'VisueltPro-Medium';
+        line-height: 112%;
+        font-size: 36px;
+        font-weight: 500;
+    } @else if $level == "2" and $layout == "desktop" {
+        font-family: 'VisueltPro-Medium';
+        line-height: 112%;
+        font-size: 36px;
+        font-weight: 500;
+    } @else if $level == "2" and $layout == "mobile" {
+        font-family: 'VisueltPro-Medium';
+        font-size: 24px;
+        line-height: 125%;
+        font-weight: 500;
+    } @else if $level == "3" and $layout == "desktop" {
+        font-family: 'VisueltPro-Medium';
+        font-size: 24px;
+        line-height: 100%;
+        font-weight: 500;
+    } @else if $level == "3" and $layout == "mobile" {
+        font-family: 'VisueltPro-Medium';
+        font-size: 18px;
+        line-height: 125%;
+        font-weight: 500;
+    } @else if $level == "headline" and $layout == "desktop" {
+        font-family: 'VisueltPro-Medium';
+        font-size: 18px;
+        line-height: 135%;
+        font-weight: 500;
+    } @else if $level == "headline" and $layout == "mobile" {
+        font-family: 'VisueltPro-Medium';
+        font-size: 14px;
+        line-height: 135%;
+        font-weight: 500;
+    } @else if $level == "body" and $layout == "desktop" {
+        font-family: 'VisueltPro-Regular';
+        font-size: 18px;
+        line-height: 135%;
+        font-weight: 400;
+    } @else if $level == "body" and $layout == "mobile" {
+        font-family: 'VisueltPro-Medium';
+        font-size: 14px;
+        line-height: 135%;
+        font-weight: 400;
+    } @else if $level == "discription" and $layout == "desktop" {
+        font-family: 'VisueltPro-Regular';
+        font-size: 12px;
+        line-height: 135%;
+        font-weight: 400;
+    } @else if $level == "discription" and $layout == "mobile" {
+        font-family: 'VisueltPro-Medium';
+        font-size: 10px;
+        line-height: 135%;
+        font-weight: 400;
+    } @else if $level == "span" and $layout == "desktop" {
+        font-family: 'VisueltPro-Medium';
+        font-size: 18px;
+        line-height: 135%;
+        font-weight: 400;
+    } @else if $level == "span" and $layout == "mobile" {
+        font-family: 'VisueltPro-Medium';
+        font-size: 14px;
+        line-height: 135%;
+        font-weight: 400;
+    } @else if $level == "table" and $layout == "desktop" {
+        font-family: 'VisueltPro-Medium';
+        font-size: 16px;
+        line-height: 135%;
+        font-weight: 400;
+    } @else if $level == "table" and $layout == "mobile" {
+        font-family: 'VisueltPro-Medium';
+        font-size: 14px;
+        line-height: 135%;
+        font-weight: 400;
+    }
+}
+
+.card-style{
+    border: 1px solid;
+    box-shadow: 0 4px 20px 0 rgba(25, 25, 25, 0.05) , 0 4px 20px 0 rgba(25, 25, 25, 0.05) inset;
+    border-image: linear-gradient(45deg,rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25)  );
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(24px);
+}
+
+ 

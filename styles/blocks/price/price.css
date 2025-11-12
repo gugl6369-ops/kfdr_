@@ -1,0 +1,205 @@
+.card-style {
+  border: 1px solid;
+  box-shadow: 0 4px 20px 0 rgba(25, 25, 25, 0.05), 0 4px 20px 0 rgba(25, 25, 25, 0.05) inset;
+  -o-border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+     border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+}
+
+.price {
+  background-color: var(--white);
+  padding: 50px 56px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 24px;
+}
+.price_left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.price_img-cirk {
+  width: 465px;
+  height: 465px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.price_img {
+  filter: blur(240px);
+}
+.price_img-main {
+  width: 628px;
+  height: 640px;
+  z-index: 2;
+}
+.price_title {
+  font-family: "VisueltPro-Medium";
+  line-height: 125%;
+  font-size: 56px;
+  font-weight: 500;
+  max-width: 80%;
+}
+.price_form {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  padding-right: 163px;
+}
+.price_text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+.price_input-block {
+  padding: 8px;
+  display: flex;
+  background-color: var(--background);
+  border-radius: 16px;
+  gap: 24px;
+  justify-content: space-between;
+}
+.price_form-title {
+  padding-left: 8px;
+  font-family: "VisueltPro-Regular";
+  font-size: 12px;
+  line-height: 135%;
+  font-weight: 400;
+  color: rgb(89, 89, 89);
+}
+.price_form-link {
+  font-family: "VisueltPro-Regular";
+  font-size: 12px;
+  line-height: 135%;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--blue);
+  transition: 0.3s linear;
+  background-image: linear-gradient(var(--hoverBlue), var(--hoverBlue));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: 0.5s ease-in-out;
+}
+.price_form-link:hover {
+  color: var(--hoverBlue);
+  background-size: 100% 1px;
+}
+.price_input {
+  background-color: transparent;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  color: var(--hoverBlue);
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+}
+.price_input::-moz-placeholder {
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--grey);
+}
+.price_input::placeholder {
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--grey);
+}
+.price_input:hover::-moz-placeholder {
+  color: var(--hoverBlue);
+}
+.price_input:hover::placeholder {
+  color: var(--hoverBlue);
+}
+.price_input:focus {
+  outline: none;
+}
+.price_input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.price_input:focus::placeholder {
+  opacity: 0;
+}
+.price_input-block:has(.price_input:focus) {
+  box-shadow: 0 8px 20px 0 rgba(94, 84, 160, 0.25);
+}
+
+@media screen and (max-width: 1300px) {
+  .price {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 56px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .price {
+    padding: 40px 8px;
+  }
+  .price_left {
+    width: 100%;
+  }
+  .price_img-main {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+  .price_img-cirk {
+    width: 80%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+  .price_form-title {
+    padding-left: 8px;
+    font-family: "VisueltPro-Medium";
+    font-size: 10px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .price_title {
+    font-family: "VisueltPro-Medium";
+    font-size: 24px;
+    line-height: 125%;
+    font-weight: 500;
+    max-width: none;
+  }
+  .price_form {
+    padding-right: 0;
+  }
+  .price_input-block {
+    gap: 0;
+    padding: 3px;
+    width: 100%;
+  }
+  .price_input-email {
+    padding: 2px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .price_input-block {
+    justify-content: space-between;
+  }
+  .price_input {
+    font-family: "VisueltPro-Medium";
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+    padding: 1px;
+  }
+  .price_btn {
+    padding: 10px;
+    font-family: "VisueltPro-Medium";
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+}/*# sourceMappingURL=price.css.map */

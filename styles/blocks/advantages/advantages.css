@@ -1,0 +1,157 @@
+.card-style, .advantages_cart {
+  border: 1px solid;
+  box-shadow: 0 4px 20px 0 rgba(25, 25, 25, 0.05), 0 4px 20px 0 rgba(25, 25, 25, 0.05) inset;
+  -o-border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+     border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+}
+
+.advantages {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  padding: 80px 24px;
+  gap: 40px;
+}
+.advantages_title {
+  font-family: "VisueltPro-Medium";
+  line-height: 112%;
+  font-size: 36px;
+  font-weight: 500;
+  padding-left: 32px;
+}
+.advantages_carts {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 16px;
+}
+.advantages_cart {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 3/span 3;
+  width: 100%;
+  transition: all 0.3s linear;
+}
+.advantages_cart:hover {
+  box-shadow: -8px 8px 25px rgba(66, 63, 86, 0.25);
+  transform: scaleY(1.02);
+}
+.advantages_header {
+  padding: 12px 0 12px 16px;
+  border-radius: 24px 24px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.7);
+}
+.advantages_header-title {
+  font-family: "VisueltPro-Medium";
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: 500;
+}
+.advantages_content {
+  display: flex;
+  padding: 16px 24px 24px 24px;
+  gap: 16px;
+  font-family: "VisueltPro-Regular";
+  font-size: 18px;
+  line-height: 135%;
+  font-weight: 400;
+  color: var(--grey);
+}
+.advantages_smile {
+  width: 56px;
+  height: 56px;
+  background-image: url(../../../pic/advantages/Emoji.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.advantages_smile:hover {
+  background-image: url(../../../pic/advantages/Emoji_och.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 140%;
+}
+.advantages_smile-cat {
+  width: 56px;
+  height: 56px;
+  background-image: url(../../../pic/advantages/Emoji_cat.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.advantages_smile-cat:hover {
+  background-image: url(../../../pic/advantages/Emoji_cat.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 140%;
+}
+.advantages_smile-och {
+  width: 56px;
+  height: 56px;
+  background-image: url(../../../pic/advantages/Emoji_och.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.advantages_smile-och:hover {
+  background-image: url(../../../pic/advantages/Emoji.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 140%;
+}
+
+@media screen and (max-width: 850px) {
+  .advantages_carts {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .advantages {
+    padding: 40px 8px;
+  }
+  .advantages_title {
+    font-family: "VisueltPro-Medium";
+    font-size: 24px;
+    line-height: 125%;
+    font-weight: 500;
+    padding-left: 20px;
+  }
+  .advantages_content {
+    font-family: "VisueltPro-Medium";
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 400;
+  }
+  .advantages_header-title {
+    font-family: "VisueltPro-Medium";
+    font-size: 18px;
+    line-height: 125%;
+    font-weight: 500;
+  }
+  .advantages_smile {
+    background-image: url(../../../pic/advantages/Emoji_och.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 140%;
+  }
+  .advantages_smile-cat {
+    background-image: url(../../../pic/advantages/Emoji_cat.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 140%;
+  }
+  .advantages_smile-och {
+    background-image: url(../../../pic/advantages/Emoji.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 140%;
+  }
+}/*# sourceMappingURL=advantages.css.map */

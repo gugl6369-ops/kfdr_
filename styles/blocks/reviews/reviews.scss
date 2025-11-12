@@ -1,0 +1,280 @@
+@use"../../mixin/mixin" as *;
+
+.reviews{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 56px;
+
+    &_title{
+        @include text-style("2", "desktop");
+        padding-bottom: 100px;
+    }
+
+    &_list{
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    &_cart{
+        display: flex;
+        flex-direction: column;
+        backdrop-filter: blur(240px);
+        box-shadow: -2px 4px 20px 0 rgba(25, 25, 25, 0.03);
+        background: rgba(255, 255, 255, 0.5);
+        transition: 0.4s;
+        border-radius: 16px;
+    }
+
+    &_header{
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        justify-content: space-between;
+        border-radius: 16px 16px 0 0;
+    }
+
+    &_user{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        
+    }
+
+    &_user-name{
+        @include text-style("3", "desktop");
+    }
+
+    &_user-img{
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+    }
+
+    &_data{
+        @include text-style("body", "desktop");
+        color: var(--grey);
+    }
+
+    &_content{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px 24px;
+    }
+
+    &_text{
+        @include text-style("body", "desktop");
+        color: var(--grey);
+    }
+
+    &_subtitle-block{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px;
+    }
+
+    &_btn-block{
+        display: flex;
+        justify-content: end;
+    }
+
+    &_btn{
+        @include text-style("body", "desktop");
+        color: var(--grey);
+    }
+
+
+    &_2{
+        position: absolute;
+        width: 50%;
+        z-index: 3;
+        transform: translateX(50%) translateY(-60px);
+    }
+    
+    &_3{
+        position: absolute;
+        transform: translateX(100%) translateY(135px);
+        z-index: 2;
+        width: 50%;
+    }
+    &_4{
+        position: absolute;
+        transform: translateX(20%) translateY(120%);
+        width: 50%;
+    }
+    &_rating{
+        display: flex;
+        gap: 4px;
+    }
+    &_rating-star-pol{
+        width: 24px;
+        height: 24px;
+        background-image: url('../../../pic/reviews/StarEmpty.svg');
+    }
+    &_rating-star{
+        width: 24px;
+        height: 24px;
+        background-image: url('../../../pic/reviews/StarFull.svg');
+    }
+    &_rating-star:hover{
+        width: 24px;
+        height: 24px;
+        background-image: url("../../../pic/reviews/fullStarHover.svg");
+    }
+    &_rating-star-pol:hover{
+        width: 24px;
+        height: 24px;
+        background-image: url('../../../pic/reviews/emptyStarHover.svg');
+    }
+
+    // ФОНОВЫЙ ДЕКОР
+
+    &_decor-vector-purpur{
+        position: absolute;
+        z-index: -3;
+        animation: 8s reviews_decor-vector-purpur infinite;
+    }
+    &_decor-vector{
+        position: absolute;
+        z-index: -3;
+        animation: 8s reviews_decor-vector infinite;
+    }
+    &_decor-vector-blue{
+        position: absolute;
+        z-index: -3;
+        animation: 10s reviews_decor-vector-blue infinite;
+    }
+    &_decor-purpur{
+        position: absolute;
+        z-index: -3;
+        animation: 10s reviews_decor-purpur infinite;
+    }
+
+    @keyframes reviews_decor-vector-purpur {
+        0%{
+            right: -10%;
+            top: -30%;
+        }
+        30%{
+            right: -15%;
+            top: -35%;
+        }
+        60%{
+            right: -5%;
+            top: -45%;
+        }
+        100%{
+            right: -10%;
+            top: -30%;
+        }
+    }
+    @keyframes reviews_decor-vector {
+        0%{
+            right: -15%;
+            top: -25%;
+        }
+        30%{
+            right: -5%;
+            top: -25%;
+        }
+        60%{
+            right: -15%;
+            top: -35%;
+        }
+        100%{
+            right: -15%;
+            top: -25%;
+        }
+    }
+    @keyframes reviews_decor-vector-blue {
+        0%{
+           right: -10%;
+           bottom: -45%;
+        }
+        30%{
+           right: 5%;
+           bottom: -45%;
+        }
+        60%{
+           right: -5%;
+           bottom: -25%;
+        }
+        100%{
+           right: -10%;
+           bottom: -45%;
+        }
+    }
+    @keyframes reviews_decor-purpur {
+        0%{
+            right: 0;
+            bottom: -50%;
+        }
+        30%{
+           right: -15%;
+           bottom: -35%;
+        }
+        60%{
+           right: 15%;
+           bottom: -25%;
+           transform: rotate(45deg);
+        }
+        100%{
+           right: 0;
+            bottom: -50%;
+        }
+    }
+    
+}
+@media screen and (max-width:1100px) {
+    .reviews{
+        &_list{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &_2{
+            transform: none;
+            position: static;
+            width: 100%;
+        }
+        &_4{
+            transform: none;
+            position: static;
+            width: 100%;
+        }
+        &_3{
+            transform: none;
+            position: static;
+            width: 100%;
+        }
+        &_btn-block{
+            display: none;
+        }
+    }
+    
+}
+@media screen and (max-width:550px) {
+    .reviews{
+        padding: 40px 8px;
+        gap: 40px;
+        &_title{
+            @include text-style("2", "mobile");
+            padding-left: 20px; 
+            padding-bottom: 0;
+        }   
+        &_text{
+            @include text-style("body", "mobile");
+            
+        }
+        &_data{
+            @include text-style("body", "mobile");
+        }
+        &_user-name{
+            @include text-style("3", "mobile");
+        }
+    }
+}

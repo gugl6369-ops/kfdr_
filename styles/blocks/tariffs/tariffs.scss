@@ -1,0 +1,159 @@
+@use"../../mixin/mixin" as *;
+
+.tariffs{
+    background-color: var(--white);
+    padding: 80px 24px 88px;
+
+    &_title{
+        @include text-style("2", "desktop");
+        font-size: 36px;
+        padding: 0 0 40px 32px;
+    }
+
+    &_list{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 24px;
+    }
+
+    &_cart{
+        display: flex;
+        flex-direction: column;
+        grid-column: span 3 / span 3 ;
+        @extend .card-style;
+        transition: 0.3s;
+    }
+
+    &_cart:hover{
+        box-shadow: -8px 8px 25px rgba(66, 63, 86, 0.25);
+        transform: scaleY(1.02);
+    }
+
+    &_header{
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 24px;
+        gap: 8px;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &_cart-title{
+        @include text-style("3", "desktop");
+    }
+
+    &_cart-price{
+        @include text-style("3", "desktop");
+        font-size: 24px;
+        color: var(--grey);
+    }
+
+    &_mouth-price{
+        color: var(--blue);
+        @include text-style("3", "desktop");
+    }
+
+    &_cart-content{
+        padding: 24px 24px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &_item{
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        gap: 16px;
+    }
+
+    &_point-title{
+        color: var(--grey);
+        justify-content: start;
+        grid-column: span 3/ span 8;
+        grid-column-start: 2;
+        @include text-style("body","desktop");
+    }
+
+    &_point-div{
+        display: flex;
+        grid-column: span 3 / span 1;
+        grid-column-start: 1;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50px;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &_link-button{
+        padding: 16px 24px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    &_btn{
+        width: 100%;
+        background-color: var(--white);
+        
+    }
+    &_cart:hover &_mouth-price{
+        color: var(--hoverBlue);
+    }
+    &_cart:hover &_link{
+        color: var(--hoverBlue);
+    }
+    &_link{
+        text-decoration: none;
+        color: var(--blue);
+        @include text-style("span","desktop");
+    }
+}
+
+@media screen and (max-width:1150px) {
+    .tariffs{
+        &_list{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &_cart{
+            grid-column: span 1 / span 1 ;
+        }
+    }
+}
+@media screen and (max-width:650px) {
+    .tariffs{
+        &_list{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &_cart{
+            grid-column: span 1 / span 1 ;
+        }
+    }
+}
+@media screen and (max-width:550px) {
+    .tariffs{
+        padding: 40px 20px;
+        &_title{
+            @include text-style("2", "mobile");
+        }
+        &_link{
+            @include text-style("span","mobile");
+        }
+        &_point-title{
+            @include text-style("body","mobile");
+        }
+        &_cart-title{
+            @include text-style("3", "mobile");
+        }
+        &_mouth-price{
+            @include text-style("3", "mobile");
+        }
+        &_cart-price{
+            @include text-style("3", "mobile");
+        }  
+    }
+}

@@ -1,0 +1,155 @@
+@use"../../mixin/mixin" as *;
+
+
+.advantages{
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    padding: 80px 24px;
+    gap: 40px;
+
+    &_title{
+        @include text-style("2", "desktop");
+        padding-left: 32px;
+    }
+
+    &_carts{
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        gap: 16px;
+    }
+
+    &_cart{
+        @extend .card-style;
+        display: flex;
+        flex-direction: column;
+        grid-column: span 3 / span 3;
+        width: 100%;
+        transition: all 0.3s linear;
+       
+    }
+    &_cart:hover{
+        box-shadow: -8px 8px 25px rgba(66, 63, 86, 0.25);
+         transform: scaleY(1.02);
+    }
+
+    &_header{
+        padding: 12px 0 12px 16px;
+        border-radius: 24px 24px 0 0 ;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(255, 255, 255, 0.7);
+    }
+    
+    &_header-title{
+        @include text-style("3","desktop");
+    }
+
+    &_content{
+        display: flex;
+        padding: 16px 24px 24px 24px;
+        gap: 16px;
+        @include text-style("body", "desktop");
+        color: var(--grey);
+    
+    }
+    &_smile{
+        width: 56px;
+        height: 56px;
+        background-image: url(../../../pic/advantages/Emoji.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &_smile:hover{
+        background-image: url(../../../pic/advantages/Emoji_och.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 140%;
+    }
+    &_smile-cat{
+        width: 56px;
+        height: 56px;
+        background-image: url(../../../pic/advantages/Emoji_cat.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &_smile-cat:hover{
+        background-image: url(../../../pic/advantages/Emoji_cat.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 140%;
+    }
+   
+    &_smile-och{
+        width: 56px;
+        height: 56px;
+        background-image: url(../../../pic/advantages/Emoji_och.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &_smile-och:hover{
+        background-image: url(../../../pic/advantages/Emoji.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 140%;
+    }
+}
+
+//АДАПТИВ
+
+@media screen and (max-width:850px) {
+    .advantages{
+        &_carts{
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 16px;
+        }
+        
+    }
+}
+
+@media screen and (max-width:550px) {
+    .advantages{
+        padding: 40px 8px;
+        &_title{
+            @include text-style("2", "mobile");
+            padding-left: 20px;
+        }   
+        &_content{
+            @include text-style("body", "mobile");
+        }
+        &_header-title{
+            @include text-style("3", "mobile");
+        }
+        &_smile{
+            background-image: url(../../../pic/advantages/Emoji_och.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 140%;
+        }
+         &_smile-cat{
+            background-image: url(../../../pic/advantages/Emoji_cat.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 140%;
+        }
+        &_smile-och{
+            background-image: url(../../../pic/advantages/Emoji.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 140%;
+        }
+    }
+}
+
+
+
+
+
+
+
+

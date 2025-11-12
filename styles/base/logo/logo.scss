@@ -1,0 +1,13 @@
+@use"../../mixin/mixin" as *;
+
+.logo{
+    @include text-style("headline","desktop");
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media screen and (max-width:560px) {
+    .logo{
+        @include text-style("headline","mobile");
+    }
+}
