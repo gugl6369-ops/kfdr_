@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import {useCommentsStore} from '@/stores/comments';
-const store = useCommentsStore();
+import {useNewsStore} from '@/stores/story';
+import { onMounted } from 'vue';
+const stores = useNewsStore();
 
-
+onMounted(() =>{
+  setInterval(() =>{
+    stores.checkId();
+  }, 60000)
+})
 
 </script>
 
@@ -13,7 +18,7 @@ const store = useCommentsStore();
       <nav>
         <RouterLink to="/">Домой</RouterLink>
       </nav>
-      <button      >Обновить посты</button>
+      <button class="cursor-pointer" @click="stores.refresh">Обновить посты</button>
     </div>
   </header>
   <main class="flex flex-col gap-10 items-center justify-center w-full pt-20">

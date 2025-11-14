@@ -2,42 +2,48 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 
-export const searchNews = defineStore('store', () => {
-  const story = ref((new Array));
-  const stor = new Array;
-  const isLoading = ref<boolean>(false);
+export const useNewsStore = defineStore('news', () => {  
+  const storyId = ref((new Array));
   const showStor =  ref((new Array));
+  const count = ref(0);
 
-  const getNews = () =>{
-    fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
-      .then((d)=>{
-        isLoading.value = true;
-        return d.json();
-      })
-      .then((f)=>{
-          f.forEach( (element: number) => {
-            fetch(`https://hacker-news.firebaseio.com/v0/item/${element}.json`)
-              .then ((l) =>{
-                return l.json();
-              })
-              .then((j) => {
-                story.value.push(j);
-                stor.push(Object.keys(story.value));
-                isLoading.value = false;
-              })
-          });{
-            
-          }
-      });
-    
+  const getIdStor = async () =>{
+    const responseId = await  fetch('https://hacker-news.firebaseio.com/v0/newstories.json');
+    storyId.value = await responseId.json();
   }
 
+  const getNextStory = async () =>{
+    const nextId = storyId.value.slice(count.value, count.value + 20);
+    count.value += 20;
 
-  const showNews = (last:number, next:number) =>{
-    const i = ref((new Array));
-    i.value.push(story.value.slice(last, next));
-    showStor.value.push(i);
+    const nextStories = await Promise.all(nextId.map( 
+        async (id:number): Promise<any> => {
+          const responseStory = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`);        
+          return responseStory.json();
+        }
+    ));
+    showStor.value.push(...nextStories);
   }
 
-  return {getNews, isLoading, story, stor, showStor, showNews};
+  const refresh = async () =>{
+    const refreshId = storyId.value.slice(0, count.value);
+    const refreshStories = await Promise.all(refreshId.map( 
+        async (id:number): Promise<any> => {
+          const responseStory = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`);        
+          return responseStory.json();
+        }
+    ));
+    showStor.value = refreshStories;
+  }
+
+  const checkId = async () =>{
+    const responseId = await fetch('https://hacker-news.firebaseio.com/v0/newstories.json');
+    const checkIds = await responseId.json();
+    if(!storyId.value.every( (elem, index) => elem === checkIds[index]) ){
+      storyId.value = checkIds;
+      refresh();
+    } 
+  }
+  
+  return {showStor, getIdStor, getNextStory, checkId, refresh};
 })

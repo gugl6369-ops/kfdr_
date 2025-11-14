@@ -1,6 +1,6 @@
 <script setup lang="ts">
-    import {searchNews} from '@/stores/story';
-    const store = searchNews();
+    import {useNewsStore} from '@/stores/story';
+    const store = useNewsStore();
 </script>
 <template>
     
