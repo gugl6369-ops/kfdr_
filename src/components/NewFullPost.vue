@@ -1,6 +1,8 @@
 <script setup lang="ts">
     import {useCommentsStore} from '@/stores/comments';
+    import LoadingFull from '@/components/LoadingFull.vue';
     import { computed } from 'vue';
+
     const store = useCommentsStore();
     
     const post = computed(() => store.post);
@@ -22,7 +24,9 @@
         </div>
         <p v-if=" post.text" v-html=" post.text"></p>
     </div>
-    <div v-else-if="store.isLoadingPost">Загрузка</div>
+    <div v-else-if="store.isLoadingPost" class="flex items-center justify-center">
+        <LoadingFull/>
+    </div>
     <div v-else>
         <div>
             <h1 class="text-4xl">404</h1>

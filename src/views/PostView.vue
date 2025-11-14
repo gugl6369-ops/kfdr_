@@ -2,6 +2,7 @@
     import NewFullPost from '@/components/NewFullPost.vue';
     import CommentsPost from '@/components/CommentsPost.vue';
     import {useCommentsStore} from '@/stores/comments';
+    import LoadingFull from '@/components/LoadingFull.vue';
 import { onMounted } from 'vue';
 
     const store = useCommentsStore();
@@ -25,7 +26,7 @@ import { onMounted } from 'vue';
             <CommentsPost v-for="comm in store.comment" :comm="comm"/>
         </div>
         <div v-else>
-            <p>Загрузка комментариев ()</p>
+            <LoadingFull/>
         </div>
     </div>
 </template>

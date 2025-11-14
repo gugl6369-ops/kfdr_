@@ -5,15 +5,17 @@ import { defineStore } from 'pinia'
 export const searchNews = defineStore('store', () => {
   const story = ref((new Array));
   const stor = new Array;
+  const isLoading = ref<boolean>(false);
+  const showStor =  ref((new Array));
 
-
-  const getNews = (last:number, next:number) =>{
+  const getNews = () =>{
     fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
       .then((d)=>{
+        isLoading.value = true;
         return d.json();
       })
       .then((f)=>{
-          f.slice(last, next).forEach( (element: number) => {
+          f.forEach( (element: number) => {
             fetch(`https://hacker-news.firebaseio.com/v0/item/${element}.json`)
               .then ((l) =>{
                 return l.json();
@@ -21,12 +23,21 @@ export const searchNews = defineStore('store', () => {
               .then((j) => {
                 story.value.push(j);
                 stor.push(Object.keys(story.value));
-                
+                isLoading.value = false;
               })
           });{
             
           }
       });
+    
   }
-  return {getNews, story, stor};
+
+
+  const showNews = (last:number, next:number) =>{
+    const i = ref((new Array));
+    i.value.push(story.value.slice(last, next));
+    showStor.value.push(i);
+  }
+
+  return {getNews, isLoading, story, stor, showStor, showNews};
 })

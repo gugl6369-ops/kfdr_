@@ -1,10 +1,10 @@
 <script setup lang="ts">
-    import {searchNews} from '../stores/story';
+    import {searchNews} from '@/stores/story';
     const store = searchNews();
 </script>
 <template>
     
-        <article v-for="item in store.story" class="w-full h-full" >   
+        <article v-for="item in store.showStor" class="w-full h-full" >   
             <router-link :to="`/${item.id}`">
                 <div class="new-item flex h-full flex-col cursor-pointer relative p-6 w-full shadow-xl rounded-lg gap-5 justify-between">
                     <div class="new-item_header"> 
