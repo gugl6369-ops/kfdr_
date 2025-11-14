@@ -3,26 +3,26 @@
     import { computed } from 'vue';
     const store = useCommentsStore();
     
-    const item = computed(() => store.post);
+    const post = computed(() => store.post);
     
 </script>
 
 <template>
-    <div v-if="item" class="w-full flex flex-col bg-blue-400/25 p-12 rounded-lg gap-5">
+    <div v-if=" post" class="w-full flex flex-col bg-blue-400/25 p-12 rounded-lg gap-5">
         <div class="flex justify-between">
             <div>
                 <div></div>
-                <p v-if="item.by" class="font-extrabold text-blue-800">{{ item.by }}</p>
+                <p v-if=" post.by" class="font-extrabold text-blue-800">{{post.by}}</p>
             </div>
-            <p>№{{ item.id }}</p>
+            <p>№{{post.id}}</p>
         </div>
         <div class="flex justify-between">
-            <h1 v-if="item.title">{{item.title}}</h1>
-            <p v-if="item.time" class="text-gray-600/80">{{ new Date((item.time)*1000).toDateString()  }}</p>
+            <h1 v-if=" post.title">{{ post.title}}</h1>
+            <p v-if=" post.time" class="text-gray-600/80">{{ new Date(( post.time)*1000).toDateString()  }}</p>
         </div>
-        <p v-if="item.text" v-html="item.text"></p>
+        <p v-if=" post.text" v-html=" post.text"></p>
     </div>
-    <div v-else-if="store.isLoading">Загрузка</div>
+    <div v-else-if="store.isLoadingPost">Загрузка</div>
     <div v-else>
         <div>
             <h1 class="text-4xl">404</h1>

@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import {useCommentsStore} from '@/stores/comments';
+const store = useCommentsStore();
+
+
+
 </script>
 
 <template>
@@ -8,6 +13,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink to="/">Домой</RouterLink>
       </nav>
+      <button      >Обновить посты</button>
     </div>
   </header>
   <main class="flex flex-col gap-10 items-center justify-center w-full pt-20">

@@ -2,7 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 
-export const searchNews = defineStore('item', () => {
+export const searchNews = defineStore('store', () => {
   const story = ref((new Array));
   const stor = new Array;
 
@@ -28,7 +28,5 @@ export const searchNews = defineStore('item', () => {
           }
       });
   }
-  
-
   return {getNews, story, stor};
 })
