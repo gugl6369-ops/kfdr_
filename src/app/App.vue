@@ -14,7 +14,7 @@ onMounted(() =>{
 
 <template>
   <header class="header w-full bg-blue-400/50">
-    <div class="wrapper p-8 flex-row justufy-between">
+    <div class="wrapper w-full p-8 flex flex-row justify-between">
       <nav>
         <RouterLink to="/">Домой</RouterLink>
       </nav>
