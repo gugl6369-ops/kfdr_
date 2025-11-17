@@ -1,0 +1,34 @@
+<script setup lang="ts">
+    import {useNewsStore} from '@/stores/story';
+    const store = useNewsStore();
+</script>
+<template>
+    
+        <article v-for="item in store.showStor" class="w-full h-full" >   
+            <router-link :to="`/${item.id}`">
+                <div class="new-item flex h-full flex-col cursor-pointer relative p-6 w-full shadow-xl rounded-lg gap-5 justify-between">
+                    <div class="new-item_header"> 
+                        <div v-if="item.type" class="flex bg-blue-100 w-auto p-1 rounded-r-lg items-center absolute top-4 left-0 pl-4 pr-2">
+                            <img class="w-8" src="../assets/pic/megafon.png" alt="Мегафон"/>
+                            <p class="text-black">{{ item.type }}</p>
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <p class="text-gray-500">№{{ item.id }}</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between">
+                        <h3 v-if="item.by" class="text-blue-500 font-extrabold">{{ item.by }}</h3>
+                        <p v-if="item.time" class="flex text-pink-500/50"><i>{{ new Date(item.time*1000).toDateString() }}</i></p>
+                    </div>
+                    <h2 v-if="item.title">{{ item.title }}</h2>
+                    <div class="flex justify-between">
+                        <p>Комментарии: {{ item.descendants }}</p>
+                        <img class="w-4 h-4 transform-cpu--tw-rotate-x" src="../assets/pic/arrow.png"></img>
+                    </div>
+                </div>
+            </router-link>     
+        </article>
+
+</template>
+<style>
+</style>
