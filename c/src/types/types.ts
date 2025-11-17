@@ -21,8 +21,9 @@ export interface board{
     kids: Number[],
     name: Status,
     lenght: Number,
+    add?: boolean,
 }
 
-export type Status = "todo" | "in-progress" | "review" | 'done';
+export type Status = "Todo" | "In-progress" | "Review" | 'Done';
 
 export type CardRole =  'Designer' | 'Backender' | 'Frontender' | 'Tester' | 'Analyst';

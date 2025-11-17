@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import { type card } from "@/types/kanban.ts";
+import { type card } from "@/types/types";
 
 const cards = ref<card[]>([
     {
         id: 0,
         role: 'Tester',
         date: new Date(2024, 6, 4),
-        status: "done",
+        status: "Done",
         title: "Konsep hero title yorg menorik",
         subtitle: "Client wants more whitespace in the left sidebar", 
         size: "small",
@@ -20,7 +20,20 @@ const cards = ref<card[]>([
         id: 1,
         role: 'Tester',
         date: new Date(2024, 6, 4),
-        status: "done",
+        status: "Done",
+        title: "Konsep hero title yorg menorik",
+        subtitle: "Client wants more whitespace in the left sidebar", 
+        size: "small",
+        priority: "small",
+        deadline: new Date(2024, 3, 3, 32, 3),
+        redact: new Date(2024, 3, 3, 32, 3),
+        overdue: true,
+    },
+      {
+        id: 2,
+        role: 'Tester',
+        date: new Date(2024, 6, 4),
+        status: "Done",
         title: "Konsep hero title yorg menorik",
         subtitle: "Client wants more whitespace in the left sidebar", 
         size: "small",
@@ -44,32 +57,32 @@ const formatDate = (date: Date): string =>
 
 </script>
 <template>
-    <article v-for="item in cards" class="w-100 flex flex-col gap-5 justify-center items-center p-8 border-3 border-blue-400/25 rounded-xl bg-white">
+    <article v-for="card in cards" :key="String(card.id)" class="card w-full max-w-110 flex flex-col gap-5 justify-center items-center p-8 bg-white">
         <div class="flex flex-row justify-between w-full items-center">
             <div class="flex items-center gap-2">
-                <p class="flex p-2 bg-pink-400/25 rounded-3xl ">{{ item.role }}</p>
+                <p class="flex p-2 bg-pink-400/25 rounded-3xl ">{{ card.role }}</p>
                 <img class="w-7 h-7 cursor-pointer" src="@/assets/pic/redact-icon.png"/>
             </div>
-            <p class="text-gray-400">{{formatDate(item.date)}}</p>
+            <p class="text-gray-400">{{formatDate(card.date)}}</p>
         </div>
         <div class="flex flex-col gap-5 ">
-            <h3 class="text-2xl">{{item.title}}</h3>
+            <h3 class="text-2xl">{{card.title}}</h3>
             <div class="flex bg-gray-600/5 p-5 rounded-3xl">
-                <h4 class="max-w-80">{{item.subtitle}}</h4>
+                <h4 class="max-w-80">{{card.subtitle}}</h4>
             </div>
         </div>
         <div class="flex w-full gap-2 items-start">
-            <p class="bg-green-400/25 rounded-3xl p-2">{{item.size}}</p>
-            <p class="bg-green-400/25 rounded-3xl p-2">{{item.priority}}</p>
+            <p class="bg-green-400/25 rounded-3xl p-2">{{card.size}}</p>
+            <p class="bg-green-400/25 rounded-3xl p-2">{{card.priority}}</p>
         </div>
         <div class="w-full flex justify-between items-center">
             <div class="flex gap-2 items-center items-center">
                 <img class="w-8 h-8" src="@/assets/pic/flag.png"></img>
-                <p class="items-end">{{formatDate(item.deadline)}}</p>
+                <p class="items-end">{{formatDate(card.deadline)}}</p>
             </div>
             <div class="flex items-center gap-5">
-                <div v-if="item.redact">
-                    <p class="text-xl text-gray-400">Ред. {{formatDate(item.redact)}}</p><!--изменить!!!!!!!!!!!!!!!!!!!!!!!!!!1-->
+                <div v-if="card.redact">
+                    <p class="text-xl text-gray-400">Ред. {{formatDate(card.redact)}}</p><!--изменить!!!!!!!!!!!!!!!!!!!!!!!!!!1-->
                 </div>
                 <div class="p-2 flex justify-center items-center bg-gray-400/25 rounded-3xl cursor-pointer">
                     <img class="w-6 h-6 " src="@/assets/pic/bask.png"></img>
@@ -78,4 +91,9 @@ const formatDate = (date: Date): string =>
         </div>
     </article>
 </template>
-<style></style>
+<style> 
+.card{
+    border-radius: 40px; 
+    box-shadow: 0 5px 15px rgb(193, 188, 188);
+}
+</style>

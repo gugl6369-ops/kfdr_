@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CardBoard from '@/components/kanban/KanbanBoard.vue';
+import CardBoard from '@/components/KanbanBoard.vue';
 import { ref, reactive } from 'vue'
 </script>
 <template>
