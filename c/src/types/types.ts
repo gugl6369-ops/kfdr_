@@ -27,3 +27,15 @@ export interface board{
 export type Status = "Todo" | "In-progress" | "Review" | 'Done';
 
 export type CardRole =  'Designer' | 'Backender' | 'Frontender' | 'Tester' | 'Analyst';
+
+
+export const formatDate = (date: Date): string => 
+{
+    const monthName = [
+        'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
+        'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
+    ];
+    const day = date.getDate();
+    const month = monthName[date.getMonth()];
+    return `${month} ${day}`;
+}

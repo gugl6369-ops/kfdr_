@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
 import { type card } from "@/types/types";
-
+import {formatDate} from "@/types/types";
 const cards = ref<card[]>([
     {
         id: 0,
@@ -29,31 +29,9 @@ const cards = ref<card[]>([
         redact: new Date(2024, 3, 3, 32, 3),
         overdue: true,
     },
-      {
-        id: 2,
-        role: 'Tester',
-        date: new Date(2024, 6, 4),
-        status: "Done",
-        title: "Konsep hero title yorg menorik",
-        subtitle: "Client wants more whitespace in the left sidebar", 
-        size: "small",
-        priority: "small",
-        deadline: new Date(2024, 3, 3, 32, 3),
-        redact: new Date(2024, 3, 3, 32, 3),
-        overdue: true,
-    }
 ]) 
 
-const formatDate = (date: Date): string => 
-{
-    const monthName = [
-        'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
-        'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
-    ];
-    const day = date.getDate();
-    const month = monthName[date.getDate()];
-    return `${month} ${day}`;
-}
+
 
 </script>
 <template>

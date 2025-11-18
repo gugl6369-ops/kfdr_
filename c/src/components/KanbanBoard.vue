@@ -3,9 +3,11 @@ import { ref, reactive } from 'vue'
 import CardItem from '@/components/KanbanCard.vue';
 import CreateCardItem from '@/components/KanbanCreateCard.vue';
 import { type board } from "@/types/types";
-
+import { type card } from "@/types/types"
 
 const addCard = ref<boolean>(false)
+
+
 
 const boards = ref<board[]>([
     {
@@ -58,7 +60,7 @@ const replace = () => {
                         <img class="home_button-img w-15 h-15" src="@/assets/pic/app.png"/>
                     </div>
                     <div v-else class="h-full">
-                        <create-card-item />
+                        <create-card-item  />
                     </div>
                 </div>
 
