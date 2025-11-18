@@ -13,7 +13,7 @@ const currentTimestamp =  ref<number>(new Date().getTime());
         <form id="card-form" class="w-full flex flex-col h-wull gap-5 justify-between">
             <div class="flex justify-between">
                 <div class="card_role-input">
-                   <select name="role" required>
+                   <select class="text-xl" name="role" required>
                     <option value="Designer">Designer</option>
                     <option value="Backender">Backender</option>
                     <option value="Frontender">Frontender</option>
@@ -34,12 +34,12 @@ const currentTimestamp =  ref<number>(new Date().getTime());
                 </div>
             </div>
             <div class="flex gap-2">
-                 <select name="size" class="bg-green-400/25 rounded-3xl p-2 cursor-pointer " required>
+                 <select name="size" class="text-xl bg-green-400/25 rounded-3xl p-2 cursor-pointer " required>
                     <option value="small">Small</option>
                     <option value="medium">Medium</option>
                     <option value="critical">Critical</option>
                    </select>
-                   <select name="priority" class="bg-green-400/25 rounded-3xl p-2 cursor-pointer" required>
+                   <select name="priority" class="text-xl bg-green-400/25 rounded-3xl p-2 cursor-pointer" required>
                     <option value="small">Low</option>
                     <option value="medium">Medium</option>
                     <option value="critical">Big</option>

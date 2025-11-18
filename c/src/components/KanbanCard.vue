@@ -10,8 +10,8 @@ const cards = ref<card[]>([
         status: "Done",
         title: "Konsep hero title yorg menorik",
         subtitle: "Client wants more whitespace in the left sidebar", 
-        size: "small",
-        priority: "small",
+        size: {id: 1, name: "critical", color:'green'},
+        priority: {id: 1, name: "critical", color:'green'},
         deadline: new Date(2024, 6, 4),
         redact: null,
         overdue: true,
@@ -23,8 +23,8 @@ const cards = ref<card[]>([
         status: "Done",
         title: "Konsep hero title yorg menorik",
         subtitle: "Client wants more whitespace in the left sidebar", 
-        size: "small",
-        priority: "small",
+        size: {id: 1, name: "critical", color:'green'},
+        priority: {id: 1, name: "critical", color:'green'},
         deadline: new Date(2024, 3, 3, 32, 3),
         redact: new Date(2024, 3, 3, 32, 3),
         overdue: true,
@@ -50,8 +50,8 @@ const cards = ref<card[]>([
             </div>
         </div>
         <div class="flex w-full gap-2 items-start">
-            <p class="bg-green-400/25 rounded-3xl p-2">{{card.size}}</p>
-            <p class="bg-green-400/25 rounded-3xl p-2">{{card.priority}}</p>
+            <p class="bg-green-400/25 text-xl rounded-3xl p-2">{{card.size.name}}</p>
+            <p class="bg-green-400/25 text-xl rounded-3xl p-2">{{card.priority.name}}</p>
         </div>
         <div class="w-full flex justify-between items-center">
             <div class="flex gap-2 items-center items-center">

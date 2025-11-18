@@ -13,8 +13,14 @@ export interface card{
 } 
 
 
-export type CardSize = "small" | "medium" | "critical";
+export interface CardSize {
+    id: number;
+    name: SizeName;
+    color: SizeColor;
+} 
 
+export type SizeName = "small" | "medium" | "critical";
+export type SizeColor = "green" | "yellow" | "red";
 
 export interface board{
     id: Number,
