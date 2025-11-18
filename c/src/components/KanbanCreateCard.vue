@@ -11,9 +11,16 @@ import { useCardStore } from "@/stores/card";
         <form id="card-form" class="w-full">
             <div сlass="card_header">
                 <div class="card_">
-                    <input >
+                    <label for="role">
+                        <input type="radio" name="role"> <!-- радио кнопку делать -->
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </label>
                 </div>
-                <p>{{  }}</p><!--дата сейчас-->
+                <p ></p><!--дата сейчас-->
             </div>
             <div >
                 <input >
