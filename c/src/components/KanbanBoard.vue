@@ -4,6 +4,9 @@ import CardItem from '@/components/KanbanCard.vue';
 import CreateCardItem from '@/components/KanbanCreateCard.vue';
 import { type board } from "@/types/types";
 
+
+const addCard = ref<boolean>(false)
+
 const boards = ref<board[]>([
     {
     id: 0,
@@ -33,6 +36,10 @@ const boards = ref<board[]>([
     
 ])
 
+const replace = () => {
+
+}
+
 </script>
 <template>
     <div class="home grid w-full gap-12">
@@ -46,9 +53,15 @@ const boards = ref<board[]>([
             </header>
             <div class="board_content flex gap-5 p-10">
                 <card-item />    
-                <div v-if="item.add" class="home_button flex items-center cursor-pointer">
-                    <img class="home_button-img w-15 h-15" src="@/assets/pic/app.png"/>
+                <div v-if="item.add" class="h-full">
+                    <div @click="() => { addCard = !addCard} " v-if="!addCard" class="home_button h-full flex items-center cursor-pointer">
+                        <img class="home_button-img w-15 h-15" src="@/assets/pic/app.png"/>
+                    </div>
+                    <div v-else class="h-full">
+                        <create-card-item />
+                    </div>
                 </div>
+
             </div> 
         </div>
     </div>
@@ -61,6 +74,9 @@ const boards = ref<board[]>([
 .board:first-child{
     grid-column: 1 / -1;
     grid-row: 1;
+    padding: 30px;
+    background-color: rgb(244, 244, 244);
+    border: 5px solid rgb(64, 131, 167);
 
 }
 .board:not(:first-child){

@@ -1,36 +1,40 @@
 <script setup lang="ts">
+import { ref, reactive } from 'vue'
+import { type card } from "@/types/types";
+import { useCardStore } from "@/stores/card";
+
+
 
 </script>
-<template>
-     <article class="card w-full max-w-120 flex flex-col gap-5 justify-center items-center p-8 bg-white">
-        <form id="card-form">
-            <div class="flex flex-row justify-between w-full items-center">
-                <div class="flex items-center gap-2">
-                    <input class="flex p-2 bg-pink-400/25 rounded-3xl ">
-                    <img class="w-7 h-7 cursor-pointer" src="@/assets/pic/redact-icon.png"/>
+<template> 
+    <article class="card w-full h-full max-w-120 flex flex-col gap-5 justify-center p-8 bg-white">
+        <form id="card-form" class="w-full">
+            <div сlass="card_header">
+                <div class="card_">
+                    <input >
                 </div>
-                <input class="text-gray-400">
+                <p>{{  }}</p><!--дата сейчас-->
             </div>
-            <div class="flex flex-col gap-5 ">
-                <input class="text-2xl">
-                <div class="flex bg-gray-600/5 p-5 rounded-3xl">
-                    <input class="max-w-80">
+            <div >
+                <input >
+                <div >
+                    <input type="text" class="max-w-80">
                 </div>
             </div>
-            <div class="flex w-full gap-2 items-start">
-                <input class="bg-green-400/25 rounded-3xl p-2">
-                <input class="bg-green-400/25 rounded-3xl p-2">
+            <div >
+                <button type="button" class="bg-green-400/25 rounded-3xl p-2 cursor-pointer">small</button>
+                <button type="button" class="bg-green-400/25 rounded-3xl p-2 cursor-pointer">small</button>
             </div>
-            <div class="w-full flex justify-between items-center">
-                <div class="flex gap-2 items-center items-center">
+            <div >
+                <div >
                     <img class="w-8 h-8" src="@/assets/pic/flag.png"/>
-                    <input class="items-end">
+                    <input type="date" class="items-end">
                 </div>
-                <div class="flex items-center gap-5">
+                <div >
                     <div> <!-- v-if="item.redact"-->
-                        <input class="text-xl text-gray-400"> <!--изменить!!!!!!!!!!!!!!!!!!!!!!!!!!1-->
+                        <input > <!--изменить!!!!!!!!!!!!!!!!!!!!!!!!!!1-->
                     </div>
-                    <div class="p-2 flex justify-center items-center bg-gray-400/25 rounded-3xl cursor-pointer">
+                    <div >
                         <img class="w-6 h-6 " src="@/assets/pic/bask.png"/>
                     </div>
                 </div>
@@ -38,6 +42,9 @@
         </form>
     </article>
 </template>
-<style>
-
+<style scoped>
+.card_header{
+    display: flex;
+    background-color: aquamarine;
+}
 </style>
