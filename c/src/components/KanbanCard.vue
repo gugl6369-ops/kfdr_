@@ -6,11 +6,16 @@ import { useCardStore } from '@/stores/card';
 
 const cardStore = useCardStore();
 
+interface CardProps {
+    card: card;
+}
+const props = defineProps<CardProps>();
+
 
 
 </script>
 <template>
-    <article v-for="card in cardStore.cardList" :key="String(card.id)" class="card w-full max-w-110 flex flex-col gap-5 justify-center items-center p-8 bg-white">
+    <article class="card w-full max-w-110 flex flex-col gap-5 justify-center items-center p-8 bg-white">
         <div class="flex flex-row justify-between w-full items-center">
             <div class="flex items-center gap-2">
                 <p class="flex p-2 bg-pink-400/25 rounded-3xl ">{{ card.role.name }}</p>

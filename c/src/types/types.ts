@@ -30,9 +30,7 @@ export type Color = "green" | "yellow" | "red";
 
 export interface board{
     id: Number,
-    kids: Number[],
     name: Status,
-    lenght: Number,
     add?: boolean,
 }
 

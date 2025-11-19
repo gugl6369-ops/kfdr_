@@ -2,50 +2,23 @@
 import { ref, reactive } from 'vue'
 import CardItem from '@/components/KanbanCard.vue';
 import CreateCardItem from '@/components/KanbanCreateCard.vue';
-import { type board } from "@/types/types";
+import { type board, type Status } from "@/types/types";
 import { type card } from "@/types/types"
-
+import { useBoardStore } from '@/stores/board';
+import { useCardStore } from '@/stores/card';
 const addCard = ref<boolean>(false)
 
+const boarStore = useBoardStore();
+const cardStore = useCardStore();
 
+const getCards = (status : Status) => 
+    cardStore.cardList.filter( (c) => status === c.status)
 
-const boards = ref<board[]>([
-    {
-    id: 0,
-    kids: [0, 1],
-    name: "Todo",
-    lenght: 1,
-    add: true,
-    },
-    {
-    id: 1,
-    kids: [0, 1],
-    name: "In-progress",
-    lenght: 1,
-    },
-     {
-    id: 2,
-    kids: [0, 1],
-    name: "Review",
-    lenght: 1,
-    },
-     {
-    id: 3,
-    kids: [0, 1],
-    name: "Done",
-    lenght: 1,
-    },
-    
-])
-
-const replace = () => {
-
-}
 
 </script>
 <template>
     <div class="home grid w-full gap-12">
-        <div v-for="item in boards" :key="String(item.id)" class="board" >
+        <div v-for="item in boarStore.boards" :key="String(item.id)" class="board" >
             <header class="board-header flex w-full items-start ">
                 <div class="flex items-center gap-5">
                     <div class="w-2 h-2 bg-black rounded-3xl"></div>
@@ -53,8 +26,10 @@ const replace = () => {
                 </div>
                 
             </header>
-            <div class="board_content flex gap-5 p-10">
-                <card-item />    
+            <div class="board_content w-full flex gap-5 p-10">
+                <div v-for="card in getCards(item.name)" >
+                    <card-item  :card="card"/>    
+                </div>
                 <div v-if="item.add" class="h-full">
                     <div @click="() => { addCard = !addCard} " v-if="!addCard" class="home_button h-full flex items-center cursor-pointer">
                         <img class="home_button-img w-15 h-15" src="@/assets/pic/app.png"/>
