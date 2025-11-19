@@ -6,6 +6,8 @@ import { type board, type Status } from "@/types/types";
 import { type card } from "@/types/types"
 import { useBoardStore } from '@/stores/board';
 import { useCardStore } from '@/stores/card';
+import { useDndStore } from '@/stores/dndStore';
+const dndStore = useDndStore();
 const addCard = ref<boolean>(false)
 
 const boarStore = useBoardStore();
@@ -14,6 +16,43 @@ const cardStore = useCardStore();
 const getCards = (status : Status) => 
     cardStore.cardList.filter( (c) => status === c.status)
 
+const dragOver = (status : Status) => (event : Event) => {
+    if(dndStore.cardGtag && dndStore.cardGtag.status != status){
+       if(stutConfirm(status).includes(dndStore.cardGtag.status)){
+        event.preventDefault();
+       }
+    }
+}
+
+const drop = (status : Status) => (event: Event) =>{
+    event.preventDefault();
+    if(dndStore.lastCard){
+        const newCard = dndStore.lastCard;
+        newCard.status = status;
+
+            cardStore.moveCard(newCard);
+    }
+
+}
+
+
+    const stutConfirm = (status : Status) => {
+        let stut: Status[] = [];
+        switch (status) {
+            case 'In-progress':
+            stut = ['Todo', 'Review'];
+            break;
+
+            case 'Review':
+            stut = ['In-progress'];
+            break;
+
+            case 'Done':
+            stut = ['Review'];
+            break;
+        }
+        return stut;
+}
 </script>
 <template>
     <div class="home grid w-full gap-12">
@@ -25,9 +64,9 @@ const getCards = (status : Status) =>
                 </div>
                 
             </header>
-            <div class="board_content h-full w-full flex gap-5 p-10">
+            <div  @dragover="(event) => dragOver(item.name)(event)" @drop="(event) => drop(item.name)(event)" class="board_content min-h-100 h-full w-full flex gap-5 p-10">
                 <div v-for="card in getCards(item.name)" >
-                    <card-item  :card="card"/>    
+                    <card-item draggable="true" @dragstart="dndStore.onDrag(card)" @dragend="dndStore.onEndDrag" :card="card"/>    
                 </div>
                 <div v-if="item.add" class="h-full">
                     <div @click="() => { addCard = !addCard} " v-if="!addCard" class="home_button h-full flex items-center cursor-pointer">

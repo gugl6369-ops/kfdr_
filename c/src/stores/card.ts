@@ -30,9 +30,17 @@ export const useCardStore = defineStore('card', () => {
       })
     }
 
+    const moveCard = (card : card) => {
+      cardList.value = cardList.value.map( (x) => { 
+        if(x.id === card.id) return card;
+        return x;
+      
+    });
+    }
+
    
 
 
-  return {cardList, createCard, deleteCard, updateCard};
+  return {cardList, createCard, deleteCard, updateCard, moveCard};
 
 })

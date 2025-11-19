@@ -56,8 +56,6 @@ const validateDate = (event: Event) => {
     const target = event.target as HTMLInputElement;
     const date = target.value;
     const prov = Number(new Date(date)) > Number(new Date()); 
-
-    
     if(!prov) {buttonSubmit.value = false}
     else buttonSubmit.value = true
 }
@@ -115,7 +113,9 @@ const validateDate = (event: Event) => {
     </article>
 </template>
 <style scoped>
-
+.card{
+    cursor: grab;
+}
 .card-form_inut-title{
     border-bottom: 2px solid var(--lightBlue);
     color: var(--lightBlue);
