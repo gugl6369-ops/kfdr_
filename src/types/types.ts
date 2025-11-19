@@ -32,7 +32,13 @@ export interface board{
     id: Number,
     name: Status,
     add?: boolean,
+    color?: BoardColor,
+    bakground?: BoardBackground,
 }
+
+
+export type BoardColor = "#7BDCB5 " | "#FFB3DE" | "#A6E3FF";
+export type BoardBackground = "#0A5C3A" | "#7A2A5C" | "#1A4D6B";
 
 export type Status = "Todo" | "In-progress" | "Review" | 'Done';
 

@@ -7,12 +7,14 @@ import { type card } from "@/types/types"
 import { useBoardStore } from '@/stores/board';
 import { useCardStore } from '@/stores/card';
 import { useDndStore } from '@/stores/dndStore';
-const dndStore = useDndStore();
+
 const addCard = ref<boolean>(false)
 
 const boarStore = useBoardStore();
 const cardStore = useCardStore();
 
+//////// от сюда
+const dndStore = useDndStore();
 const getCards = (status : Status) => 
     cardStore.cardList.filter( (c) => status === c.status)
 
@@ -53,10 +55,11 @@ const drop = (status : Status) => (event: Event) =>{
         }
         return stut;
 }
+//////// до сюда
 </script>
 <template>
     <div class="home grid w-full gap-12">
-        <div v-for="item in boarStore.boards" :key="String(item.id)" class="board" >
+        <div v-for="item in boarStore.boards" :key="String(item.id)" :class="{ item.bakground}" class="board" >
             <header class="board-header flex w-full items-start ">
                 <div class="flex items-center gap-5">
                     <div class="w-2 h-2 bg-black rounded-3xl"></div>
@@ -64,6 +67,7 @@ const drop = (status : Status) => (event: Event) =>{
                 </div>
                 
             </header>
+            <!-- отсюда -->
             <div  @dragover="(event) => dragOver(item.name)(event)" @drop="(event) => drop(item.name)(event)" class="board_content min-h-100 h-full w-full flex gap-5 p-10">
                 <div v-for="card in getCards(item.name)" >
                     <card-item draggable="true" @dragstart="dndStore.onDrag(card)" @dragend="dndStore.onEndDrag" :card="card"/>    
@@ -91,7 +95,8 @@ const drop = (status : Status) => (event: Event) =>{
     grid-row: 1;
     padding: 30px;
     background-color: rgb(244, 244, 244);
-    border: 5px solid rgb(64, 131, 167);
+    border: 5px solid white;
+    box-shadow: 0 5px 15px white;
 
 }
 .board:not(:first-child){

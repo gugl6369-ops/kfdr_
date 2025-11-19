@@ -114,7 +114,8 @@ const validateDate = (event: Event) => {
 </template>
 <style scoped>
 .card{
-    cursor: grab;
+    border-radius: 40px; 
+    box-shadow: 0 5px 15px rgb(193, 188, 188);
 }
 .card-form_inut-title{
     border-bottom: 2px solid var(--lightBlue);

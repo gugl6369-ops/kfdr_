@@ -21,7 +21,7 @@
     <article v-if="!redact" class="card w-full min-w-90 max-w-110 flex flex-col gap-5 justify-center items-center p-8 bg-white">
         <div class="flex flex-row justify-between w-full items-center">
             <div class="flex items-center gap-2">
-                <p class="flex p-2 bg-pink-400/25 rounded-3xl text-xl " :style="{backgroundColor: card.role.color}">{{ card.role.name }}</p>
+                <p class="card_role flex p-2 bg-pink-400/25 rounded-3xl text-xl " :style="{backgroundColor: card.role.color}">{{ card.role.name }}</p>
                 <button type="button" @click="() => redact = !redact " class="cursor-pointer">
                     <img class="w-7 h-7 cursor-pointer" src="@/assets/pic/redact-icon.png"/>
                 </button>
@@ -57,7 +57,7 @@
         <redact-card :card="card" @submit="() => redact = !redact" />
     </div>
 </template>
-<style> 
+<style scoped> 
 .card{
     border-radius: 40px; 
     box-shadow: 0 5px 15px rgb(193, 188, 188);
@@ -68,5 +68,11 @@
 .card_button:hover{
     background-color: var(--blueGray);
     transition: .3s;
+}
+.card{
+    cursor: grab;
+}
+.card_role{
+    color: white
 }
 </style>
