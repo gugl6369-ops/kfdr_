@@ -13,7 +13,6 @@ const addCard = ref<boolean>(false)
 const boarStore = useBoardStore();
 const cardStore = useCardStore();
 
-//////// от сюда
 const dndStore = useDndStore();
 const getCards = (status : Status) => 
     cardStore.cardList.filter( (c) => status === c.status)
@@ -55,19 +54,20 @@ const drop = (status : Status) => (event: Event) =>{
         }
         return stut;
 }
-//////// до сюда
+
 </script>
 <template>
     <div class="home grid w-full gap-12">
-        <div v-for="item in boarStore.boards" :key="String(item.id)" :class="{ item.bakground}" class="board" >
+        <div v-for="item in boarStore.boards" :key="String(item.id)"  class="board" 
+            :style="{borderColor: item.background, 
+                color: item.color}">
             <header class="board-header flex w-full items-start ">
-                <div class="flex items-center gap-5">
-                    <div class="w-2 h-2 bg-black rounded-3xl"></div>
+                <div class="flex items-center gap-5 bg-white/50 p-5 rounded-3xl">
+                    <div class="w-2 h-2 bg-black rounded-3xl" :style="{backgroundColor: item.color}"></div>
                     <h2 class="text-3xl">{{ item.name }}</h2>
                 </div>
                 
             </header>
-            <!-- отсюда -->
             <div  @dragover="(event) => dragOver(item.name)(event)" @drop="(event) => drop(item.name)(event)" class="board_content min-h-100 h-full w-full flex gap-5 p-10">
                 <div v-for="card in getCards(item.name)" >
                     <card-item draggable="true" @dragstart="dndStore.onDrag(card)" @dragend="dndStore.onEndDrag" :card="card"/>    
@@ -86,6 +86,9 @@ const drop = (status : Status) => (event: Event) =>{
     </div>
 </template>
 <style>
+.home_button:hover{
+    background-color: rgba(0, 0, 0, .1);
+}
 .home{
     background-color: var(--white);
     grid-template-columns: 1fr 1fr 1fr;
@@ -100,18 +103,19 @@ const drop = (status : Status) => (event: Event) =>{
 
 }
 .board:not(:first-child){
-    background-color: var(--lightBlue);
     grid-row-start:  2;
     align-items: center;
     justify-content: center;
     padding: 50px 10px 50px;
 }
 .board{
+    border: 2px solid transparent;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     border-radius: 50px;
     box-shadow: 0 5px 15px white;
+    box-shadow: 0 5px 15px rgb(181, 179, 179) inset;
     max-height: 100vh;
 }
 

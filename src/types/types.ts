@@ -33,7 +33,7 @@ export interface board{
     name: Status,
     add?: boolean,
     color?: BoardColor,
-    bakground?: BoardBackground,
+    background?: BoardBackground,
 }
 
 

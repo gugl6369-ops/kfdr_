@@ -13,20 +13,20 @@ export const useBoardStore = defineStore('board', () => {
     id: 1,
     name: "In-progress",
     color: "#7BDCB5 ",
-    bakground: "#0A5C3A",
+    background: "#0A5C3A",
     
     },
      {
     id: 2,
     name: "Review",
     color: "#FFB3DE",
-    bakground: "#7A2A5C",
+    background: "#7A2A5C",
     },
      {
     id: 3,
     name: "Done",
     color: "#A6E3FF",
-    bakground: "#1A4D6B",
+    background: "#1A4D6B",
     },
     
 ])
