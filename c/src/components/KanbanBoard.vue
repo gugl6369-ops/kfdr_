@@ -60,7 +60,7 @@ const replace = () => {
                         <img class="home_button-img w-15 h-15" src="@/assets/pic/app.png"/>
                     </div>
                     <div v-else class="h-full">
-                        <create-card-item  />
+                        <create-card-item @submit="() => { addCard = !addCard}" />
                     </div>
                 </div>
 

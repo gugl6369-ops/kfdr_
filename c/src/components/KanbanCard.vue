@@ -2,48 +2,23 @@
 import { ref, reactive } from 'vue'
 import { type card } from "@/types/types";
 import {formatDate} from "@/types/types";
-const cards = ref<card[]>([
-    {
-        id: 0,
-        role: 'Tester',
-        date: new Date(2024, 6, 4),
-        status: "Done",
-        title: "Konsep hero title yorg menorik",
-        subtitle: "Client wants more whitespace in the left sidebar", 
-        size: {id: 1, name: "critical", color:'green'},
-        priority: {id: 1, name: "critical", color:'green'},
-        deadline: new Date(2024, 6, 4),
-        redact: null,
-        overdue: true,
-    },
-     {
-        id: 1,
-        role: 'Tester',
-        date: new Date(2024, 6, 4),
-        status: "Done",
-        title: "Konsep hero title yorg menorik",
-        subtitle: "Client wants more whitespace in the left sidebar", 
-        size: {id: 1, name: "critical", color:'green'},
-        priority: {id: 1, name: "critical", color:'green'},
-        deadline: new Date(2024, 3, 3, 32, 3),
-        redact: new Date(2024, 3, 3, 32, 3),
-        overdue: true,
-    },
-]) 
+import { useCardStore } from '@/stores/card';
+
+const cardStore = useCardStore();
 
 
 
 </script>
 <template>
-    <article v-for="card in cards" :key="String(card.id)" class="card w-full max-w-110 flex flex-col gap-5 justify-center items-center p-8 bg-white">
+    <article v-for="card in cardStore.cardList" :key="String(card.id)" class="card w-full max-w-110 flex flex-col gap-5 justify-center items-center p-8 bg-white">
         <div class="flex flex-row justify-between w-full items-center">
             <div class="flex items-center gap-2">
-                <p class="flex p-2 bg-pink-400/25 rounded-3xl ">{{ card.role }}</p>
+                <p class="flex p-2 bg-pink-400/25 rounded-3xl ">{{ card.role.name }}</p>
                 <img class="w-7 h-7 cursor-pointer" src="@/assets/pic/redact-icon.png"/>
             </div>
             <p class="text-gray-400">{{formatDate(card.date)}}</p>
         </div>
-        <div class="flex flex-col gap-5 ">
+        <div class="flex w-full justify-start flex-col gap-5 ">
             <h3 class="text-2xl">{{card.title}}</h3>
             <div class="flex bg-gray-600/5 p-5 rounded-3xl">
                 <h4 class="max-w-80">{{card.subtitle}}</h4>

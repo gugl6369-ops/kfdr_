@@ -1,25 +1,26 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import type { CardSize } from '@/types/types';
+import type { CardPriority } from '@/types/types';
 
 
-export const useSizeStore = defineStore('size', () => {
-    const sizes = ref<CardSize[]>([
+
+export const usePriorityStore = defineStore('priority', () => {
+    const prioritys = ref<CardPriority[]>([
         {
             id: 0,
-            name: "Small",
+            name: "Little",
             color: "green"
         },
         {
             id: 1,
-            name: "Medium",
+            name: "Average",
             color: "yellow"
         },
         {
             id: 2,
-            name: "Critical",
+            name: "Big",
             color: "red"
         }
     ]);
-    return {sizes};
+    return {prioritys};
 })

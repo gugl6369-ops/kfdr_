@@ -3,10 +3,10 @@ export interface card{
     role: CardRole;
     date: Date,
     status: Status,
-    title: String,
-    subtitle: String, 
+    title: string,
+    subtitle: string, 
     size: CardSize,
-    priority: CardSize,
+    priority: CardPriority,
     deadline: Date,
     redact: Date | null,
     overdue: boolean,
@@ -16,11 +16,17 @@ export interface card{
 export interface CardSize {
     id: number;
     name: SizeName;
-    color: SizeColor;
+    color: Color;
 } 
 
-export type SizeName = "small" | "medium" | "critical";
-export type SizeColor = "green" | "yellow" | "red";
+export interface CardPriority{
+    id: number;
+    name: PriorityName;
+    color: Color;
+}
+export type PriorityName = "Little" | "Average" | "Big";
+export type SizeName = "Small" | "Medium" | "Critical";
+export type Color = "green" | "yellow" | "red";
 
 export interface board{
     id: Number,
@@ -32,7 +38,13 @@ export interface board{
 
 export type Status = "Todo" | "In-progress" | "Review" | 'Done';
 
-export type CardRole =  'Designer' | 'Backender' | 'Frontender' | 'Tester' | 'Analyst';
+export interface CardRole {
+    id: number;
+    name: RoleName;
+    color: RoleColor;
+}
+export type RoleName =  'Designer' | 'Backender' | 'Frontender' | 'Tester' | 'Analyst';
+export type RoleColor = "#876ED7" | "#6C8CD5" | "#5CCCCC" | "#FF7D73" | "#65E17B";
 
 
 export const formatDate = (date: Date): string => 

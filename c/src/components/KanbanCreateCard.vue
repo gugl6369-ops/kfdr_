@@ -3,59 +3,98 @@ import { ref, reactive } from 'vue'
 import { type card } from "@/types/types";
 import { useCardStore } from "@/stores/card";
 import { formatDate } from '@/types/types';
+import { useSizeStore } from '@/stores/sizeStore';
+import { usePriorityStore } from '@/stores/priorityStore'
+import { useRoleStore } from '@/stores/roleStore';
+
+const cardStore = useCardStore();
+const roleStore = useRoleStore();
+const priorityStore = usePriorityStore();
+const sizeStore = useSizeStore();
+
+
+const newCardForm = ref<card>( Object.assign({
+    id: cardStore.cardList.length,
+    role: roleStore.roles[0],
+    date: new Date(),
+    status: "Todo", 
+    title: "",
+    subtitle: "",
+    size: sizeStore.sizes[0],
+    priority: priorityStore.prioritys[0], 
+    deadline: new Date(), 
+    redact: null,
+    overdue: false
+}));
 
 
 const currentTimestamp =  ref<number>(new Date().getTime());
 
+const changeRoleColor = (event: Event) => {
+    const target = event.target as HTMLSelectElement;
+    target.style.backgroundColor = newCardForm.value.role.color;
+}
+
+const changeSizeColor = (event: Event) => {
+    const target = event.target as HTMLSelectElement;
+    target.style.backgroundColor = newCardForm.value.size.color;
+}
+
+const changePriorityColor = (event: Event) => {
+    const target = event.target as HTMLSelectElement;
+    target.style.backgroundColor = newCardForm.value.priority.color;
+}
+
+const submit = (event: Event) => {
+    event.preventDefault();
+    newCardForm.value.deadline = new Date(newCardForm.value.deadline);
+    cardStore.createCard(newCardForm.value);
+}
+
 </script>
 <template> 
     <article class="card w-full h-full max-w-120 flex flex-col  p-8 bg-white">
-        <form id="card-form" class="w-full flex flex-col h-wull gap-5 justify-between">
+        <form @submit="submit" id="card-form" class="w-full flex flex-col h-wull gap-5 justify-between">
             <div class="flex justify-between">
                 <div class="card_role-input">
-                   <select class="text-xl" name="role" required>
-                    <option value="Designer">Designer</option>
-                    <option value="Backender">Backender</option>
-                    <option value="Frontender">Frontender</option>
-                    <option value="Tester">Tester</option>
-                    <option value="Analyst">Analyst</option>
+                   <select v-model="newCardForm.role" @change="changeRoleColor" class="text-xl p-2 rounded-xl" name="role" required>
+                        <option v-for="option in roleStore.roles" :key="option.id" :value="option">{{ option.name }}</option>
                    </select>
                 </div>
                 <p>{{ formatDate((new Date(currentTimestamp)))}}</p>
             </div>
             <div class="flex flex-col card-form_text-input gap-5">
                 <label class="flex p-1" for="title">
-                    <input class="card-form_inut-title" type="text" placeholder="Название" required/>
+                    <input v-model="newCardForm.title" class="card-form_inut-title" type="text" placeholder="Название" required/>
                 </label>
                 <div class="flex p-3 bg-gray-300/25 rounded-3xl">
                     <label for="subtitle">
-                        <textarea  type="text" class="max-w-80 card-form_textarea" required>Комментарий</textarea>
+                        <textarea
+                         v-model="newCardForm.subtitle"  
+                         class="max-w-80 card-form_textarea" placeholder="Комментрий" required>
+                        </textarea>
                     </label>
                 </div>
             </div>
             <div class="flex gap-2">
-                 <select name="size" class="text-xl bg-green-400/25 rounded-3xl p-2 cursor-pointer " required>
-                    <option value="small">Small</option>
-                    <option value="medium">Medium</option>
-                    <option value="critical">Critical</option>
-                   </select>
-                   <select name="priority" class="text-xl bg-green-400/25 rounded-3xl p-2 cursor-pointer" required>
-                    <option value="small">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="critical">Big</option>
-                   </select>
-    
+                <select  v-model="newCardForm.size"   name="size" @change="changeSizeColor" class="text-xl bg-green-400/25 rounded-3xl p-2 cursor-pointer"  required>
+                    <option v-for="option in sizeStore.sizes" :key="option.id" :value="option">{{option.name}}</option>   
+                </select>
+                <select  v-model="newCardForm.priority"   name="priority"  @change="changePriorityColor" class="text-xl bg-green-400/25 rounded-3xl p-2 cursor-pointer " required>
+                    <option v-for="option in priorityStore.prioritys" :key="option.id" :value="option">{{option.name}}</option>   
+                </select>
+
             </div>
             <div class="flex justify-between">
                 <div class="flex">
                     <img class="w-8 h-8" src="@/assets/pic/flag.png"/>
-                    <input type="date" class="items-end" required>
+                    <input  v-model="newCardForm.deadline"   type="date" class="items-end" required>
                 </div>
                 <div class="flex items-center justify-center gap-2">
                     <!-- <div>  v-if="item.redact"
                         <input > изменить!!!!!!!!!!!!!!!!!!!!!!!!!!1
                     </div> -->
-                    <button type="submit" class=" bg-green-500 p-2 rounded-3xl">
+                    <button type="submit" class=" bg-green-500 p-2 rounded-3xl cursor-pointer">
                         <img class="h-6 w-6" src="@/assets/pic/app.png"></img>
                     </button>
                     <button type="reset" class="p-2 flex justify-center items-center bg-gray-400/25 rounded-3xl cursor-pointer" >
