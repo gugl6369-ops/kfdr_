@@ -120,12 +120,7 @@ const submit = (event: Event) => {
     font-size: 1rem;
     padding: 5px;
 }
-
 .card-form_textarea:focus{
     outline: none;
-}
-
-.card-form_text-input{
-    
 }
 </style>

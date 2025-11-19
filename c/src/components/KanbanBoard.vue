@@ -26,7 +26,7 @@ const getCards = (status : Status) =>
                 </div>
                 
             </header>
-            <div class="board_content w-full flex gap-5 p-10">
+            <div class="board_content h-full w-full flex gap-5 p-10">
                 <div v-for="card in getCards(item.name)" >
                     <card-item  :card="card"/>    
                 </div>
