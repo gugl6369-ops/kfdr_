@@ -14,7 +14,6 @@ const cardStore = useCardStore();
 const getCards = (status : Status) => 
     cardStore.cardList.filter( (c) => status === c.status)
 
-
 </script>
 <template>
     <div class="home grid w-full gap-12">
@@ -64,10 +63,14 @@ const getCards = (status : Status) =>
     padding: 50px 10px 50px;
 }
 .board{
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     border-radius: 50px;
+    box-shadow: 0 5px 15px white;
+    max-height: 100vh;
 }
+
 .board:not(:first-child) > .board_content{
     display: flex;
     flex-direction: column;
@@ -82,5 +85,9 @@ const getCards = (status : Status) =>
 }
 .home_button-img{
     opacity: 0.7;
+}
+
+.board_content{
+    overflow: auto;
 }
 </style>

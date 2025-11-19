@@ -47,6 +47,7 @@ export type RoleColor = "#876ED7" | "#6C8CD5" | "#5CCCCC" | "#FF7D73" | "#65E17B
 
 export const formatDate = (date: Date): string => 
 {
+    date = new Date(date);
     const monthName = [
         'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
         'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'

@@ -1,26 +1,30 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
-import { type card } from "@/types/types";
-import {formatDate} from "@/types/types";
-import { useCardStore } from '@/stores/card';
-
-const cardStore = useCardStore();
-
-interface CardProps {
-    card: card;
-}
-const props = defineProps<CardProps>();
+    import { ref, reactive, computed } from 'vue'
+    import { type card } from "@/types/types";
+    import {formatDate} from "@/types/types";
+    import { useCardStore } from '@/stores/card';
+    import RedactCard from "@/components/KanbanRedactCard.vue";
 
 
+    const cardStore = useCardStore();
+    const redact = ref<boolean>(false);
 
+    interface CardProps {
+        card: card;
+    }
+    const props = defineProps<CardProps>();
+
+    const days = computed(() => Math.ceil( new Date(props.card.deadline).getTime() - new Date().getTime())/(1000*60*60*24)); 
 
 </script>
 <template>
-    <article class="card w-full min-w-90 max-w-110 flex flex-col gap-5 justify-center items-center p-8 bg-white">
+    <article v-if="!redact" class="card w-full min-w-90 max-w-110 flex flex-col gap-5 justify-center items-center p-8 bg-white">
         <div class="flex flex-row justify-between w-full items-center">
             <div class="flex items-center gap-2">
                 <p class="flex p-2 bg-pink-400/25 rounded-3xl text-xl " :style="{backgroundColor: card.role.color}">{{ card.role.name }}</p>
-                <img class="w-7 h-7 cursor-pointer" src="@/assets/pic/redact-icon.png"/>
+                <button type="button" @click="() => redact = !redact " class="cursor-pointer">
+                    <img class="w-7 h-7 cursor-pointer" src="@/assets/pic/redact-icon.png"/>
+                </button>
             </div>
             <p class="text-gray-400">{{formatDate(card.date)}}</p>
         </div>
@@ -35,7 +39,7 @@ const props = defineProps<CardProps>();
             <p class="text-xl rounded-3xl p-2" :style="{color: card.priority.color,  border: `3px solid ${card.priority.color}`} ">{{card.priority.name}}</p>
         </div>
         <div class="w-full flex justify-between items-center">
-            <div class="flex gap-2 items-center items-center">
+            <div class="flex gap-2 items-center items-center p-2 rounded-xl" :style="{ backgroundColor: days <= 2 ? 'red' : 'transparent'}" >
                 <img class="w-8 h-8" src="@/assets/pic/flag.png"></img>
                 <p class="items-end">{{formatDate(card.deadline)}}</p>
             </div>
@@ -43,16 +47,26 @@ const props = defineProps<CardProps>();
                 <div v-if="card.redact">
                     <p class="text-xl text-gray-400">Ред. {{formatDate(card.redact)}}</p><!--изменить!!!!!!!!!!!!!!!!!!!!!!!!!!1-->
                 </div>
-                <button type="button" @click="cardStore.deleteCard(card)" class="p-2 flex justify-center items-center bg-gray-400/25 rounded-3xl cursor-pointer">
+                <button type="button" @click="cardStore.deleteCard(card)" class="p-2 flex justify-center items-center bg-gray-400/25 rounded-3xl cursor-pointer card_button">
                     <img class="w-6 h-6 " src="@/assets/pic/bask.png"></img>
                 </button>
             </div>
         </div>
     </article>
+    <div v-else>
+        <redact-card :card="card" @submit="() => redact = !redact" />
+    </div>
 </template>
 <style> 
 .card{
     border-radius: 40px; 
     box-shadow: 0 5px 15px rgb(193, 188, 188);
+}
+.card_button{
+    transition: .3s;
+}
+.card_button:hover{
+    background-color: var(--blueGray);
+    transition: .3s;
 }
 </style>
